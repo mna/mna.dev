@@ -1,0 +1,18 @@
+{
+  "name": "mna.dev",
+  "version": "1.0.0",
+  "main": "sass/mystyles.scss",
+  "license": "ISC",
+  "scripts": {
+    "build:assets": "echo 'todo(assets): probably just copy over from static dir'",
+    "build:css": "node-sass --omit-source-map-url src/sass/styles.scss public/css/styles.css",
+    "build:html": "echo 'todo(html): Go command to execute src/templates => public/*.html'",
+    "build:js": "echo 'todo(js): probably just copy over from static dir'",
+    "build": "npm-run-all build:*"
+  },
+  "devDependencies": {
+    "bulma": "^0.7.4",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
