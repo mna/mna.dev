@@ -4,11 +4,14 @@
   "main": "sass/mystyles.scss",
   "license": "ISC",
   "scripts": {
-    "build:assets": "echo 'todo(assets): probably just copy over from static dir'",
+    "build:assets": "cp --recursive src/static/* public/",
     "build:css": "node-sass --omit-source-map-url src/sass/styles.scss public/css/styles.css",
     "build:html": "echo 'todo(html): Go command to execute src/templates => public/*.html'",
     "build:js": "echo 'todo(js): probably just copy over from static dir'",
-    "build": "npm-run-all build:*"
+    "prebuild": "npm run clean",
+    "build": "npm-run-all build:*",
+    "clean": "find public/ -not -path '*/\\.*' -type f -delete",
+    "serve": "go run scripts/serve/main.go"
   },
   "devDependencies": {
     "bulma": "^0.7.4",

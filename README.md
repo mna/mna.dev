@@ -45,3 +45,27 @@ Using this, it should be possible to retrieve data for:
 * StackOverflow
 * Twitter (see linked comment)
 * Possibly Sourcehut: https://man.sr.ht/meta.sr.ht/api.md
+
+## install and generate
+
+```
+$ npm init
+# installs development dependencies, populates node_modules
+
+$ npm run build
+# builds assets, generates css, js, html in public/
+
+$ npm run serve
+# starts a local web server to browse the static website, installs
+# Go dependencies based on go.mod if needed
+
+$ npm run generate
+# runs the commands to retrieve data from the supported sources,
+# updating existing ones as needed
+```
+
+Requires the following environments to be set (e.g. via an `.envrc` file
+managed by `direnv`):
+
+* GO111MODULE=on
+
