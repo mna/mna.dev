@@ -6,6 +6,7 @@ import (
 
 	"git.sr.ht/~mna/mna.dev/scripts/generate/datasource"
 	_ "git.sr.ht/~mna/mna.dev/scripts/generate/datasource/github"
+	_ "git.sr.ht/~mna/mna.dev/scripts/generate/datasource/srht"
 )
 
 func main() {

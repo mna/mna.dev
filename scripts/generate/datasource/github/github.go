@@ -14,8 +14,8 @@ import (
 )
 
 const (
-	githubBaseURL = "https://api.github.com"
-	myUsername    = "mna"
+	baseURL    = "https://api.github.com"
+	myUsername = "mna"
 )
 
 type repo struct {
@@ -64,7 +64,7 @@ func init() {
 	}
 
 	datasource.Register("github", &source{
-		base:  githubBaseURL,
+		base:  baseURL,
 		token: os.Getenv("GITHUB_API_TOKEN"),
 	})
 }
