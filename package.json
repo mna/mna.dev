@@ -11,7 +11,7 @@
     "prebuild": "npm run clean",
     "build": "npm-run-all build:*",
     "clean": "find public/ -not -path '*/\\.*' -type f -delete",
-    "generate": "go run scripts/generate/main.go",
+    "generate": "go run scripts/generate/main.go data/",
     "serve": "go run scripts/serve/main.go"
   },
   "devDependencies": {
