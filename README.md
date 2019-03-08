@@ -12,7 +12,8 @@ data sources as clickable "tiles" or "cards".
   - https://blog.gopheracademy.com/advent-2014/goquery/
   - https://splice.com/blog/lesser-known-features-go-test/
   - https://splice.com/blog/going-extra-mile-golint-go-vet/
-* Top-10 year-end music lists
+* Top-10 year-end music lists (sputnik music lists)
+  - https://www.sputnikmusic.com/list.php?memberid=1142495
 * Horns of the devil website archive
 * Maybe short posts directly on this site?
 * An about page
