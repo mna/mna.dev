@@ -9,7 +9,6 @@ data sources as clickable "tiles" or "cards".
 ## list of data sources
 
 * Twitter account
-* 0value, hypermegatop blog websites
 * Stack overflow profile
 * Guest/job blog posts
   - https://blog.gopheracademy.com/advent-2014/goquery/
