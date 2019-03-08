@@ -1,0 +1,30 @@
+{
+  "description": "Vim syntax highlighting for the Inko programming language.",
+  "visibility": "public",
+  "name": "inko.vim",
+  "name_with_namespace": "Martin Angers / inko.vim",
+  "archived": false,
+  "forks_count": 0,
+  "star_count": 0,
+  "forked_from_project": null
+}
+{
+  "description": "",
+  "visibility": "public",
+  "name": "inkospec",
+  "name_with_namespace": "Martin Angers / inkospec",
+  "archived": false,
+  "forks_count": 0,
+  "star_count": 0,
+  "forked_from_project": null
+}
+{
+  "description": "A testing library for the Inko programming language.",
+  "visibility": "public",
+  "name": "inkotest",
+  "name_with_namespace": "Martin Angers / inkotest",
+  "archived": false,
+  "forks_count": 0,
+  "star_count": 0,
+  "forked_from_project": null
+}
