@@ -17,8 +17,6 @@ data sources as clickable "tiles" or "cards".
   - https://splice.com/blog/going-extra-mile-golint-go-vet/
 * Top-10 year-end music lists
 * Horns of the devil website archive
-* List of open source repos
-  - github, gitlab, bitbucket, sr.ht
 * Maybe the LinkedIn profile?
 * Maybe short posts directly on this site?
 * An about page

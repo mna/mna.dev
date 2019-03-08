@@ -9,6 +9,7 @@ import (
 	_ "git.sr.ht/~mna/mna.dev/scripts/generate/datasource/github"
 	_ "git.sr.ht/~mna/mna.dev/scripts/generate/datasource/gitlab"
 	_ "git.sr.ht/~mna/mna.dev/scripts/generate/datasource/srht"
+	_ "git.sr.ht/~mna/mna.dev/scripts/generate/datasource/zerovalue"
 )
 
 func main() {
