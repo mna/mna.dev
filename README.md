@@ -8,15 +8,12 @@ data sources as clickable "tiles" or "cards".
 
 ## list of data sources
 
-* Twitter account
-* Stack overflow profile
 * Guest/job blog posts
   - https://blog.gopheracademy.com/advent-2014/goquery/
   - https://splice.com/blog/lesser-known-features-go-test/
   - https://splice.com/blog/going-extra-mile-golint-go-vet/
 * Top-10 year-end music lists
 * Horns of the devil website archive
-* Maybe the LinkedIn profile?
 * Maybe short posts directly on this site?
 * An about page
 
@@ -27,21 +24,6 @@ data sources as clickable "tiles" or "cards".
 * Filter by hashtags, search tiles
 * About page
 * Very little javascript, no cookies, no tracking ("analytics")
-
-## dependencies
-
-For Go:
-
-* https://godoc.org/golang.org/x/oauth2
-  - See for twitter: https://github.com/golang/oauth2/issues/175#issuecomment-299756224
-
-Using this, it should be possible to retrieve data for:
-* Github
-* Gitlab
-* Bitbucket
-* StackOverflow
-* Twitter (see linked comment)
-* Possibly Sourcehut: https://man.sr.ht/meta.sr.ht/api.md
 
 ## install and generate
 
@@ -64,5 +46,9 @@ $ npm run generate
 Requires the following environments to be set (e.g. via an `.envrc` file
 managed by `direnv`):
 
-* GO111MODULE=on
+* `GO111MODULE=on`
+* `GITHUB_API_TOKEN`
+* `SRHT_API_TOKEN`
+* `GITLAB_API_TOKEN`
+* `BITBUCKET_API_TOKEN`
 
