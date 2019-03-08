@@ -79,5 +79,8 @@ func generateSource(baseDir, name string, source Source) error {
 	close(ch)
 	wg.Wait()
 
+	if err != nil {
+		err = fmt.Errorf("%s: %s", name, err)
+	}
 	return err
 }
