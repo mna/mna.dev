@@ -1,18 +1,18 @@
-<div class="hero">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title">Martin Angers</h1>
-    </div>
-    <nav class="level">
-      {{range .Links}}
-        <p class="level-item has-text-centered">
-          <a class="navbar-item" href="{{.URL}}" title="{{.Username}} on {{.Website}}">
-            <figure class="image is-32x32">
-              <img class="is-rounded" src="/img/{{lower .Website}}.png" alt="{{.Username}} on {{.Website}}"/>
-            </figure>
-          </a>
-        </p>
-      {{end}}
-    </nav>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <p class="title">Martin Angers</p>
+    </a>
   </div>
-</div>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      {{range .Links}}
+        <a class="navbar-item" href="{{.URL}}" title="{{.Username}} on {{.Website}}">
+          <figure class="image is-32x32">
+            <img src="/img/{{lower .Website}}.svg" alt="{{.Username}} on {{.Website}}"/>
+          </figure>
+        </a>
+      {{end}}
+    </div>
+  </div>
+</nav>
