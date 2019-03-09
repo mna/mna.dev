@@ -1,0 +1,12 @@
+<footer class="footer">
+  <div class="content">
+    <ul>
+      {{range .IconCredits}}
+        <li>
+          <div>
+            <span>{{.Icon}} icon: </span><a href="{{.AuthorURL}}">{{.Name}}</a> on <a href="{{.WebsiteURL}}">{{.Website}}</a> (<a href="{{.LicenseURL}}">{{.License}}</a>)
+          </div>
+      {{end}}
+    </ul>
+  </div>
+</footer>

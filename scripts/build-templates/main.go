@@ -9,13 +9,24 @@ import (
 )
 
 type website struct {
-	Links []*link
+	Links       []*link
+	IconCredits []*iconCredit
 }
 
 type link struct {
 	Website  string
 	Username string
 	URL      string
+}
+
+type iconCredit struct {
+	Icon       string
+	Name       string
+	AuthorURL  string
+	Website    string
+	WebsiteURL string
+	License    string
+	LicenseURL string
 }
 
 var funcs = template.FuncMap{
@@ -37,9 +48,16 @@ func main() {
 
 	w := &website{
 		Links: []*link{
+			{"About", "", "/about"},
 			{"Twitter", "___mna___", "https://twitter.com/___mna___/"},
 			{"GitHub", "mna", "https://github.com/mna"},
 			{"StackOverflow", "mna", "https://stackoverflow.com/users/1094941/mna"},
+		},
+		IconCredits: []*iconCredit{
+			{Icon: "About", Name: "Dave Gandy", AuthorURL: "https://www.flaticon.com/authors/dave-gandy", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
+			{Icon: "GitHub", Name: "Dave Gandy", AuthorURL: "https://www.flaticon.com/authors/dave-gandy", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
+			{Icon: "Twitter", Name: "Katarina Stefanikova", AuthorURL: "https://www.flaticon.com/authors/katarina-stefanikova", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
+			{Icon: "Stack Overflow", Name: "Freepik", AuthorURL: "https://www.freepik.com/", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
 		},
 	}
 	if err := w.execute(t, "index.html", dst); err != nil {
