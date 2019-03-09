@@ -3,7 +3,7 @@ package staticpost
 import (
 	"time"
 
-	"git.sr.ht/~mna/mna.dev/scripts/generate/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
 )
 
 type source struct {

@@ -8,7 +8,7 @@ import (
 	"os"
 	"regexp"
 
-	"git.sr.ht/~mna/mna.dev/scripts/generate/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
 )
 
 const (

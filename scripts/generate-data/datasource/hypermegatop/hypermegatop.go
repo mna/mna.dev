@@ -1,4 +1,4 @@
-package zerovalue
+package hypermegatop
 
 import (
 	"fmt"
@@ -6,18 +6,16 @@ import (
 	"strings"
 	"time"
 
-	"git.sr.ht/~mna/mna.dev/scripts/generate/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
 	"github.com/PuerkitoBio/goquery"
 )
 
-const (
-	baseURL    = "https://www.0value.com/"
-	initialURL = "https://www.0value.com/build-a-blog-engine-in-go"
-)
+const baseURL = "http://hypermegatop.github.io"
 
 type post struct {
 	URL       string
 	Title     string
+	Lead      string
 	Published time.Time
 }
 
@@ -25,7 +23,7 @@ type source struct {
 }
 
 func init() {
-	datasource.Register("0value", &source{})
+	datasource.Register("hypermegatop", &source{})
 }
 
 func (s *source) Generate(emit chan<- interface{}) error {
@@ -33,7 +31,7 @@ func (s *source) Generate(emit chan<- interface{}) error {
 
 	var err error
 
-	url := initialURL
+	url := baseURL
 	for url != "" {
 		url, err = s.processPage(cli, url, emit)
 		if err != nil {
@@ -59,22 +57,31 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 		return "", err
 	}
 
-	nav := doc.Find("nav")
-	title := strings.TrimSpace(nav.Find(".middle").Text())
-	next = nav.Find(".right a").AttrOr("href", "")
+	doc.Find("#post-list li").Each(func(i int, s *goquery.Selection) {
+		var published time.Time
+		dt := s.Find("time.published").AttrOr("datetime", "")
+		if dt != "" {
+			published, _ = time.Parse("2006-01-02", dt)
+		}
+		anchor := s.Find("h2 a")
+		link := anchor.AttrOr("href", "")
+		if link != "" {
+			link = baseURL + link
+		}
+		title := strings.TrimSpace(anchor.Text())
+		lead := strings.TrimSpace(s.Find("p.abstract").Text())
+
+		emit <- post{
+			URL:       link,
+			Title:     title,
+			Lead:      lead,
+			Published: published,
+		}
+	})
+
+	next = doc.Find(".pager .previous a").AttrOr("href", "")
 	if next != "" {
 		next = baseURL + next
 	}
-	var published time.Time
-	dt := doc.Find("main .meta time").AttrOr("datetime", "")
-	if dt != "" {
-		published, _ = time.Parse("2006-01-02", dt)
-	}
-	emit <- &post{
-		URL:       url,
-		Title:     title,
-		Published: published,
-	}
-
 	return next, nil
 }

@@ -6,12 +6,14 @@
   "scripts": {
     "build:assets": "cp --recursive src/static/* public/",
     "build:css": "node-sass --omit-source-map-url src/sass/styles.scss public/css/styles.css",
-    "build:html": "echo 'todo(html): Go command to execute src/templates => public/*.html'",
+    "build:html": "go run scripts/build-templates/main.go src/posts/ src/templates/ public/",
     "build:js": "echo 'todo(js): probably just copy over from static dir'",
-    "prebuild": "npm run clean",
-    "build": "npm-run-all build:*",
-    "clean": "find public/ -not -path '*/\\.*' -type f -delete",
-    "generate": "go run scripts/generate/main.go data/",
+    "prebuild": "npm-run-all -s clean generate",
+    "build": "npm-run-all -p build:*",
+    "clean": "npm-run-all -p clean:*",
+    "clean:public": "find public/ -not -path '*/\\.*' -type f -delete",
+    "clean:data": "find data/ -not -path '*/\\.*' -type f -delete",
+    "generate": "go run scripts/generate-data/main.go data/",
     "serve": "go run scripts/serve/main.go"
   },
   "devDependencies": {

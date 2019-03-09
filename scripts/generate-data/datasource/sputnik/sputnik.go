@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"git.sr.ht/~mna/mna.dev/scripts/generate/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
 	"github.com/PuerkitoBio/goquery"
 )
 
