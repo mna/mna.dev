@@ -8,12 +8,6 @@ data sources as clickable "tiles" or "cards".
 
 ## list of data sources
 
-* Guest/job blog posts
-  - https://blog.gopheracademy.com/advent-2014/goquery/
-  - https://splice.com/blog/lesser-known-features-go-test/
-  - https://splice.com/blog/going-extra-mile-golint-go-vet/
-* Top-10 year-end music lists (sputnik music lists)
-  - https://www.sputnikmusic.com/list.php?memberid=1142495
 * Horns of the devil website archive
 * Maybe short posts directly on this site?
 * An about page
@@ -47,7 +41,7 @@ $ npm run generate
 Requires the following environments to be set (e.g. via an `.envrc` file
 managed by `direnv`):
 
-* `GO111MODULE=on`
+* `GO111MODULE=on` (until this is the default)
 * `GITHUB_API_TOKEN`
 * `SRHT_API_TOKEN`
 * `GITLAB_API_TOKEN`
