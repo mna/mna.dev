@@ -1,0 +1,1272 @@
+{
+  "name": "purell",
+  "full_name": "PuerkitoBio/purell",
+  "private": false,
+  "html_url": "https://github.com/PuerkitoBio/purell",
+  "description": "tiny Go library to normalize URLs",
+  "fork": false,
+  "stargazers_count": 330,
+  "watchers_count": 330,
+  "forks_count": 41,
+  "language": "Go",
+  "archived": false,
+  "topics": [
+    "normalizer",
+    "url"
+  ],
+  "owner": {
+    "login": "PuerkitoBio",
+    "type": "Organization",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "redisc",
+  "full_name": "mna/redisc",
+  "private": false,
+  "html_url": "https://github.com/mna/redisc",
+  "description": "A Go redis cluster client built on top of redigo.",
+  "fork": false,
+  "stargazers_count": 109,
+  "watchers_count": 109,
+  "forks_count": 19,
+  "language": "Go",
+  "archived": false,
+  "topics": [
+    "redis",
+    "redis-cluster",
+    "redis-cluster-client"
+  ],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "0value",
+  "full_name": "mna/0value",
+  "private": false,
+  "html_url": "https://github.com/mna/0value",
+  "description": "files for my 0value.com blog",
+  "fork": false,
+  "stargazers_count": 1,
+  "watchers_count": 1,
+  "forks_count": 0,
+  "language": "HTML",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "goquery",
+  "full_name": "PuerkitoBio/goquery",
+  "private": false,
+  "html_url": "https://github.com/PuerkitoBio/goquery",
+  "description": "A little like that j-thing, only in Go.",
+  "fork": false,
+  "stargazers_count": 6882,
+  "watchers_count": 6882,
+  "forks_count": 591,
+  "language": "Go",
+  "archived": false,
+  "topics": [
+    "goquery",
+    "html-parsing",
+    "jquery",
+    "selector-strings"
+  ],
+  "owner": {
+    "login": "PuerkitoBio",
+    "type": "Organization",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "myvim",
+  "full_name": "mna/myvim",
+  "private": false,
+  "html_url": "https://github.com/mna/myvim",
+  "description": "my vim setup",
+  "fork": false,
+  "stargazers_count": 1,
+  "watchers_count": 1,
+  "forks_count": 0,
+  "language": "Vim script",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "throttled",
+  "full_name": "throttled/throttled",
+  "private": false,
+  "html_url": "https://github.com/throttled/throttled",
+  "description": "Package throttled implements rate limiting access to resources such as HTTP endpoints.",
+  "fork": false,
+  "stargazers_count": 763,
+  "watchers_count": 763,
+  "forks_count": 40,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "throttled",
+    "type": "Organization",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "netlify-test",
+  "full_name": "mna/netlify-test",
+  "private": false,
+  "html_url": "https://github.com/mna/netlify-test",
+  "description": "kicking tires",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "pigeon",
+  "full_name": "mna/pigeon",
+  "private": false,
+  "html_url": "https://github.com/mna/pigeon",
+  "description": "Command pigeon generates parsers in Go from a PEG grammar.",
+  "fork": false,
+  "stargazers_count": 375,
+  "watchers_count": 375,
+  "forks_count": 30,
+  "language": "Go",
+  "archived": false,
+  "topics": [
+    "parser",
+    "parser-generator",
+    "peg"
+  ],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "gocrawl",
+  "full_name": "PuerkitoBio/gocrawl",
+  "private": false,
+  "html_url": "https://github.com/PuerkitoBio/gocrawl",
+  "description": "Polite, slim and concurrent web crawler.",
+  "fork": false,
+  "stargazers_count": 1734,
+  "watchers_count": 1734,
+  "forks_count": 180,
+  "language": "Go",
+  "archived": false,
+  "topics": [
+    "crawler",
+    "robots-txt"
+  ],
+  "owner": {
+    "login": "PuerkitoBio",
+    "type": "Organization",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "liboneone",
+  "full_name": "mna/liboneone",
+  "private": false,
+  "html_url": "https://github.com/mna/liboneone",
+  "description": "",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "C",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "fetchbot",
+  "full_name": "PuerkitoBio/fetchbot",
+  "private": false,
+  "html_url": "https://github.com/PuerkitoBio/fetchbot",
+  "description": "A simple and flexible web crawler that follows the robots.txt policies and crawl delays.",
+  "fork": false,
+  "stargazers_count": 705,
+  "watchers_count": 705,
+  "forks_count": 95,
+  "language": "Go",
+  "archived": false,
+  "topics": [
+    "crawler",
+    "robots-txt"
+  ],
+  "owner": {
+    "login": "PuerkitoBio",
+    "type": "Organization",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "rehttp",
+  "full_name": "PuerkitoBio/rehttp",
+  "private": false,
+  "html_url": "https://github.com/PuerkitoBio/rehttp",
+  "description": "Package rehttp implements a Go HTTP transport that handles retries.",
+  "fork": false,
+  "stargazers_count": 156,
+  "watchers_count": 156,
+  "forks_count": 7,
+  "language": "Go",
+  "archived": false,
+  "topics": [
+    "http-client",
+    "retry"
+  ],
+  "owner": {
+    "login": "PuerkitoBio",
+    "type": "Organization",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "dotfiles",
+  "full_name": "mna/dotfiles",
+  "private": false,
+  "html_url": "https://github.com/mna/dotfiles",
+  "description": "",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Shell",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "Networking",
+  "full_name": "mna/Networking",
+  "private": false,
+  "html_url": "https://github.com/mna/Networking",
+  "description": "Low-level Swift package for POSIX sockets and Epoll/Kqueue.",
+  "fork": false,
+  "stargazers_count": 22,
+  "watchers_count": 22,
+  "forks_count": 2,
+  "language": "Swift",
+  "archived": true,
+  "topics": [
+    "networking",
+    "sockets",
+    "swift-library",
+    "swift-package-manager"
+  ],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "urlesc",
+  "full_name": "PuerkitoBio/urlesc",
+  "private": false,
+  "html_url": "https://github.com/PuerkitoBio/urlesc",
+  "description": "Proper URL escaping as per RFC3986",
+  "fork": false,
+  "stargazers_count": 17,
+  "watchers_count": 17,
+  "forks_count": 9,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "PuerkitoBio",
+    "type": "Organization",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "homebrew-harfangapps",
+  "full_name": "harfangapps/homebrew-harfangapps",
+  "private": false,
+  "html_url": "https://github.com/harfangapps/homebrew-harfangapps",
+  "description": "Homebrew tap for Harfang Apps commands and tools.",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Ruby",
+  "archived": false,
+  "topics": [
+    "homebrew",
+    "homebrew-tap"
+  ],
+  "owner": {
+    "login": "harfangapps",
+    "type": "Organization",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "regis-companion",
+  "full_name": "harfangapps/regis-companion",
+  "private": false,
+  "html_url": "https://github.com/harfangapps/regis-companion",
+  "description": "Command-line tool that provides advanced features for the Regis Mac App.",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "harfangapps",
+    "type": "Organization",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "juggler",
+  "full_name": "mna/juggler",
+  "private": false,
+  "html_url": "https://github.com/mna/juggler",
+  "description": "Juggler: a websocket-based, redis-backed RPC and pub-sub server.",
+  "fork": false,
+  "stargazers_count": 55,
+  "watchers_count": 55,
+  "forks_count": 2,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "lune",
+  "full_name": "mna/lune",
+  "private": false,
+  "html_url": "https://github.com/mna/lune",
+  "description": "A pure Go implementation of the Lua virtual machine.",
+  "fork": false,
+  "stargazers_count": 41,
+  "watchers_count": 41,
+  "forks_count": 1,
+  "language": "Go",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "specter",
+  "full_name": "mna/specter",
+  "private": false,
+  "html_url": "https://github.com/mna/specter",
+  "description": "a (tiny) VM project built with Go",
+  "fork": false,
+  "stargazers_count": 56,
+  "watchers_count": 56,
+  "forks_count": 6,
+  "language": "Go",
+  "archived": true,
+  "topics": [
+    "virtual-machine",
+    "vm"
+  ],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "httpparms",
+  "full_name": "mna/httpparms",
+  "private": false,
+  "html_url": "https://github.com/mna/httpparms",
+  "description": "Package httpparms provides helper functions and mechanisms to load the content of an HTTP request into a Go struct.",
+  "fork": false,
+  "stargazers_count": 1,
+  "watchers_count": 1,
+  "forks_count": 0,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "gred",
+  "full_name": "mna/gred",
+  "private": false,
+  "html_url": "https://github.com/mna/gred",
+  "description": "A pure Go concurrent implementation of the Redis server",
+  "fork": false,
+  "stargazers_count": 18,
+  "watchers_count": 18,
+  "forks_count": 4,
+  "language": "Go",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "httpmw",
+  "full_name": "mna/httpmw",
+  "private": false,
+  "html_url": "https://github.com/mna/httpmw",
+  "description": "Package httpmw is a collection of bite-sized middleware with chaining support.",
+  "fork": false,
+  "stargazers_count": 2,
+  "watchers_count": 2,
+  "forks_count": 0,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "httpcmw",
+  "full_name": "mna/httpcmw",
+  "private": false,
+  "html_url": "https://github.com/mna/httpcmw",
+  "description": "Package httpcmw supports creating middleware chains for HTTP clients.",
+  "fork": false,
+  "stargazers_count": 2,
+  "watchers_count": 2,
+  "forks_count": 1,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "babashka-deps",
+  "full_name": "mna/babashka-deps",
+  "private": false,
+  "html_url": "https://github.com/mna/babashka-deps",
+  "description": "",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Shell",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "trouve",
+  "full_name": "mna/trouve",
+  "private": false,
+  "html_url": "https://github.com/mna/trouve",
+  "description": "",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Crystal",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "MIT License"
+  }
+}
+{
+  "name": "setupjs",
+  "full_name": "mna/setupjs",
+  "private": false,
+  "html_url": "https://github.com/mna/setupjs",
+  "description": "Personal setup for javascript frontend projects.",
+  "fork": false,
+  "stargazers_count": 2,
+  "watchers_count": 2,
+  "forks_count": 0,
+  "language": "JavaScript",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "ghost",
+  "full_name": "mna/ghost",
+  "private": false,
+  "html_url": "https://github.com/mna/ghost",
+  "description": "Lego blocks for web servers.",
+  "fork": false,
+  "stargazers_count": 52,
+  "watchers_count": 52,
+  "forks_count": 6,
+  "language": "Go",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "nitfind",
+  "full_name": "mna/nitfind",
+  "private": false,
+  "html_url": "https://github.com/mna/nitfind",
+  "description": "ack-style finder in Nit, mostly to experiment with the language",
+  "fork": false,
+  "stargazers_count": 2,
+  "watchers_count": 2,
+  "forks_count": 0,
+  "language": "Nit",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "ooc-check",
+  "full_name": "mna/ooc-check",
+  "private": false,
+  "html_url": "https://github.com/mna/ooc-check",
+  "description": "testing assertions and utilities for ooc.",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "ooc",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "martini-api-example",
+  "full_name": "mna/martini-api-example",
+  "private": false,
+  "html_url": "https://github.com/mna/martini-api-example",
+  "description": "An example RESTful API application built with Martini.",
+  "fork": false,
+  "stargazers_count": 280,
+  "watchers_count": 280,
+  "forks_count": 60,
+  "language": "Go",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "restit",
+  "full_name": "mna/restit",
+  "private": false,
+  "html_url": "https://github.com/mna/restit",
+  "description": "",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Crystal",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "MIT License"
+  }
+}
+{
+  "name": "agora",
+  "full_name": "mna/agora",
+  "private": false,
+  "html_url": "https://github.com/mna/agora",
+  "description": "a dynamically typed, garbage collected, embeddable programming language built with Go",
+  "fork": false,
+  "stargazers_count": 317,
+  "watchers_count": 317,
+  "forks_count": 31,
+  "language": "Go",
+  "archived": false,
+  "topics": [
+    "programming-language"
+  ],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "ds",
+  "full_name": "mna/ds",
+  "private": false,
+  "html_url": "https://github.com/mna/ds",
+  "description": "",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 1,
+  "language": "Nimrod",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "gocostmodel",
+  "full_name": "mna/gocostmodel",
+  "private": false,
+  "html_url": "https://github.com/mna/gocostmodel",
+  "description": "Benchmarks of common basic operations for the Go language.",
+  "fork": false,
+  "stargazers_count": 51,
+  "watchers_count": 51,
+  "forks_count": 2,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "jsonb",
+  "full_name": "mna/jsonb",
+  "private": false,
+  "html_url": "https://github.com/mna/jsonb",
+  "description": "wip",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "nimhash",
+  "full_name": "mna/nimhash",
+  "private": false,
+  "html_url": "https://github.com/mna/nimhash",
+  "description": "experiment with the nim language",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Nimrod",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "implement.js",
+  "full_name": "mna/implement.js",
+  "private": false,
+  "html_url": "https://github.com/mna/implement.js",
+  "description": "Strong type-checking for dependency injection and method arguments.",
+  "fork": false,
+  "stargazers_count": 19,
+  "watchers_count": 19,
+  "forks_count": 0,
+  "language": "JavaScript",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "MIT License"
+  }
+}
+{
+  "name": "swiftodo",
+  "full_name": "mna/swiftodo",
+  "private": false,
+  "html_url": "https://github.com/mna/swiftodo",
+  "description": "iOS ToDo list tutorial in Swift",
+  "fork": false,
+  "stargazers_count": 4,
+  "watchers_count": 4,
+  "forks_count": 0,
+  "language": "Swift",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "trofaf",
+  "full_name": "mna/trofaf",
+  "private": false,
+  "html_url": "https://github.com/mna/trofaf",
+  "description": "Super simple live static blog generator in Go. Vraiment trofaf.",
+  "fork": false,
+  "stargazers_count": 130,
+  "watchers_count": 130,
+  "forks_count": 17,
+  "language": "Go",
+  "archived": false,
+  "topics": [
+    "blog-engine"
+  ],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "express-boilerplate",
+  "full_name": "mna/express-boilerplate",
+  "private": false,
+  "html_url": "https://github.com/mna/express-boilerplate",
+  "description": "Basic structure of a node.js web application with Express. Started out as a blog post about how to structure code in an Express web app (in French, see the URL below).",
+  "fork": false,
+  "stargazers_count": 68,
+  "watchers_count": 68,
+  "forks_count": 15,
+  "language": "JavaScript",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "gocoro",
+  "full_name": "mna/gocoro",
+  "private": false,
+  "html_url": "https://github.com/mna/gocoro",
+  "description": "Lua coroutine implementation in Go",
+  "fork": false,
+  "stargazers_count": 4,
+  "watchers_count": 4,
+  "forks_count": 0,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "renku",
+  "full_name": "mna/renku",
+  "private": false,
+  "html_url": "https://github.com/mna/renku",
+  "description": "",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "qs",
+  "full_name": "mna/qs",
+  "private": false,
+  "html_url": "https://github.com/mna/qs",
+  "description": "Quick Server - a simple web server for client-side prototyping.",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Go",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "BSD 3-Clause \"New\" or \"Revised\" License"
+  }
+}
+{
+  "name": "advice",
+  "full_name": "mna/advice",
+  "private": false,
+  "html_url": "https://github.com/mna/advice",
+  "description": "Advice functional mixin based on Twitter's Angus Croll presentation (How we learned to stop worrying and love Javascript).",
+  "fork": false,
+  "stargazers_count": 41,
+  "watchers_count": 41,
+  "forks_count": 6,
+  "language": "JavaScript",
+  "archived": true,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "MIT License"
+  }
+}
+{
+  "name": "compiler-construction",
+  "full_name": "mna/compiler-construction",
+  "private": false,
+  "html_url": "https://github.com/mna/compiler-construction",
+  "description": "Following along the iTunes U course \"Introduction to compiler construction\" (using Go instead of C).",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 1,
+  "language": "C",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "goreact",
+  "full_name": "mna/goreact",
+  "private": false,
+  "html_url": "https://github.com/mna/goreact",
+  "description": "reactive programming in Go",
+  "fork": false,
+  "stargazers_count": 0,
+  "watchers_count": 0,
+  "forks_count": 0,
+  "language": "Go",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "Provok.in-issues",
+  "full_name": "mna/Provok.in-issues",
+  "private": false,
+  "html_url": "https://github.com/mna/Provok.in-issues",
+  "description": "Issues repository for the Provok.in website.",
+  "fork": false,
+  "stargazers_count": 2,
+  "watchers_count": 2,
+  "forks_count": 0,
+  "language": "",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "assnat",
+  "full_name": "mna/assnat",
+  "private": false,
+  "html_url": "https://github.com/mna/assnat",
+  "description": "Extracteur des données du site de l'Assemblée Nationale du Québec, pour nourrir assnatapi.",
+  "fork": false,
+  "stargazers_count": 4,
+  "watchers_count": 4,
+  "forks_count": 0,
+  "language": "JavaScript",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "hypermegatop.github.com",
+  "full_name": "hypermegatop/hypermegatop.github.com",
+  "private": false,
+  "html_url": "https://github.com/hypermegatop/hypermegatop.github.com",
+  "description": "Code source du blogue hypermegatop.github.com.",
+  "fork": false,
+  "stargazers_count": 1,
+  "watchers_count": 1,
+  "forks_count": 0,
+  "language": "JavaScript",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "hypermegatop",
+    "type": "Organization",
+    "site_admin": false
+  },
+  "license": {
+    "name": "MIT License"
+  }
+}
+{
+  "name": "assnatapi",
+  "full_name": "mna/assnatapi",
+  "private": false,
+  "html_url": "https://github.com/mna/assnatapi",
+  "description": "API pour exploiter les données de l'Assemblée nationale du Québec.",
+  "fork": false,
+  "stargazers_count": 6,
+  "watchers_count": 6,
+  "forks_count": 1,
+  "language": "JavaScript",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": "MIT License"
+  }
+}
+{
+  "name": "angular-gtd",
+  "full_name": "mna/angular-gtd",
+  "private": false,
+  "html_url": "https://github.com/mna/angular-gtd",
+  "description": "An example app for Getting Things Done built with AngularJS.",
+  "fork": false,
+  "stargazers_count": 6,
+  "watchers_count": 6,
+  "forks_count": 1,
+  "language": "JavaScript",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "see-no-evil",
+  "full_name": "mna/see-no-evil",
+  "private": false,
+  "html_url": "https://github.com/mna/see-no-evil",
+  "description": "Tiny callback cleaner library for node.js, so that error management gets out of the way.",
+  "fork": false,
+  "stargazers_count": 2,
+  "watchers_count": 2,
+  "forks_count": 1,
+  "language": "JavaScript",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "feedbuilder",
+  "full_name": "mna/feedbuilder",
+  "private": false,
+  "html_url": "https://github.com/mna/feedbuilder",
+  "description": "",
+  "fork": false,
+  "stargazers_count": 1,
+  "watchers_count": 1,
+  "forks_count": 0,
+  "language": "JavaScript",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "bookify",
+  "full_name": "mna/bookify",
+  "private": false,
+  "html_url": "https://github.com/mna/bookify",
+  "description": "Make a book out of URLs, basically. Exploring node.js, express and socket.io along the way!",
+  "fork": false,
+  "stargazers_count": 1,
+  "watchers_count": 1,
+  "forks_count": 0,
+  "language": "JavaScript",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}
+{
+  "name": "ungeekenorbite",
+  "full_name": "mna/ungeekenorbite",
+  "private": false,
+  "html_url": "https://github.com/mna/ungeekenorbite",
+  "description": "Blog exploratoire d'un geek qui découvre avec stupeur et tremblements le merveilleux monde des nouvelles technologies.",
+  "fork": false,
+  "stargazers_count": 1,
+  "watchers_count": 1,
+  "forks_count": 0,
+  "language": "JavaScript",
+  "archived": false,
+  "topics": [],
+  "owner": {
+    "login": "mna",
+    "type": "User",
+    "site_admin": false
+  },
+  "license": {
+    "name": ""
+  }
+}

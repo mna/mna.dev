@@ -1,13 +1,25 @@
 package main
 
 import (
+	"html/template"
 	"log"
 	"os"
 	"path/filepath"
-	"text/template"
+	"strings"
 )
 
 type website struct {
+	Links []*link
+}
+
+type link struct {
+	Website  string
+	Username string
+	URL      string
+}
+
+var funcs = template.FuncMap{
+	"lower": strings.ToLower,
 }
 
 func main() {
@@ -16,25 +28,34 @@ func main() {
 	}
 
 	posts, src, dst := os.Args[1], os.Args[2], os.Args[3]
-	t, err := template.ParseGlob(filepath.Join(src, "*"))
+
+	t := template.New("root").Funcs(funcs)
+	t, err := t.ParseGlob(filepath.Join(src, "*"))
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if err := execute(t, "index.html", dst); err != nil {
+	w := &website{
+		Links: []*link{
+			{"Twitter", "___mna___", "https://twitter.com/___mna___/"},
+			{"GitHub", "mna", "https://github.com/mna"},
+			{"StackOverflow", "mna", "https://stackoverflow.com/users/1094941/mna"},
+		},
+	}
+	if err := w.execute(t, "index.html", dst); err != nil {
 		log.Fatal(err)
 	}
 	_ = posts
 }
 
-func execute(t *template.Template, name string, outDir string) error {
+func (w *website) execute(t *template.Template, name string, outDir string) error {
 	f, err := os.Create(filepath.Join(outDir, name))
 	if err != nil {
 		return err
 	}
 	defer f.Close()
 
-	if err := t.ExecuteTemplate(f, name, nil); err != nil {
+	if err := t.ExecuteTemplate(f, name, w); err != nil {
 		return err
 	}
 	return f.Close()

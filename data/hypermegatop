@@ -1,0 +1,66 @@
+{
+  "URL": "http://hypermegatop.github.io/2012/07/du-code-et-de-la-tole-a-chaudiere.html",
+  "Title": "Du code et de la tôle à chaudière",
+  "Lead": "En ces deux mois et demi de silence hypermégatopien, je n'ai pas chômé. Je suis parti en guerre contre la tôle à chaudière.",
+  "Published": "2012-07-12T00:00:00Z"
+}
+{
+  "URL": "http://hypermegatop.github.io/2012/04/comment-emprunter-heritage-backbone.html",
+  "Title": "Comment emprunter l'héritage de Backbone",
+  "Lead": "L'héritage par prototypage de Javascript n'est ni trivial, ni abominablement complexe. Il est cependant tout sauf intuitif à bien mettre en place. Heureusement, dans une application Web utilisant déjà Backbone, on peut facilement profiter de l'implémentation de cette librairie pour définir nos classes.",
+  "Published": "2012-04-30T00:00:00Z"
+}
+{
+  "URL": "http://hypermegatop.github.io/2012/04/je-suis-venu-te-dire-que-je-men-vais.html",
+  "Title": "Je suis venu te dire que je m'en vais",
+  "Lead": "Ou plutôt, \"je suis venu te dire qu'on m'évince\", mais ça \"punch\" moins... En effet, mon coup de foudre pour le blogiciel Calepin aura finalement été son baiser de la mort. Sur Twitter la semaine dernière, via le canal officiel du site, on apprenait que c'était la fin des haricots.",
+  "Published": "2012-04-23T00:00:00Z"
+}
+{
+  "URL": "http://hypermegatop.github.io/2012/04/proprietes-calculees-avec-backbone.html",
+  "Title": "Propriétés calculées avec Backbone",
+  "Lead": "La beauté de l'univers du code libre est que lorsqu'il manque une fonctionnalité, on peut se retrousser les manches, ouvrir le code et l'ajouter. Voici ma petite histoire des propriétés calculées avec Backbone.",
+  "Published": "2012-04-13T00:00:00Z"
+}
+{
+  "URL": "http://hypermegatop.github.io/2012/04/implementjs-typage-fort-et-javascript.html",
+  "Title": "implement.js: typage fort et Javascript",
+  "Lead": "L'injection de dépendance avec Javascript a comme conséquence de ne pouvoir assumer que les fonctionnalités offertes par l'instance reçue seront celles attendues.",
+  "Published": "2012-04-02T00:00:00Z"
+}
+{
+  "URL": "http://hypermegatop.github.io/2012/03/experimentations-sur-injection-de-dependance-avec-nodejs.html",
+  "Title": "Expérimentations sur l'injection de dépendance avec node.js",
+  "Lead": "L'injection de dépendance permet de découpler les différentes composantes d'une application pour en faciliter l'entretien, la testabilité, circonscrire l'impact des changements, mais aussi pour imposer une façon d'aborder la création de l'application en une aggrégation de pièces simples, à la responsabilité ciblée, et à l'API bien défini.",
+  "Published": "2012-03-27T00:00:00Z"
+}
+{
+  "URL": "http://hypermegatop.github.io/2012/03/structurer-une-application-web-avec-express-et-nodejs.html",
+  "Title": "Structurer une application Web avec Express et Node.js",
+  "Lead": "La façon d'organiser son code, en divers répertoires et fichiers, est en bonne partie une question de préférence personnelle. Le cadre d'application Web Express n'impose aucune structure particulière, laissant le développeur totalement libre d'arranger le tout selon son inspiration du moment. Cette liberté peut parfois donner le vertige et provoquer un effet pervers: le syndrome de la page blanche.",
+  "Published": "2012-03-19T00:00:00Z"
+}
+{
+  "URL": "http://hypermegatop.github.io/2012/03/npm-shrinkwrap-comment-controler-ses-dependances.html",
+  "Title": "npm shrinkwrap: Comment contrôler ses dépendances",
+  "Lead": "Utiliser une librairie existante permet d'ajouter rapidement des fonctionnalités à une application, et de concentrer ses efforts sur les nouveautés, les spécificités de son projet, plutôt qu'à réinventer la roue. Cependant, chaque librairie utilisée devient une dépendance, et une dépendance est un risque. Un risque car notre code dépend maintenant de ce corps étranger sur lequel on a généralement peu ou pas de contrôle. Les meilleures pratiques pour limiter ce risque ont évolué rapidement sur la plateforme node.js ces derniers mois.",
+  "Published": "2012-03-12T00:00:00Z"
+}
+{
+  "URL": "http://hypermegatop.github.io/2012/03/npm-la-base-essentielle-pour-debuter-avec-nodejs.html",
+  "Title": "npm: la base essentielle pour débuter avec node.js",
+  "Lead": "La plateforme node.js est volontairement limitée, en son coeur, aux fonctionnalités les plus fondamentales. Elle mise donc sur les contributions de sa communauté pour enrichir le noyau et repousser les limites du possible. Avec près de 8000 librairies à ce jour, il y a sérieux danger de chaos. Et si on y retrouve plutôt quelque chose comme une belle organisation, c'est en bonne partie grâce au gestionnaire de librairies npm.",
+  "Published": "2012-03-05T00:00:00Z"
+}
+{
+  "URL": "http://hypermegatop.github.io/2012/02/meta-billet-un-mot-sur-le-calepin.html",
+  "Title": "Méta-billet: un mot sur le Calepin",
+  "Lead": "Il existe de nombreux moteurs de blogue gratuits sur internet. Pourquoi avoir jeté l'ancre sur ce discret et modeste Calepin?",
+  "Published": "2012-02-29T00:00:00Z"
+}
+{
+  "URL": "http://hypermegatop.github.io/2012/02/propulse-par-nodejs.html",
+  "Title": "Propulsé par node.js",
+  "Lead": "Le développement d'une application Web est ponctué d'une multitude de choix technologiques. Pour le compte rendu Web, le coeur technologique, celui qui a orienté pratiquement tous les autres choix, n'a pourtant pas fait l'objet d'une réflexion, d'une étude comparative. Loin s'en faut. Il a plutôt été l'élément déclencheur de tout le projet.",
+  "Published": "2012-02-21T00:00:00Z"
+}
