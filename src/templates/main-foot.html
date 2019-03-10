@@ -1,12 +1,21 @@
 <footer class="footer">
-  <div class="content">
-    <ul>
-      {{range .IconCredits}}
-        <li>
-          <div>
-            <span>{{.Icon}} icon: </span><a href="{{.AuthorURL}}">{{.Name}}</a> on <a href="{{.WebsiteURL}}">{{.Website}}</a> (<a href="{{.LicenseURL}}">{{.License}}</a>)
-          </div>
-      {{end}}
-    </ul>
+  <div class="columns">
+    <div class="column is-half">
+      <div class="content">
+        <ul >
+          {{range .IconCredits}}
+            <li>
+                <span>{{.Icon}} icon: </span><a href="{{.AuthorURL}}">{{.Name}}</a> <small>(<a href="{{.WebsiteURL}}">{{.Website}}</a>, <a href="{{.LicenseURL}}">{{.License}}</a>)</small>
+          {{end}}
+        </ul>
+      </div>
+    </div>
+    <div class="column">
+      <div class="content">
+        <ul >
+          <li>Custom-built with Bulma, Go and markdown.
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>
