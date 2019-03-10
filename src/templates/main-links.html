@@ -1,24 +1,16 @@
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <p class="title">Martin Angers</p>
-        </a>
-        <a role="button" class="navbar-burger" data-target="nav-menu" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div class="navbar-menu" id="nav-menu">
-        <div class="navbar-end">
-          {{range .Links}}
-            <a class="navbar-item" href="{{.URL}}" title="{{if .Username}}{{.Username}} on {{.Website}}{{else}}{{.Website}}{{end}}">
-              <figure class="image is-32x32">
-                <img src="/img/{{lower .Website}}.svg" alt="{{if .Username}}{{.Username}} on {{.Website}}{{else}}{{.Website}}{{end}}"/>
-              </figure>
-              <span class="is-hidden-tablet"> {{.Website}}</span>
-            </a>
-          {{end}}
-        </div>
-      </div>
-    </nav>
+<nav class="w-full mb-4" role="navigation" aria-label="main navigation">
+  <h1>
+    <a class="text-black no-underline" href="/">
+      Martin Angers
+    </a>
+  </h1>
+  <div>
+    {{range .Links}}
+        <figure class="inline-block w-32px h-32px mr-3">
+          <a class="no-underline" href="{{.URL}}" title="{{if .Username}}{{.Username}} on {{.Website}}{{else}}{{.Website}}{{end}}">
+            <img src="/img/{{lower .Website}}.svg" alt="{{if .Username}}{{.Username}} on {{.Website}}{{else}}{{.Website}}{{end}}"/>
+          </a>
+        </figure>
+    {{end}}
+  </div>
+</nav>
