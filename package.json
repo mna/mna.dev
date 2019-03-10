@@ -5,7 +5,7 @@
   "license": "ISC",
   "scripts": {
     "build:assets": "cp --recursive src/static/* public/",
-    "build:css": "npx tailwind build src/css/main.css -o public/css/styles.css",
+    "build:css": "npx tailwind build src/css/main.css -c tailwind.js -o public/css/styles.css",
     "build:html": "go run scripts/build-templates/main.go src/posts/ src/templates/ public/",
     "build:js": "echo 'todo(js): probably just copy over from static dir'",
     "prebuild": "npm-run-all -s clean generate",

@@ -56,6 +56,7 @@ let colors = {
   'grey-lightest': '#f8fafc',
   'white': '#ffffff',
 
+/*
   'red-darkest': '#3b0d0c',
   'red-darker': '#621b18',
   'red-dark': '#cc1f1a',
@@ -95,6 +96,7 @@ let colors = {
   'teal-light': '#64d5ca',
   'teal-lighter': '#a0f0ed',
   'teal-lightest': '#e8fffe',
+*/
 
   'blue-darkest': '#12283a',
   'blue-darker': '#1c3d5a',
@@ -104,6 +106,7 @@ let colors = {
   'blue-lighter': '#bcdefa',
   'blue-lightest': '#eff8ff',
 
+/*
   'indigo-darkest': '#191e38',
   'indigo-darker': '#2f365f',
   'indigo-dark': '#5661b3',
@@ -127,6 +130,7 @@ let colors = {
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
+*/
 }
 
 module.exports = {
@@ -280,15 +284,15 @@ module.exports = {
   */
 
   fontWeights: {
-    'hairline': 100,
-    'thin': 200,
+    //'hairline': 100,
+    //'thin': 200,
     'light': 300,
     'normal': 400,
-    'medium': 500,
-    'semibold': 600,
+    //'medium': 500,
+    //'semibold': 600,
     'bold': 700,
-    'extrabold': 800,
-    'black': 900,
+    //'extrabold': 800,
+    //'black': 900,
   },
 
 
@@ -954,10 +958,7 @@ module.exports = {
   */
 
   plugins: [
-    require('tailwindcss/plugins/container')({
-      // center: true,
-      // padding: '1rem',
-    }),
+    require('tailwindcss/plugins/container')(),
   ],
 
 
