@@ -10,11 +10,13 @@ import (
 	"time"
 
 	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 	"golang.org/x/oauth2"
 )
 
 const (
-	baseURL = "https://git.sr.ht"
+	baseURL    = "https://git.sr.ht"
+	myUsername = "~mna"
 )
 
 type repo struct {
@@ -91,7 +93,16 @@ func (s *source) processPage(client *http.Client, u string, emit chan<- interfac
 		if r.Visibility != "public" {
 			continue
 		}
-		emit <- r
+		repo := &types.Repo{
+			URL:         fmt.Sprintf("%s/%s/%s", baseURL, myUsername, r.Name),
+			Host:        "sourcehut",
+			Name:        r.Name,
+			Description: r.Description,
+			Created:     r.Created,
+			Updated:     r.Updated,
+		}
+		repo.SetTags()
+		emit <- repo
 	}
 
 	if resp.Next > 0 {

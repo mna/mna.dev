@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 )
 
 const (
@@ -28,6 +29,11 @@ type repo struct {
 	Parent      *struct {
 		UUID string `json:"uuid"`
 	} `json:"parent"`
+	Links struct {
+		HTML struct {
+			HREF string `json:"href"`
+		} `json:"html"`
+	} `json:"links"`
 }
 
 type response struct {
@@ -91,7 +97,18 @@ func (s *source) processPage(client *http.Client, u string, emit chan<- interfac
 		if r.IsPrivate || r.Parent != nil {
 			continue
 		}
-		emit <- r
+
+		repo := &types.Repo{
+			URL:         r.Links.HTML.HREF,
+			Host:        "bitbucket",
+			Name:        r.FullName,
+			Description: r.Description,
+			Language:    r.Language,
+			Created:     r.CreatedOn,
+			Updated:     r.UpdatedOn,
+		}
+		repo.SetTags()
+		emit <- repo
 	}
 
 	if resp.Next != "" {

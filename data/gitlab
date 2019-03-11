@@ -1,30 +1,45 @@
 {
-  "description": "Vim syntax highlighting for the Inko programming language.",
-  "visibility": "public",
-  "name": "inko.vim",
-  "name_with_namespace": "Martin Angers / inko.vim",
-  "archived": false,
-  "forks_count": 0,
-  "star_count": 0,
-  "forked_from_project": null
+  "URL": "https://gitlab.com/___mna___/inko.vim.git",
+  "Host": "gitlab",
+  "Name": "Martin Angers / inko.vim",
+  "Description": "Vim syntax highlighting for the Inko programming language.",
+  "Language": "",
+  "Created": "2018-06-15T18:01:04.264Z",
+  "Updated": "2018-06-16T20:05:21.635Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "gitlab"
+  ]
 }
 {
-  "description": "",
-  "visibility": "public",
-  "name": "inkospec",
-  "name_with_namespace": "Martin Angers / inkospec",
-  "archived": false,
-  "forks_count": 0,
-  "star_count": 0,
-  "forked_from_project": null
+  "URL": "https://gitlab.com/___mna___/inkospec.git",
+  "Host": "gitlab",
+  "Name": "Martin Angers / inkospec",
+  "Description": "",
+  "Language": "",
+  "Created": "2018-06-16T20:54:49.043Z",
+  "Updated": "2018-06-17T20:56:12.667Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "gitlab"
+  ]
 }
 {
-  "description": "A testing library for the Inko programming language.",
-  "visibility": "public",
-  "name": "inkotest",
-  "name_with_namespace": "Martin Angers / inkotest",
-  "archived": false,
-  "forks_count": 0,
-  "star_count": 0,
-  "forked_from_project": null
+  "URL": "https://gitlab.com/___mna___/inkotest.git",
+  "Host": "gitlab",
+  "Name": "Martin Angers / inkotest",
+  "Description": "A testing library for the Inko programming language.",
+  "Language": "",
+  "Created": "2018-06-14T17:12:44.773Z",
+  "Updated": "2018-06-20T01:08:39.59Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "gitlab"
+  ]
 }

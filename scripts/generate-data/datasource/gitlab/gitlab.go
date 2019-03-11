@@ -7,8 +7,10 @@ import (
 	"net/http"
 	"os"
 	"regexp"
+	"time"
 
 	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 )
 
 const (
@@ -16,13 +18,16 @@ const (
 )
 
 type repo struct {
-	Description       string `json:"description"`
-	Visibility        string `json:"visibility"`
-	Name              string `json:"name"`
-	NameWithNamespace string `json:"name_with_namespace"`
-	Archived          bool   `json:"archived"`
-	ForksCount        int    `json:"forks_count"`
-	StarCount         int    `json:"star_count"`
+	Description       string    `json:"description"`
+	Visibility        string    `json:"visibility"`
+	Name              string    `json:"name"`
+	NameWithNamespace string    `json:"name_with_namespace"`
+	HTTPURL           string    `json:"http_url_to_repo"`
+	Archived          bool      `json:"archived"`
+	ForksCount        int       `json:"forks_count"`
+	StarCount         int       `json:"star_count"`
+	CreatedAt         time.Time `json:"created_at"`
+	LastActivityAt    time.Time `json:"last_activity_at"`
 	ForkedFromProject *struct {
 		ID int `json:"id"`
 	} `json:"forked_from_project"`
@@ -92,7 +97,18 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 		if r.Visibility != "public" || r.ForkedFromProject != nil {
 			continue
 		}
-		emit <- r
+		repo := &types.Repo{
+			URL:         r.HTTPURL,
+			Host:        "gitlab",
+			Name:        r.NameWithNamespace,
+			Description: r.Description,
+			Created:     r.CreatedAt,
+			Updated:     r.LastActivityAt,
+			Stars:       r.StarCount,
+			Forks:       r.ForksCount,
+		}
+		repo.SetTags()
+		emit <- repo
 	}
 
 	url = extractNextLink(res.Header)

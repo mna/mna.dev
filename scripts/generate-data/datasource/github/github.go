@@ -8,8 +8,10 @@ import (
 	"net/http"
 	"os"
 	"regexp"
+	"time"
 
 	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 	"golang.org/x/oauth2"
 )
 
@@ -19,18 +21,20 @@ const (
 )
 
 type repo struct {
-	Name            string   `json:"name"`
-	FullName        string   `json:"full_name"`
-	Private         bool     `json:"private"`
-	HTMLURL         string   `json:"html_url"`
-	Description     string   `json:"description"`
-	Fork            bool     `json:"fork"`
-	StargazersCount int      `json:"stargazers_count"`
-	WatchersCount   int      `json:"watchers_count"`
-	ForksCount      int      `json:"forks_count"`
-	Language        string   `json:"language"`
-	Archived        bool     `json:"archived"`
-	Topics          []string `json:"topics"`
+	Name            string    `json:"name"`
+	FullName        string    `json:"full_name"`
+	Private         bool      `json:"private"`
+	HTMLURL         string    `json:"html_url"`
+	Description     string    `json:"description"`
+	Fork            bool      `json:"fork"`
+	StargazersCount int       `json:"stargazers_count"`
+	WatchersCount   int       `json:"watchers_count"`
+	ForksCount      int       `json:"forks_count"`
+	Language        string    `json:"language"`
+	Archived        bool      `json:"archived"`
+	Topics          []string  `json:"topics"`
+	CreatedAt       time.Time `json:"created_at"`
+	UpdatedAt       time.Time `json:"updated_at"`
 
 	Owner struct {
 		Login     string `json:"login"`
@@ -134,7 +138,20 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 				continue
 			}
 		}
-		emit <- r
+
+		repo := &types.Repo{
+			URL:         r.HTMLURL,
+			Host:        "github",
+			Name:        r.FullName,
+			Description: r.Description,
+			Language:    r.Language,
+			Created:     r.CreatedAt,
+			Updated:     r.UpdatedAt,
+			Stars:       r.StargazersCount,
+			Forks:       r.ForksCount,
+		}
+		repo.SetTags()
+		emit <- repo
 	}
 
 	url = extractNextLink(res.Header)

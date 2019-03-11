@@ -6,43 +6,9 @@ import (
 	"os"
 	"path/filepath"
 	"sync"
-	"time"
 
 	"github.com/hashicorp/go-multierror"
 )
-
-// Repo is the struct for a repository.
-type Repo struct {
-	URL         string
-	Host        string
-	Name        string
-	Description string
-	Language    string
-	Created     time.Time
-	Updated     time.Time
-	Stars       int
-	Forks       int
-	Tags        []string
-}
-
-// Post is the struct for a blog post.
-type Post struct {
-	URL       string
-	Website   string
-	Title     string
-	Lead      string
-	Published time.Time
-	Tags      []string
-}
-
-// MicroPost is the struct for a micro-post.
-type MicroPost struct {
-	URL       string
-	Website   string
-	Text      string
-	Published time.Time
-	Tags      []string
-}
 
 var sources = make(map[string]Source)
 
