@@ -1,21 +1,20 @@
-<footer class="footer">
-  <div class="columns">
-    <div class="column is-half">
-      <div class="content">
-        <ul >
-          {{range .IconCredits}}
-            <li>
-                <span>{{.Icon}} icon: </span><a href="{{.AuthorURL}}">{{.Name}}</a> <small>(<a href="{{.WebsiteURL}}">{{.Website}}</a>, <a href="{{.LicenseURL}}">{{.License}}</a>)</small>
-          {{end}}
-        </ul>
-      </div>
-    </div>
-    <div class="column">
-      <div class="content">
-        <ul >
-          <li>Custom-built with Bulma, Go and markdown.
-        </ul>
-      </div>
-    </div>
+<footer class="w-full bg-grey-light mt-4 p-4 flex flex-wrap md:flex-no-wrap">
+  <div class="flex-grow md:flex-auto">
+    <span class="block uppercase text-sm font-bold">Credits</span>
+    <ul class="list-reset list-square list-pos-inside my-2">
+      {{range .IconCredits}}
+        <li>{{.Icon}} icon:
+          <a href="{{.AuthorURL}}">{{.Name}}</a>
+          <span class="text-sm">(<a href="{{.WebsiteURL}}">{{.Website}}</a>, <a href="{{.LicenseURL}}">{{.License}}</a>)</span>
+      {{end}}
+    </ul>
+  </div>
+  <div class="flex-grow md:flex-auto">
+    <span class="block uppercase text-sm font-bold">Technology</span>
+    <ul class="list-reset list-square list-pos-inside my-2">
+      <li>Custom-built with <a href="https://tailwindcss.com">Tailwind</a>, <a href="https://golang.org">Go</a> and <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>.
+      <li>Very little javascript.
+      <li>No tracker ("analytics", "cookies", etc.).
+    </ul>
   </div>
 </footer>
