@@ -1,12 +1,15 @@
 package datasource
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
+	"io"
 	"os"
 	"path/filepath"
 	"sync"
 
+	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 	"github.com/hashicorp/go-multierror"
 )
 
@@ -34,11 +37,36 @@ func Generate(dir string) error {
 	var merr *multierror.Error
 	var wg sync.WaitGroup
 
+	if err := os.MkdirAll(dir, 0700); err != nil {
+		return err
+	}
+	// create files for posts, micro-posts and repos
+	writers := map[string]io.Writer{"post": nil, "mpost": nil, "repo": nil}
+	for nm := range writers {
+		f, err := os.Create(filepath.Join(dir, nm+".json"))
+		if err != nil {
+			return err
+		}
+		defer f.Close()
+
+		bw := bufio.NewWriter(f)
+		writers[nm] = &lockWriter{w: bw}
+		defer bw.Flush()
+	}
+
 	wg.Add(len(sources))
 	for name, source := range sources {
 		go func(name string, source Source) {
 			defer wg.Done()
-			if err := generateSource(dir, name, source); err != nil {
+
+			seri := &serializer{
+				sourceName: name,
+				source:     source,
+				wpost:      writers["post"],
+				wmpost:     writers["mpost"],
+				wrepo:      writers["repo"],
+			}
+			if err := seri.serialize(); err != nil {
 				mu.Lock()
 				merr = multierror.Append(merr, err)
 				mu.Unlock()
@@ -50,37 +78,72 @@ func Generate(dir string) error {
 	return merr.ErrorOrNil()
 }
 
-func generateSource(baseDir, name string, source Source) error {
+type lockWriter struct {
+	mu sync.Mutex
+	w  io.Writer
+}
+
+func (w *lockWriter) Write(b []byte) (int, error) {
+	w.mu.Lock()
+	n, err := w.w.Write(b)
+	w.mu.Unlock()
+	return n, err
+}
+
+type serializer struct {
+	sourceName string
+	source     Source
+	encodeErr  error
+
+	wpost  io.Writer
+	wmpost io.Writer
+	wrepo  io.Writer
+}
+
+func (s *serializer) serialize() error {
 	var wg sync.WaitGroup
 	ch := make(chan interface{})
-
-	if err := os.MkdirAll(baseDir, 0700); err != nil {
-		return err
-	}
-
-	out, err := os.Create(filepath.Join(baseDir, name))
-	if err != nil {
-		return err
-	}
-	defer out.Close()
-
-	enc := json.NewEncoder(out)
-	enc.SetIndent("", "  ")
 
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
+
 		for v := range ch {
-			enc.Encode(v)
+			if s.encodeErr != nil {
+				continue // drain ch
+			}
+
+			b, err := json.MarshalIndent(v, "", "  ")
+			if err != nil {
+				s.encodeErr = err
+				continue
+			}
+
+			var werr error
+			switch v.(type) {
+			case *types.Post:
+				_, werr = s.wpost.Write(b)
+			case *types.MicroPost:
+				_, werr = s.wmpost.Write(b)
+			case *types.Repo:
+				_, werr = s.wrepo.Write(b)
+			}
+			if werr != nil {
+				s.encodeErr = werr
+				continue
+			}
 		}
 	}()
-	err = source.Generate(ch)
+	err := s.source.Generate(ch)
 
 	close(ch)
 	wg.Wait()
 
+	if err == nil {
+		err = s.encodeErr
+	}
 	if err != nil {
-		err = fmt.Errorf("%s: %s", name, err)
+		err = fmt.Errorf("%s: %s", s.sourceName, err)
 	}
 	return err
 }

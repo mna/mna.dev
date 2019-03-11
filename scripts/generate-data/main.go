@@ -18,7 +18,7 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		log.Fatalf("want 1 argument, got %v", os.Args)
+		log.Fatalf("want 1 argument, the destination directory, got %v", os.Args)
 	}
 	if err := datasource.Generate(os.Args[1]); err != nil {
 		log.Fatal(err)

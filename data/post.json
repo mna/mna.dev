@@ -1,0 +1,291 @@
+{
+  "URL": "https://blog.gopheracademy.com/advent-2014/goquery/",
+  "Website": "GopherAcademy",
+  "Title": "goquery: a little like that j-thing",
+  "Lead": "goquery: a little like that j-thing",
+  "Published": "2014-12-12T00:00:00Z",
+  "Tags": [
+    "gopheracademy",
+    "post"
+  ]
+}{
+  "URL": "https://splice.com/blog/lesser-known-features-go-test/",
+  "Website": "Splice",
+  "Title": "Lesser-known features of go test",
+  "Lead": "",
+  "Published": "2014-09-03T00:00:00Z",
+  "Tags": [
+    "post",
+    "splice"
+  ]
+}{
+  "URL": "https://splice.com/blog/going-extra-mile-golint-go-vet/",
+  "Website": "Splice",
+  "Title": "Going the extra mile: golint and go vet",
+  "Lead": "",
+  "Published": "2014-07-10T00:00:00Z",
+  "Tags": [
+    "post",
+    "splice"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/07/du-code-et-de-la-tole-a-chaudiere.html",
+  "Website": "hypermégatop",
+  "Title": "Du code et de la tôle à chaudière",
+  "Lead": "En ces deux mois et demi de silence hypermégatopien, je n'ai pas chômé. Je suis parti en guerre contre la tôle à chaudière.",
+  "Published": "2012-07-12T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/04/comment-emprunter-heritage-backbone.html",
+  "Website": "hypermégatop",
+  "Title": "Comment emprunter l'héritage de Backbone",
+  "Lead": "L'héritage par prototypage de Javascript n'est ni trivial, ni abominablement complexe. Il est cependant tout sauf intuitif à bien mettre en place. Heureusement, dans une application Web utilisant déjà Backbone, on peut facilement profiter de l'implémentation de cette librairie pour définir nos classes.",
+  "Published": "2012-04-30T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/04/je-suis-venu-te-dire-que-je-men-vais.html",
+  "Website": "hypermégatop",
+  "Title": "Je suis venu te dire que je m'en vais",
+  "Lead": "Ou plutôt, \"je suis venu te dire qu'on m'évince\", mais ça \"punch\" moins... En effet, mon coup de foudre pour le blogiciel Calepin aura finalement été son baiser de la mort. Sur Twitter la semaine dernière, via le canal officiel du site, on apprenait que c'était la fin des haricots.",
+  "Published": "2012-04-23T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/04/proprietes-calculees-avec-backbone.html",
+  "Website": "hypermégatop",
+  "Title": "Propriétés calculées avec Backbone",
+  "Lead": "La beauté de l'univers du code libre est que lorsqu'il manque une fonctionnalité, on peut se retrousser les manches, ouvrir le code et l'ajouter. Voici ma petite histoire des propriétés calculées avec Backbone.",
+  "Published": "2012-04-13T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/04/implementjs-typage-fort-et-javascript.html",
+  "Website": "hypermégatop",
+  "Title": "implement.js: typage fort et Javascript",
+  "Lead": "L'injection de dépendance avec Javascript a comme conséquence de ne pouvoir assumer que les fonctionnalités offertes par l'instance reçue seront celles attendues.",
+  "Published": "2012-04-02T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/03/experimentations-sur-injection-de-dependance-avec-nodejs.html",
+  "Website": "hypermégatop",
+  "Title": "Expérimentations sur l'injection de dépendance avec node.js",
+  "Lead": "L'injection de dépendance permet de découpler les différentes composantes d'une application pour en faciliter l'entretien, la testabilité, circonscrire l'impact des changements, mais aussi pour imposer une façon d'aborder la création de l'application en une aggrégation de pièces simples, à la responsabilité ciblée, et à l'API bien défini.",
+  "Published": "2012-03-27T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/03/structurer-une-application-web-avec-express-et-nodejs.html",
+  "Website": "hypermégatop",
+  "Title": "Structurer une application Web avec Express et Node.js",
+  "Lead": "La façon d'organiser son code, en divers répertoires et fichiers, est en bonne partie une question de préférence personnelle. Le cadre d'application Web Express n'impose aucune structure particulière, laissant le développeur totalement libre d'arranger le tout selon son inspiration du moment. Cette liberté peut parfois donner le vertige et provoquer un effet pervers: le syndrome de la page blanche.",
+  "Published": "2012-03-19T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/03/npm-shrinkwrap-comment-controler-ses-dependances.html",
+  "Website": "hypermégatop",
+  "Title": "npm shrinkwrap: Comment contrôler ses dépendances",
+  "Lead": "Utiliser une librairie existante permet d'ajouter rapidement des fonctionnalités à une application, et de concentrer ses efforts sur les nouveautés, les spécificités de son projet, plutôt qu'à réinventer la roue. Cependant, chaque librairie utilisée devient une dépendance, et une dépendance est un risque. Un risque car notre code dépend maintenant de ce corps étranger sur lequel on a généralement peu ou pas de contrôle. Les meilleures pratiques pour limiter ce risque ont évolué rapidement sur la plateforme node.js ces derniers mois.",
+  "Published": "2012-03-12T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/03/npm-la-base-essentielle-pour-debuter-avec-nodejs.html",
+  "Website": "hypermégatop",
+  "Title": "npm: la base essentielle pour débuter avec node.js",
+  "Lead": "La plateforme node.js est volontairement limitée, en son coeur, aux fonctionnalités les plus fondamentales. Elle mise donc sur les contributions de sa communauté pour enrichir le noyau et repousser les limites du possible. Avec près de 8000 librairies à ce jour, il y a sérieux danger de chaos. Et si on y retrouve plutôt quelque chose comme une belle organisation, c'est en bonne partie grâce au gestionnaire de librairies npm.",
+  "Published": "2012-03-05T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/02/meta-billet-un-mot-sur-le-calepin.html",
+  "Website": "hypermégatop",
+  "Title": "Méta-billet: un mot sur le Calepin",
+  "Lead": "Il existe de nombreux moteurs de blogue gratuits sur internet. Pourquoi avoir jeté l'ancre sur ce discret et modeste Calepin?",
+  "Published": "2012-02-29T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "http://hypermegatop.github.io/2012/02/propulse-par-nodejs.html",
+  "Website": "hypermégatop",
+  "Title": "Propulsé par node.js",
+  "Lead": "Le développement d'une application Web est ponctué d'une multitude de choix technologiques. Pour le compte rendu Web, le coeur technologique, celui qui a orienté pratiquement tous les autres choix, n'a pourtant pas fait l'objet d'une réflexion, d'une étude comparative. Loin s'en faut. Il a plutôt été l'élément déclencheur de tout le projet.",
+  "Published": "2012-02-21T00:00:00Z",
+  "Tags": [
+    "hypermégatop",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/build-a-blog-engine-in-go",
+  "Website": "0value",
+  "Title": "Build a blog engine in Go",
+  "Lead": "",
+  "Published": "2013-07-22T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.sputnikmusic.com/list.php?memberid=1142495\u0026listid=186271",
+  "Website": "sputnikmusic",
+  "Title": "Best Metal Albums - 2018",
+  "Lead": "",
+  "Published": "2019-03-08T00:00:00Z",
+  "Tags": [
+    "post",
+    "sputnikmusic"
+  ]
+}{
+  "URL": "https://www.sputnikmusic.com/list.php?memberid=1142495\u0026listid=186270",
+  "Website": "sputnikmusic",
+  "Title": "Best Metal Albums - 2017",
+  "Lead": "",
+  "Published": "2019-03-08T00:00:00Z",
+  "Tags": [
+    "post",
+    "sputnikmusic"
+  ]
+}{
+  "URL": "https://www.sputnikmusic.com/list.php?memberid=1142495\u0026listid=186269",
+  "Website": "sputnikmusic",
+  "Title": "Best Metal Albums - 2016",
+  "Lead": "",
+  "Published": "2019-03-08T00:00:00Z",
+  "Tags": [
+    "post",
+    "sputnikmusic"
+  ]
+}{
+  "URL": "https://www.0value.com/implementing-lua-coroutines-in-Go",
+  "Website": "0value",
+  "Title": "Implementing Lua coroutines in Go",
+  "Lead": "",
+  "Published": "2013-07-29T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/my-Go-centric-Vim-setup",
+  "Website": "0value",
+  "Title": "My (Go-centric) Vim Setup",
+  "Lead": "",
+  "Published": "2013-08-15T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/introducing-agora--a-dynamic--embeddable-programming-language-built-with-Go",
+  "Website": "0value",
+  "Title": "Introducing agora: a dynamic, embeddable programming language built with Go",
+  "Lead": "",
+  "Published": "2013-09-17T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/agora-v0-2--closures--coroutines-and-for--range",
+  "Website": "0value",
+  "Title": "Agora v0.2: Closures, Coroutines and For-Range",
+  "Lead": "",
+  "Published": "2013-10-08T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/build-a-restful-API-with-Martini",
+  "Website": "0value",
+  "Title": "Build a RESTful API with Martini",
+  "Lead": "",
+  "Published": "2013-11-27T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/throttled--guardian-of-the-web-server",
+  "Website": "0value",
+  "Title": "Throttled: Guardian Of The Web Server",
+  "Lead": "",
+  "Published": "2014-02-19T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/Dealing-with-binary-files-and-uglified-json-in-Vim",
+  "Website": "0value",
+  "Title": "Dealing with binary files and uglified JSON in Vim",
+  "Lead": "",
+  "Published": "2014-06-16T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/A-PEG-parser-generator-for-Go",
+  "Website": "0value",
+  "Title": "A PEG parser generator for Go",
+  "Lead": "",
+  "Published": "2015-04-13T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/Let-the-Doer-Do-it",
+  "Website": "0value",
+  "Title": "Let the Doer Do it",
+  "Lead": "",
+  "Published": "2016-02-16T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/about-Go-logging",
+  "Website": "0value",
+  "Title": "About Go logging for reusable packages",
+  "Lead": "",
+  "Published": "2016-03-02T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
+  "URL": "https://www.0value.com/using-arch-linux-on-a-macbook-pro",
+  "Website": "0value",
+  "Title": "Using Arch Linux on a Macbook Pro",
+  "Lead": "",
+  "Published": "2019-01-28T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}
