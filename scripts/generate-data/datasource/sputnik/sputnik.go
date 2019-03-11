@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 	"github.com/PuerkitoBio/goquery"
 )
 
@@ -14,12 +15,6 @@ const (
 	initialURL = "https://www.sputnikmusic.com/list.php?memberid=1142495"
 	baseURL    = "https://www.sputnikmusic.com/"
 )
-
-type post struct {
-	URL       string
-	Title     string
-	Published time.Time
-}
 
 type source struct {
 }
@@ -83,11 +78,14 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 			}
 			title := strings.TrimSpace(anchor.Text())
 
-			emit <- &post{
+			post := &types.Post{
 				URL:       link,
+				Website:   "sputnikmusic",
 				Title:     title,
 				Published: published,
 			}
+			post.SetTags()
+			emit <- post
 		}
 	})
 

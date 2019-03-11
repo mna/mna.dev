@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 	"github.com/PuerkitoBio/goquery"
 )
 
@@ -19,12 +20,6 @@ const (
 	initialURL = "https://twitter.com/___mna___/media"
 	baseURL    = "https://twitter.com"
 )
-
-type post struct {
-	URL       string
-	Text      string
-	Published time.Time
-}
 
 type source struct {
 }
@@ -84,11 +79,15 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 				published = time.Unix(epoch, 0)
 			}
 		}
-		emit <- &post{
+
+		post := &types.MicroPost{
 			URL:       link,
+			Website:   "twitter",
 			Text:      text,
 			Published: published,
 		}
+		post.SetTags()
+		emit <- post
 	})
 	return "", nil
 }

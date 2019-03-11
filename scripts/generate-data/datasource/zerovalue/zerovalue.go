@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 	"github.com/PuerkitoBio/goquery"
 )
 
@@ -14,12 +15,6 @@ const (
 	baseURL    = "https://www.0value.com/"
 	initialURL = "https://www.0value.com/build-a-blog-engine-in-go"
 )
-
-type post struct {
-	URL       string
-	Title     string
-	Published time.Time
-}
 
 type source struct {
 }
@@ -70,11 +65,14 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 	if dt != "" {
 		published, _ = time.Parse("2006-01-02", dt)
 	}
-	emit <- &post{
+	post := &types.Post{
 		URL:       url,
 		Title:     title,
+		Website:   "0value",
 		Published: published,
 	}
+	post.SetTags()
+	emit <- post
 
 	return next, nil
 }

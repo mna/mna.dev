@@ -7,17 +7,11 @@ import (
 	"time"
 
 	"git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource"
+	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 	"github.com/PuerkitoBio/goquery"
 )
 
 const baseURL = "http://hypermegatop.github.io"
-
-type post struct {
-	URL       string
-	Title     string
-	Lead      string
-	Published time.Time
-}
 
 type source struct {
 }
@@ -71,12 +65,15 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 		title := strings.TrimSpace(anchor.Text())
 		lead := strings.TrimSpace(s.Find("p.abstract").Text())
 
-		emit <- post{
+		post := &types.Post{
 			URL:       link,
+			Website:   "hypermégatop",
 			Title:     title,
 			Lead:      lead,
 			Published: published,
 		}
+		post.SetTags()
+		emit <- post
 	})
 
 	next = doc.Find(".pager .previous a").AttrOr("href", "")
