@@ -1,4 +1,6 @@
 *
 !.gitignore
 !/css/
+!/img/
 !/js/
+!/posts/
