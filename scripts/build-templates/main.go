@@ -48,7 +48,7 @@ func main() {
 	posts, data, tpls, dst := os.Args[1], os.Args[2], os.Args[3], os.Args[4]
 
 	t := parseTemplates(tpls)
-	ps, ms, rs := loadPostMicroRepo(data)
+	ps, ms, rs := loadDataPostMicroRepo(data)
 	i := &index{
 		Website:    newWebsite(),
 		Posts:      ps,
@@ -59,6 +59,11 @@ func main() {
 		log.Fatal(err)
 	}
 	_ = posts
+
+	// TODO: load local posts, then add a SortedByDateDesc function on the
+	// index to get a mixed list of all posts, micro-posts and repos by
+	// published/updated date descending. This is what will be used in the
+	// index to list them.
 }
 
 var funcs = template.FuncMap{
@@ -74,7 +79,7 @@ func parseTemplates(dir string) *template.Template {
 	return t
 }
 
-func loadPostMicroRepo(dir string) (ps []*types.Post, ms []*types.MicroPost, rs []*types.Repo) {
+func loadDataPostMicroRepo(dir string) (ps []*types.Post, ms []*types.MicroPost, rs []*types.Repo) {
 	append := func(v interface{}) {
 		switch v := v.(type) {
 		case *types.Post:
@@ -113,6 +118,16 @@ func loadPostMicroRepo(dir string) (ps []*types.Post, ms []*types.MicroPost, rs 
 	}
 
 	return ps, ms, rs
+}
+
+func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost) {
+	// TODO: posts are all those that have full text content in a markdown file,
+	// micro-posts are those with a full-text directly in the toml and no markdown file
+	// (or micro=true and a markdown file).
+	// Pages are all those posts that are not in the "posts/" directory. Those are
+	// pages not listed in the index, but that may be linked directly otherwise,
+	// e.g. the about page linked from the question mark icon.
+	return
 }
 
 func newWebsite() *website {

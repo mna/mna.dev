@@ -7,6 +7,19 @@ import (
 	"time"
 )
 
+// MarkdownPost is a post extracted from the .toml metadata file and
+// the optional .md markdown file. In other words, it represents a post
+// in-memory (in this struct), but not yet generated to a public/ page,
+// so it doesn't have an URL yet.
+type MarkdownPost struct {
+	Path      string
+	Title     string
+	Published time.Time
+	Lead      string
+	FullText  string
+	Markdown  []byte
+}
+
 // Repo is the struct for a repository.
 type Repo struct {
 	// URL is the link to the repository.
