@@ -1,4 +1,31 @@
 <section>
   {{template "index-filter.html" .}}
   {{template "index-cards.html" .}}
+
+  {{if .Posts}}
+  <h3>Posts</h3>
+  <ul>
+    {{range .Posts}}
+      <li>{{.Title}}
+    {{end}}
+  </ul>
+  {{end}}
+
+  {{if .MicroPosts}}
+  <h3>Micro posts</h3>
+  <ul>
+    {{range .MicroPosts}}
+      <li>{{if .RawHTML}}{{.RawHTML}}{{else}}{{.Text}}{{end}}
+    {{end}}
+  </ul>
+  {{end}}
+
+  {{if .Repos}}
+  <h3>Repositories</h3>
+  <ul>
+    {{range .Repos}}
+      <li>{{.Name}}
+    {{end}}
+  </ul>
+  {{end}}
 </section>
