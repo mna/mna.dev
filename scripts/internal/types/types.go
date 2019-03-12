@@ -16,8 +16,17 @@ type MarkdownPost struct {
 	Title     string
 	Published time.Time
 	Lead      string
-	FullText  string
+	Micro     bool
 	Markdown  []byte
+}
+
+// PostConfig holds the configuration of a post as read from
+// the toml files.
+type PostConfig struct {
+	Title     string    `toml:"title"`
+	Lead      string    `toml:"lead"`
+	Micro     bool      `toml:"micro"`
+	Published time.Time `toml:"published"`
 }
 
 // Repo is the struct for a repository.

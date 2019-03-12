@@ -4,12 +4,14 @@ import (
 	"encoding/json"
 	"html/template"
 	"io"
+	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
 	"strings"
 
 	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
+	"github.com/BurntSushi/toml"
 )
 
 type website struct {
@@ -48,22 +50,26 @@ func main() {
 	posts, data, tpls, dst := os.Args[1], os.Args[2], os.Args[3], os.Args[4]
 
 	t := parseTemplates(tpls)
-	ps, ms, rs := loadDataPostMicroRepo(data)
+	dps, dms, drs := loadDataPostMicroRepo(data)
 	i := &index{
 		Website:    newWebsite(),
-		Posts:      ps,
-		MicroPosts: ms,
-		Repos:      rs,
+		Posts:      dps,
+		MicroPosts: dms,
+		Repos:      drs,
 	}
 	if err := i.execute(t, dst); err != nil {
 		log.Fatal(err)
 	}
-	_ = posts
 
-	// TODO: load local posts, then add a SortedByDateDesc function on the
+	lps, lms, lgs := loadLocalPostMicroPages(posts)
+	// TODO: generate ps and gs pages
+	// TODO: merge ps and ms with dps and dms once pages exist
+	// TODO: add a SortedByDateDesc function on the
 	// index to get a mixed list of all posts, micro-posts and repos by
 	// published/updated date descending. This is what will be used in the
 	// index to list them.
+	// TODO: add Pages on the index, a map by relative path to the post struct
+	_, _, _ = lps, lms, lgs
 }
 
 var funcs = template.FuncMap{
@@ -121,13 +127,106 @@ func loadDataPostMicroRepo(dir string) (ps []*types.Post, ms []*types.MicroPost,
 }
 
 func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost) {
-	// TODO: posts are all those that have full text content in a markdown file,
-	// micro-posts are those with a full-text directly in the toml and no markdown file
-	// (or micro=true and a markdown file).
-	// Pages are all those posts that are not in the "posts/" directory. Those are
-	// pages not listed in the index, but that may be linked directly otherwise,
-	// e.g. the about page linked from the question mark icon.
-	return
+	configs := make(map[string]*types.PostConfig)
+
+	// first, walk to read the configuration TOML files
+	err := filepath.Walk(dir, func(path string, fi os.FileInfo, err error) error {
+		// stop if error walking dir
+		if err != nil {
+			return err
+		}
+
+		// this pass only cares about toml files
+		ext := filepath.Ext(fi.Name())
+		if ext != ".toml" {
+			return nil
+		}
+
+		// extract the path relative to dir, without the extension
+		rel, err := filepath.Rel(dir, path)
+		if err != nil {
+			return err
+		}
+		rel = strings.TrimSuffix(rel, ext)
+
+		var conf types.PostConfig
+		_, err = toml.DecodeFile(path, &conf)
+		if err != nil {
+			return err
+		}
+		configs[rel] = &conf
+
+		return nil
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var posts []*types.MarkdownPost
+
+	// next, walk to read the corresponding markdown files and collect
+	// the list of all posts.
+	err = filepath.Walk(dir, func(path string, fi os.FileInfo, err error) error {
+		// stop if error walking dir
+		if err != nil {
+			return err
+		}
+
+		// this pass only cares about markdown files
+		ext := filepath.Ext(fi.Name())
+		if ext != ".md" {
+			return nil
+		}
+
+		// extract the path relative to dir, without the extension
+		rel, err := filepath.Rel(dir, path)
+		if err != nil {
+			return err
+		}
+		rel = strings.TrimSuffix(rel, ext)
+
+		// lookup the config for that post
+		conf := configs[rel]
+		if conf == nil {
+			// ignore if there is no config
+			return nil
+		}
+
+		b, err := ioutil.ReadFile(path)
+		if err != nil {
+			return err
+		}
+		post := &types.MarkdownPost{
+			Path:      rel,
+			Title:     conf.Title,
+			Published: conf.Published,
+			Lead:      conf.Lead,
+			Micro:     conf.Micro,
+			Markdown:  b,
+		}
+		posts = append(posts, post)
+
+		return nil
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// finally, split into posts, micro-posts and standalone pages
+	for _, post := range posts {
+		isPost := filepath.Dir(post.Path) == "posts"
+		switch {
+		case isPost && post.Micro:
+			ms = append(ms, post)
+		case isPost && !post.Micro:
+			ps = append(ps, post)
+		case !isPost && !post.Micro:
+			// standalone pages cannot be micro-posts
+			gs = append(gs, post)
+		}
+	}
+
+	return ps, ms, gs
 }
 
 func newWebsite() *website {
