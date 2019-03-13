@@ -5,7 +5,7 @@
   "Description": "My personal website.",
   "Language": "",
   "Created": "2019-03-04T23:32:00Z",
-  "Updated": "2019-03-12T02:23:44Z",
+  "Updated": "2019-03-12T23:41:20Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -55,6 +55,21 @@
     "sourcehut"
   ]
 }{
+  "URL": "https://github.com/mna/pigeon",
+  "Host": "github",
+  "Name": "mna/pigeon",
+  "Description": "Command pigeon generates parsers in Go from a PEG grammar.",
+  "Language": "Go",
+  "Created": "2015-04-05T14:55:20Z",
+  "Updated": "2019-03-12T20:39:46Z",
+  "Stars": 375,
+  "Forks": 31,
+  "Tags": [
+    "code",
+    "github",
+    "go"
+  ]
+}{
   "URL": "https://gitlab.com/___mna___/inko.vim.git",
   "Host": "gitlab",
   "Name": "Martin Angers / inko.vim",
@@ -95,21 +110,6 @@
   "Tags": [
     "code",
     "gitlab"
-  ]
-}{
-  "URL": "https://github.com/mna/pigeon",
-  "Host": "github",
-  "Name": "mna/pigeon",
-  "Description": "Command pigeon generates parsers in Go from a PEG grammar.",
-  "Language": "Go",
-  "Created": "2015-04-05T14:55:20Z",
-  "Updated": "2019-03-12T20:39:46Z",
-  "Stars": 375,
-  "Forks": 31,
-  "Tags": [
-    "code",
-    "github",
-    "go"
   ]
 }{
   "URL": "https://github.com/PuerkitoBio/purell",

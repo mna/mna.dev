@@ -20,6 +20,30 @@ type MarkdownPost struct {
 	Markdown  []byte
 }
 
+// ToPost converts a MarkdownPost to a Post.
+func (mp *MarkdownPost) ToPost() *Post {
+	p := &Post{
+		URL:       "/" + mp.Path,
+		Website:   "mna.dev",
+		Title:     mp.Title,
+		Lead:      mp.Lead,
+		Published: mp.Published,
+	}
+	p.SetTags()
+	return p
+}
+
+// ToMicroPost converts a MarkdownPost to a Post.
+func (mp *MarkdownPost) ToMicroPost() *MicroPost {
+	p := &MicroPost{
+		Website:   "mna.dev",
+		Text:      string(mp.Markdown),
+		Published: mp.Published,
+	}
+	p.SetTags()
+	return p
+}
+
 // PostConfig holds the configuration of a post as read from
 // the toml files.
 type PostConfig struct {

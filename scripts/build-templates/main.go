@@ -12,11 +12,22 @@ import (
 
 	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 	"github.com/BurntSushi/toml"
+	"github.com/russross/blackfriday/v2"
 )
 
 type website struct {
 	Links       []*link
 	IconCredits []*iconCredit
+
+	// Posts, MicroPosts and Repos is set only when generating
+	// the index.
+	Posts      []*types.Post
+	MicroPosts []*types.MicroPost
+	Repos      []*types.Repo
+
+	// CurrentPost is set only when generating specific pages,
+	// in which case it is set to that page's MarkdownPost.
+	CurrentPost *types.MarkdownPost
 }
 
 type link struct {
@@ -35,13 +46,6 @@ type iconCredit struct {
 	LicenseURL string
 }
 
-type index struct {
-	Website    *website
-	Posts      []*types.Post
-	MicroPosts []*types.MicroPost
-	Repos      []*types.Repo
-}
-
 func main() {
 	if len(os.Args) != 5 {
 		log.Fatal("expect 4 arguments: posts, data, templates and destination directories")
@@ -49,31 +53,59 @@ func main() {
 
 	posts, data, tpls, dst := os.Args[1], os.Args[2], os.Args[3], os.Args[4]
 
-	t := parseTemplates(tpls)
-	dps, dms, drs := loadDataPostMicroRepo(data)
-	i := &index{
-		Website:    newWebsite(),
-		Posts:      dps,
-		MicroPosts: dms,
-		Repos:      drs,
+	dps, dms, drs, err := loadDataPostMicroRepo(data)
+	if err != nil {
+		log.Fatal(err)
 	}
-	if err := i.execute(t, dst); err != nil {
+	lps, lms, lgs, err := loadLocalPostMicroPages(posts)
+	if err != nil {
 		log.Fatal(err)
 	}
 
-	lps, lms, lgs := loadLocalPostMicroPages(posts)
-	// TODO: generate ps and gs pages
-	// TODO: merge ps and ms with dps and dms once pages exist
+	t := parseTemplates(tpls)
+	w := newWebsite()
+
+	for _, post := range lps {
+		if err := w.executePage(t, dst, post); err != nil {
+			log.Fatal(err)
+		}
+		// once generated, merge with dps
+		dps = append(dps, post.ToPost())
+	}
+	for _, page := range lgs {
+		if err := w.executePage(t, dst, page); err != nil {
+			log.Fatal(err)
+		}
+	}
+	for _, micro := range lms {
+		dms = append(dms, micro.ToMicroPost())
+	}
+
+	w.Posts = dps
+	w.MicroPosts = dms
+	w.Repos = drs
+
+	// generate the index page
+	if err := w.executeIndex(t, dst); err != nil {
+		log.Fatal(err)
+	}
+
 	// TODO: add a SortedByDateDesc function on the
 	// index to get a mixed list of all posts, micro-posts and repos by
 	// published/updated date descending. This is what will be used in the
 	// index to list them.
-	// TODO: add Pages on the index, a map by relative path to the post struct
-	_, _, _ = lps, lms, lgs
 }
 
 var funcs = template.FuncMap{
-	"lower": strings.ToLower,
+	"lower":    strings.ToLower,
+	"markdown": toMarkdown,
+	"markdownString": func(s string) template.HTML {
+		return toMarkdown([]byte(s))
+	},
+}
+
+func toMarkdown(b []byte) template.HTML {
+	return template.HTML(blackfriday.Run(b))
 }
 
 func parseTemplates(dir string) *template.Template {
@@ -85,7 +117,7 @@ func parseTemplates(dir string) *template.Template {
 	return t
 }
 
-func loadDataPostMicroRepo(dir string) (ps []*types.Post, ms []*types.MicroPost, rs []*types.Repo) {
+func loadDataPostMicroRepo(dir string) (ps []*types.Post, ms []*types.MicroPost, rs []*types.Repo, err error) {
 	append := func(v interface{}) {
 		switch v := v.(type) {
 		case *types.Post:
@@ -106,7 +138,7 @@ func loadDataPostMicroRepo(dir string) (ps []*types.Post, ms []*types.MicroPost,
 	for fnm, newv := range files {
 		f, err := os.Open(filepath.Join(dir, fnm))
 		if err != nil {
-			log.Fatal(err)
+			return nil, nil, nil, err
 		}
 		defer f.Close()
 
@@ -117,20 +149,20 @@ func loadDataPostMicroRepo(dir string) (ps []*types.Post, ms []*types.MicroPost,
 				if err == io.EOF {
 					break
 				}
-				log.Fatal(err)
+				return nil, nil, nil, err
 			}
 			append(v)
 		}
 	}
 
-	return ps, ms, rs
+	return ps, ms, rs, nil
 }
 
-func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost) {
+func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost, err error) {
 	configs := make(map[string]*types.PostConfig)
 
 	// first, walk to read the configuration TOML files
-	err := filepath.Walk(dir, func(path string, fi os.FileInfo, err error) error {
+	err = filepath.Walk(dir, func(path string, fi os.FileInfo, err error) error {
 		// stop if error walking dir
 		if err != nil {
 			return err
@@ -159,7 +191,7 @@ func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost) {
 		return nil
 	})
 	if err != nil {
-		log.Fatal(err)
+		return nil, nil, nil, err
 	}
 
 	var posts []*types.MarkdownPost
@@ -209,7 +241,7 @@ func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost) {
 		return nil
 	})
 	if err != nil {
-		log.Fatal(err)
+		return nil, nil, nil, err
 	}
 
 	// finally, split into posts, micro-posts and standalone pages
@@ -226,7 +258,7 @@ func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost) {
 		}
 	}
 
-	return ps, ms, gs
+	return ps, ms, gs, nil
 }
 
 func newWebsite() *website {
@@ -246,14 +278,29 @@ func newWebsite() *website {
 	}
 }
 
-func (i *index) execute(t *template.Template, outDir string) error {
+func (w *website) executePage(t *template.Template, outDir string, post *types.MarkdownPost) error {
+	f, err := os.Create(filepath.Join(outDir, post.Path))
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	w.CurrentPost = post
+	if err := t.ExecuteTemplate(f, "post.html", w); err != nil {
+		return err
+	}
+	return f.Close()
+}
+
+func (w *website) executeIndex(t *template.Template, outDir string) error {
 	f, err := os.Create(filepath.Join(outDir, "index.html"))
 	if err != nil {
 		return err
 	}
 	defer f.Close()
 
-	if err := t.ExecuteTemplate(f, "index.html", i); err != nil {
+	w.CurrentPost = nil
+	if err := t.ExecuteTemplate(f, "index.html", w); err != nil {
 		return err
 	}
 	return f.Close()
