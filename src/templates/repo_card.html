@@ -1,5 +1,45 @@
 <div class="card">
   <section>
-    A repo: {{.Name}}
+    {{if .Description}}
+      <div class="card-head">
+        <a class="{{cardTextSizeFor "head" .Name}}" href="{{.URL}}">
+          {{.Name}}
+        </a>
+      </div>
+      <div class="card-body">
+        <div class="{{cardTextSizeFor "body" .Description}}">
+          {{.Description}}
+        </div>
+      </div>
+    {{else}}
+      <div class="card-body">
+        <div>
+          <a class="{{cardTextSizeFor "body" .Name}}" href="{{.URL}}">
+            {{.Name}}
+          </a>
+        </div>
+      </div>
+    {{end}}
+    <div class="card-foot">
+      {{if or .Stars .Forks}}
+        <p>
+          {{if .Stars}}
+          <span title="{{.Stars}} stars">⭐ {{.Stars}}</span>{{if .Forks}} | {{end}}
+          {{end}}
+          {{if .Forks}}
+          <span title="{{.Forks}} forks">⑂ {{.Forks}}</span>
+          {{end}}
+        </p>
+      {{end}}
+      <p>
+        <time datetime="{{isotime .Created}}">Created in {{.Created.Year}}</time> |
+        <time datetime="{{isotime .Updated}}">Updated {{humandate .Updated}}</time> | {{.Host}}
+      </p>
+      <p>
+        {{range .Tags}}
+          <a href="#">#{{.}}</a>
+        {{end}}
+      </p>
+    </div>
   </section>
 </div>

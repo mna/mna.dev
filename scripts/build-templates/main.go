@@ -96,6 +96,7 @@ func main() {
 
 var funcs = template.FuncMap{
 	"cardTextSizeFor": func(section, text string) string {
+		// TODO: down-size if a single word is too long
 		n := len(text)
 		sz := 0
 		switch {
@@ -111,18 +112,21 @@ var funcs = template.FuncMap{
 			sz = 1
 		}
 		if section == "head" {
-			sz -= 2
+			sz -= 3
 		}
-		switch sz {
-		case -2, -1:
+		switch {
+		case sz < 0:
 			return "text-base"
-		case 0:
+		case sz == 0:
 			return "text-lg"
-		case 1:
+		case sz == 1:
 			return "text-xl"
 		default:
 			return fmt.Sprintf("text-%dxl", sz)
 		}
+	},
+	"humandate": func(t time.Time) string {
+		return t.Format("Jan 2006")
 	},
 	"humantime": func(t time.Time) string {
 		return t.Format("Jan 02, 2006")

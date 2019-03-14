@@ -1,13 +1,13 @@
 <nav class="w-full mb-4" role="navigation" aria-label="main navigation">
   <h1>
-    <a class="text-black no-underline" href="/">
+    <a class="text-black" href="/" title="mna.dev home">
       Martin Angers
     </a>
   </h1>
   <div>
     {{range .Links}}
       <figure class="inline-block w-32px h-32px mr-3">
-        <a class="no-underline" href="{{.URL}}" title="{{if .Username}}{{.Username}} on {{.Website}}{{else}}{{.Website}}{{end}}">
+        <a href="{{.URL}}" title="{{if .Username}}{{.Username}} on {{.Website}}{{else}}{{.Website}}{{end}}">
           <img src="/img/{{lower .Website}}.svg" alt="{{if .Username}}{{.Username}} on {{.Website}}{{else}}{{.Website}}{{end}}"/>
         </a>
       </figure>

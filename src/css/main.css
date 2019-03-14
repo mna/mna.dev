@@ -94,11 +94,11 @@ a {
 }
 
 .card {
-  @apply flex-1 m-2 min-w-card min-h-card;
+  @apply flex-1 m-2 min-w-card;
 }
 
 .card > section {
-  @apply w-full h-full flex flex-col flex-wrap border border-grey-light border-solid rounded;
+  @apply w-full min-h-card flex flex-col flex-wrap border border-grey-light border-solid rounded overflow-hidden;
 }
 
 .card-head {
@@ -115,4 +115,8 @@ a {
 
 .card-foot {
   @apply flex-none w-full p-2 border-t border-grey-light border-solid text-sm text-grey-darker;
+}
+
+.card-foot p {
+  @apply my-1;
 }

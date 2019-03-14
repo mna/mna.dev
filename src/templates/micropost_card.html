@@ -15,13 +15,9 @@
         </div>
       </div>
       <div class="card-foot">
-        {{if .Published.IsZero}}
-          {{.Website}}
-        {{else}}
-          <p>
-            <time datetime="{{isotime .Published}}">{{humantime .Published}}</time> on {{.Website}}
-          </p>
-        {{end}}
+        <p>
+          <time datetime="{{isotime .Published}}">Posted {{humantime .Published}}</time> | {{.Website}}
+        </p>
         <p>
           {{range .Tags}}
             <a href="#">#{{.}}</a>

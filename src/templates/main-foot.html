@@ -1,5 +1,5 @@
 <footer class="w-full bg-grey-light mt-4 p-4 flex flex-wrap md:flex-no-wrap">
-  <div class="flex-grow md:flex-auto">
+  <div class="flex-grow md:flex-1 m-2">
     <span class="block uppercase text-sm font-bold">Credits</span>
     <ul class="list-reset list-square list-pos-inside my-2">
       {{range .IconCredits}}
@@ -9,12 +9,23 @@
       {{end}}
     </ul>
   </div>
-  <div class="flex-grow md:flex-auto">
+  <div class="flex-grow md:flex-1 m-2">
     <span class="block uppercase text-sm font-bold">Technology</span>
     <ul class="list-reset list-square list-pos-inside my-2">
       <li>Custom-built with <a href="https://tailwindcss.com">Tailwind</a>, <a href="https://golang.org">Go</a> and <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>.
       <li>Very little javascript.
         <li>No tracker ("analytics", "cookies", etc.), except for <a href="https://help.twitter.com/en/twitter-for-websites-ads-info-and-privacy">what Twitter requires</a>.
+    </ul>
+  </div>
+  <div class="flex-grow md:flex-1 m-2">
+    <span class="block uppercase text-sm font-bold">Contact</span>
+    <ul class="list-reset list-square list-pos-inside my-2">
+      {{range .Links}}
+        {{if .Username}}
+        <li><a href="{{.URL}}">{{.Username}} on {{.Website}}</a>
+        {{end}}
+      {{end}}
+        <li><a href="mailto:martin.n.angers@gmail.com">Email</a>
     </ul>
   </div>
 </footer>
