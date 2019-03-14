@@ -1,11 +1,11 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"html/template"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -18,9 +18,17 @@ import (
 	"github.com/russross/blackfriday/v2"
 )
 
+var vars = map[string]string{
+	"Email": "martin.n.angers+mna.dev@gmail.com",
+}
+
 type website struct {
 	Links       []*link
 	IconCredits []*iconCredit
+
+	// Vars is a list of useful values provided as variables to
+	// the templates to avoid hard-coding them (e.g. email address).
+	Vars map[string]string
 
 	// Posts, MicroPosts and Repos is set only when generating
 	// the index.
@@ -273,17 +281,22 @@ func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost, err 
 			return nil
 		}
 
-		b, err := ioutil.ReadFile(path)
+		t, err := template.ParseFiles(path)
 		if err != nil {
 			return err
 		}
+		var buf bytes.Buffer
+		if err := t.Execute(&buf, vars); err != nil {
+			return err
+		}
+
 		post := &types.MarkdownPost{
 			Path:      rel,
 			Title:     conf.Title,
 			Published: conf.Published,
 			Lead:      conf.Lead,
 			Micro:     conf.Micro,
-			Markdown:  b,
+			Markdown:  buf.Bytes(),
 		}
 		posts = append(posts, post)
 
@@ -324,6 +337,7 @@ func newWebsite() *website {
 			{Icon: "Twitter", Name: "Katarina Stefanikova", AuthorURL: "https://www.flaticon.com/authors/katarina-stefanikova", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
 			{Icon: "Stack Overflow", Name: "Pixel perfect", AuthorURL: "https://www.flaticon.com/authors/pixel-perfect", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
 		},
+		Vars: vars,
 	}
 }
 
