@@ -95,13 +95,42 @@ func main() {
 }
 
 var funcs = template.FuncMap{
-	"lower": strings.ToLower,
-	"isotime": func(t time.Time) string {
-		return t.Format("2006-01-02")
+	"cardTextSizeFor": func(section, text string) string {
+		n := len(text)
+		sz := 0
+		switch {
+		case n < 30:
+			sz = 5
+		case n < 100:
+			sz = 4
+		case n < 200:
+			sz = 3
+		case n < 300:
+			sz = 2
+		case n < 400:
+			sz = 1
+		}
+		if section == "head" {
+			sz -= 2
+		}
+		switch sz {
+		case -2, -1:
+			return "text-base"
+		case 0:
+			return "text-lg"
+		case 1:
+			return "text-xl"
+		default:
+			return fmt.Sprintf("text-%dxl", sz)
+		}
 	},
 	"humantime": func(t time.Time) string {
 		return t.Format("Jan 02, 2006")
 	},
+	"isotime": func(t time.Time) string {
+		return t.Format("2006-01-02")
+	},
+	"lower":    strings.ToLower,
 	"markdown": toMarkdown,
 	"markdownString": func(s string) template.HTML {
 		return toMarkdown([]byte(s))

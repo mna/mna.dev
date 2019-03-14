@@ -70,7 +70,7 @@
 }
 
 .min-w-card {
-  min-width: 500px;
+  min-width: 300px;
 }
 
 .min-h-card {
@@ -87,4 +87,32 @@
 
 .list-pos-inside {
   list-style-position: inside;
+}
+
+a {
+  @apply text-blue-dark no-underline;
+}
+
+.card {
+  @apply flex-1 m-2 min-w-card min-h-card;
+}
+
+.card > section {
+  @apply w-full h-full flex flex-col flex-wrap border border-grey-light border-solid rounded;
+}
+
+.card-head {
+  @apply flex-shrink w-full p-2 border-b border-grey-light border-solid;
+}
+
+.card-body {
+  @apply flex items-center flex-grow p-2 w-full;
+}
+
+.card-body > div {
+  @apply flex-grow w-full text-center;
+}
+
+.card-foot {
+  @apply flex-none w-full p-2 border-t border-grey-light border-solid text-sm text-grey-darker;
 }

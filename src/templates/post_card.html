@@ -1,3 +1,38 @@
-<div class="flex-auto min-w-card min-h-card">
-  A post: {{.Title}}
+<div class="card">
+  <section>
+    {{if .Lead}}
+      <div class="card-head">
+        <a class="{{cardTextSizeFor "head" .Title}}" href="{{.URL}}">
+          {{.Title}}
+        </a>
+      </div>
+      <div class="card-body">
+        <div class="{{cardTextSizeFor "body" .Lead}}">
+          {{markdownString .Lead}}
+        </div>
+      </div>
+    {{else}}
+      <div class="card-body">
+        <div>
+          <a class="{{cardTextSizeFor "body" .Title}}" href="{{.URL}}">
+            {{.Title}}
+          </a>
+        </div>
+      </div>
+    {{end}}
+    <div class="card-foot">
+      {{if .Published.IsZero}}
+        {{.Website}}
+      {{else}}
+        <p>
+          <time datetime="{{isotime .Published}}">{{humantime .Published}}</time> on {{.Website}}
+        </p>
+      {{end}}
+      <p>
+        {{range .Tags}}
+          <a href="#">#{{.}}</a>
+        {{end}}
+      </p>
+    </div>
+  </section>
 </div>

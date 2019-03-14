@@ -72,7 +72,7 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 			Lead:      lead,
 			Published: published,
 		}
-		post.SetTags()
+		post.SetTags("fr")
 		emit <- post
 	})
 
