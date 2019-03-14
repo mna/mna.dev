@@ -1,31 +1,17 @@
 <section>
-  {{template "index-filter.html" .}}
-  {{template "index-cards.html" .}}
-
-  {{if .Posts}}
-  <h3>Posts</h3>
-  <ul>
-    {{range .Posts}}
-      <li>{{.Title}}
+  <header>
+    <h1 class="text-xl">Filter</h1>
+  </header>
+  <div class="flex flex-wrap">
+    {{range .SortedByDateDesc}}
+      {{$tpl := templateFor .}}
+      {{if eq $tpl "post_card.html"}}
+        {{template "post_card.html" .}}
+      {{else if eq $tpl "micropost_card.html"}}
+        {{template "micropost_card.html" .}}
+      {{else if eq $tpl "repo_card.html"}}
+        {{template "repo_card.html" .}}
+      {{end}}
     {{end}}
-  </ul>
-  {{end}}
-
-  {{if .MicroPosts}}
-  <h3>Micro posts</h3>
-  <ul>
-    {{range .MicroPosts}}
-      <li>{{if .RawHTML}}{{.RawHTML}}{{else}}{{.Text}}{{end}}
-    {{end}}
-  </ul>
-  {{end}}
-
-  {{if .Repos}}
-  <h3>Repositories</h3>
-  <ul>
-    {{range .Repos}}
-      <li>{{.Name}}
-    {{end}}
-  </ul>
-  {{end}}
+  </div>
 </section>

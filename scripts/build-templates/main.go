@@ -2,13 +2,16 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"html/template"
 	"io"
 	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
+	"time"
 
 	"git.sr.ht/~mna/mna.dev/scripts/internal/types"
 	"github.com/BurntSushi/toml"
@@ -89,11 +92,6 @@ func main() {
 	if err := w.executeIndex(t, dst); err != nil {
 		log.Fatal(err)
 	}
-
-	// TODO: add a SortedByDateDesc function on the
-	// index to get a mixed list of all posts, micro-posts and repos by
-	// published/updated date descending. This is what will be used in the
-	// index to list them.
 }
 
 var funcs = template.FuncMap{
@@ -101,6 +99,18 @@ var funcs = template.FuncMap{
 	"markdown": toMarkdown,
 	"markdownString": func(s string) template.HTML {
 		return toMarkdown([]byte(s))
+	},
+	"templateFor": func(v interface{}) string {
+		switch v.(type) {
+		case *types.Post:
+			return "post_card.html"
+		case *types.MicroPost:
+			return "micropost_card.html"
+		case *types.Repo:
+			return "repo_card.html"
+		default:
+			panic(fmt.Errorf("unsupported type: %T", v))
+		}
 	},
 }
 
@@ -304,4 +314,34 @@ func (w *website) executeIndex(t *template.Template, outDir string) error {
 		return err
 	}
 	return f.Close()
+}
+
+func (w *website) SortedByDateDesc() []interface{} {
+	ret := make([]interface{}, 0, len(w.Posts)+len(w.MicroPosts)+len(w.Repos))
+	for _, p := range w.Posts {
+		ret = append(ret, p)
+	}
+	for _, m := range w.MicroPosts {
+		ret = append(ret, m)
+	}
+	for _, r := range w.Repos {
+		ret = append(ret, r)
+	}
+	dateFor := func(v interface{}) time.Time {
+		switch v := v.(type) {
+		case *types.Post:
+			return v.Published
+		case *types.MicroPost:
+			return v.Published
+		case *types.Repo:
+			return v.Updated
+		default:
+			panic(fmt.Errorf("unsupported type: %T", v))
+		}
+	}
+	sort.Slice(ret, func(i, j int) bool {
+		l, r := dateFor(ret[i]), dateFor(ret[j])
+		return r.Before(l)
+	})
+	return ret
 }
