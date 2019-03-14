@@ -95,7 +95,13 @@ func main() {
 }
 
 var funcs = template.FuncMap{
-	"lower":    strings.ToLower,
+	"lower": strings.ToLower,
+	"isotime": func(t time.Time) string {
+		return t.Format("2006-01-02")
+	},
+	"humantime": func(t time.Time) string {
+		return t.Format("Jan 02, 2006")
+	},
 	"markdown": toMarkdown,
 	"markdownString": func(s string) template.HTML {
 		return toMarkdown([]byte(s))

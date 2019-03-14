@@ -69,6 +69,14 @@
   height: 32px;
 }
 
+.min-w-card {
+  min-width: 500px;
+}
+
+.min-h-card {
+  min-height: 480px;
+}
+
 .list-disc {
   list-style-type: disc;
 }
