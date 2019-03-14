@@ -1,9 +1,19 @@
 # About me
 
 My name is Martin Angers, I go by `mna` or some variation of it on most websites.
+When the `.dev` craze cooled down in March 2019, I noticed that `mna.dev` was still
+available at a reasonable price, and decided that I'd make it my *portfolio* of
+sorts, listing my open-source projects, blog posts and stuff.
+
 I'm a software developer, working mostly as a Go backend engineer since 2012. I
 work remotely as a freelancer based in Quebec City, Canada. If you're interested in
 my services, you can [contact me][email] - I may be available for part-time contracts.
+
+You can find some of my code on [github], [gitlab], [bitbucket] and [sourcehut], I
+sometimes answer questions on [stackoverflow] and although I closed pretty much
+all my "social" accounts (such as facebook, instagram, snapchat and google+ but then
+so did you), I still use [twitter] from time to time. I like to read [hacker news][hn]
+and [lobsters].
 
 ## Background
 
@@ -34,14 +44,79 @@ have learned (and forgotten) a wide variety of languages and technologies, inclu
 
 I'm quite interested in programming languages in general (obsessed, some would say), and have
 played with many relatively unknown/alpha- and beta- stages languages such as Inko, Zig,
-Nit, Nim, etc. I even implemented my own toy programming language (now unmaintained), [Agora][].
+Nit, Nim, etc. I even implemented my own toy programming language (now unmaintained), [Agora].
 
 ## Jobs
 
+My career can be roughly split in 3 parts:
+
+* Consulting in Quebec City and Paris for DMR, Planaxis, Larochelle-Gratton and CGI,
+  mostly big projects for large enterprises such as Visa, BNP, government departments,
+  Desjardins, etc. That was from 1996 to 2008.
+* From 2008 to 2013, employed by government departments, first Revenu Québec then
+  Régie de l'Assurance-Maladie du Québec in a lead software architect role.
+* Starting in 2014, working remotely (mostly as a freelancer, mostly for startups)
+  for companies around the world (USA, Switzerland, France, etc.).
+
+## Personal Projects
+
+In addition to my professional work and my open-source projects (listed on this site),
+I also have various (closed-source) personal projects that were started either for fun,
+to learn or experiment with new technologies, to try to generate some revenue, or a mix
+of all this:
+
+* **Horns of the Devil**, a website similar to Metacritic or Rotten Tomatoes, but for
+  metal reviews. I believe it was online from late 2009 to early 2011, and the only
+  traces of its existence are now [on the web archive][horns].
+
+* **Provok.in**, a website where users could argue over a subject by linking articles
+  or blog posts to prove their point, and vote for some point of view. It never took
+  off but it was built with a very early version of Angular and I received a T-Shirt
+  from them as my website was posted on their "made with Angular" website that was
+  quite scarce at the time. According to [the web archive][provok], this was in 2012,
+  so probably with a pre-1.0 or the newly release 1.0 of Angular.
+
 ## Family
 
+My significant other and I have two wonderful kids, a boy and a girl. We also have
+two cats, which you may see from time to time on my Twitter feed or on some of my
+profile pictures (though usually this is *feu* Gribouille, who died in 2018).
+
 ## Hobbies
+
+I spend a good amount of "hobby" time on programming or computer-related stuff
+(see open-source and personal projects), but outside of programming and family
+life, I enjoy a few hobbies:
+
+* Listening to music - I'm a metalhead and have been since my teen years, maybe
+  even before if you count Kiss and 80s "hair metal" as... well, as metal. I can
+  enjoy pretty much any subgenre, but death and thrash metal is what I listen to
+  the most. Outside metal, I'm also a huge Bruce Springsteen fan and I listen to
+  various rock, folk and Americana artists.
+
+* Making music - I play decent guitar and used to play drums, although I haven't
+  played in years (I sold my drum in 2017). I have two accoustic guitars and an
+  electric one, and a Korg keyboard. I recently bought an audio interface and a
+  Shure mic, and started recording on GarageBand, there's a world of fun with that.
+
+* Writing - I enjoy poetry and a few years back I wrote a lot of it (in french),
+  and had two poems published.
+
+* Reading - I spend a lot of my reading time on technical articles and other
+  programming-related documentation, but I also enjoy reading novels. Nancy
+  Huston's "Lignes de faille" (*Fault lines*) and Mathias Enard's "Zone" are
+  among my favorite ones.
 
 [email]: mailto:{{.Email}}
 [coco2]: https://twitter.com/___mna___/status/813406732697423872
 [agora]: https://github.com/mna/agora
+[github]: https://github.com/mna
+[gitlab]: https://gitlab.com/___mna___?nav_source=navbar
+[bitbucket]: https://bitbucket.org/___mna___/
+[sourcehut]: https://git.sr.ht/~mna/
+[stackoverflow]: https://stackoverflow.com/users/1094941/mna
+[twitter]: https://twitter.com/___mna___
+[hn]: https://news.ycombinator.com/
+[lobsters]: https://lobste.rs/
+[horns]: https://web.archive.org/web/20101115125910/http://hornsofthedevil.com/
+[provok]: https://web.archive.org/web/20120824135414/http://provok.in/
