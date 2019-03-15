@@ -35,6 +35,7 @@ type repo struct {
 	Topics          []string  `json:"topics"`
 	CreatedAt       time.Time `json:"created_at"`
 	UpdatedAt       time.Time `json:"updated_at"`
+	PushedAt        time.Time `json:"pushed_at"`
 
 	Owner struct {
 		Login     string `json:"login"`
@@ -146,7 +147,7 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 			Description: r.Description,
 			Language:    r.Language,
 			Created:     r.CreatedAt,
-			Updated:     r.UpdatedAt,
+			Updated:     r.PushedAt,
 			Stars:       r.StargazersCount,
 			Forks:       r.ForksCount,
 		}

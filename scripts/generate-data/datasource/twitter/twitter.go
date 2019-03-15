@@ -19,6 +19,7 @@ import (
 const (
 	initialURL = "https://twitter.com/___mna___/media"
 	baseURL    = "https://twitter.com"
+	maxTweets  = 10
 )
 
 type source struct {
@@ -59,10 +60,11 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 		return "", err
 	}
 
-	doc.Find(".content").Each(func(i int, s *goquery.Selection) {
+	count := 0
+	doc.Find(".content").EachWithBreak(func(i int, s *goquery.Selection) bool {
 		// ignore replies
 		if s.Find(".ReplyingToContextBelowAuthor").Length() > 0 {
-			return
+			return true
 		}
 
 		var html string
@@ -92,6 +94,9 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 		}
 		post.SetTags()
 		emit <- post
+		count++
+
+		return count < maxTweets
 	})
 	return "", nil
 }
