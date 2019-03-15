@@ -93,6 +93,21 @@ a {
   @apply text-blue-dark no-underline;
 }
 
+/* Style the twitter embeds similarly to cards for when the twitter
+ * script is not available/ready.
+*/
+.twitter-tweet:not(.twitter-tweet-rendered) {
+  @apply w-full min-h-card p-4 border border-grey-light border-solid rounded overflow-hidden;
+}
+
+.twitter-tweet:not(.twitter-tweet-rendered):hover {
+  @apply shadow-lg border-blue-dark;
+}
+
+.twitter-tweet:not(.twitter-tweet-rendered) > p {
+  @apply w-full text-2xl mb-4;
+}
+
 .card {
   @apply flex-1 m-2 min-w-card;
 }

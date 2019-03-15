@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"io/ioutil"
 	"net/http"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -95,6 +96,8 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 	return "", nil
 }
 
+var rxScript = regexp.MustCompile(`<script .+?</script>`)
+
 func generateEmbed(cli *http.Client, url string) (string, error) {
 	res, err := cli.Get(fmt.Sprintf("https://publish.twitter.com/oembed?url=%s", url))
 	if err != nil {
@@ -117,5 +120,9 @@ func generateEmbed(cli *http.Client, url string) (string, error) {
 	if err := json.Unmarshal(b, &embed); err != nil {
 		return "", err
 	}
-	return embed.HTML, nil
+
+	// remove the <script> tag to load twitter's script, as it is added already
+	// in the index template (only once)
+	html := embed.HTML
+	return rxScript.ReplaceAllString(html, ""), nil
 }
