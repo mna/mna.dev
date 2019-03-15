@@ -126,15 +126,15 @@ article {
 }
 
 article h1 {
-  @apply text-2xl my-3;
+  @apply text-2xl mt-5 mb-4;
 }
 
 article h2 {
-  @apply text-xl my-2;
+  @apply text-xl mt-4 mb-3;
 }
 
 article h3 {
-  @apply text-lg my-1;
+  @apply text-lg mt-3 mb-2;
 }
 
 article a {

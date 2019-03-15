@@ -3,6 +3,8 @@ package sputnik
 import (
 	"fmt"
 	"net/http"
+	"regexp"
+	"strconv"
 	"strings"
 	"time"
 
@@ -37,6 +39,8 @@ func (s *source) Generate(emit chan<- interface{}) error {
 	}
 	return nil
 }
+
+var rxTitleBestYear = regexp.MustCompile(`^Best\s.+\s(\d{4})$`)
 
 func (s *source) processPage(client *http.Client, url string, emit chan<- interface{}) (next string, err error) {
 	res, err := client.Get(url)
@@ -77,6 +81,12 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 				link = baseURL + link
 			}
 			title := strings.TrimSpace(anchor.Text())
+			if ms := rxTitleBestYear.FindStringSubmatch(title); ms != nil {
+				// special-case for "Best of YYYY" lists, replace the published date
+				// with the last day of the year of the best-of.
+				year, _ := strconv.Atoi(ms[1])
+				published = time.Date(year, 12, 31, 0, 0, 0, 0, time.UTC)
+			}
 
 			post := &types.Post{
 				URL:       link,
