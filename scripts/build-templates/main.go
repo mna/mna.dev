@@ -168,7 +168,7 @@ func toMarkdown(b []byte) template.HTML {
 
 func parseTemplates(dir string) *template.Template {
 	t := template.New("root").Funcs(funcs)
-	t, err := t.ParseGlob(filepath.Join(dir, "*"))
+	t, err := t.ParseGlob(filepath.Join(dir, "*.html"))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -283,7 +283,7 @@ func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost, err 
 		}
 
 		t := template.New("root").Funcs(funcs)
-		t, err = t.ParseGlob(filepath.Join(dir, "templates", "*"))
+		t, err = t.ParseGlob(filepath.Join(dir, "templates", "*.html"))
 		if err != nil {
 			return err
 		}
