@@ -2,7 +2,8 @@
 
 {{template "post-meta.html" .Config}}
 
-My name is Martin Angers, I go by `mna` or some variation of it on most websites.
+My name is Martin Angers (that's pronounced like the [French city of the same name][ville]).
+I go by `mna` or some variation of it on most websites.
 When the `.dev` craze cooled down in March 2019, I noticed that `mna.dev` was still
 available at a reasonable price, and decided that I'd make it my *portfolio* of
 sorts, listing my open-source projects, blog posts and stuff.
@@ -22,7 +23,7 @@ and [lobsters].
 I have been programming professionally since 1996, and for fun since I was a kid. I
 have learned (and forgotten) a wide variety of languages and technologies, including:
 
-* BASIC (probably Color BASIC, as [I had a TRS-80 Color Computer 2][coco2] way back then;
+* BASIC (probably Color BASIC, as [I had a TRS-80 Color Computer 2][coco2] way back then);
 * C, which was the language used in my computer programming courses and that I still use
   and enjoy every once in a while in personal projects;
 * Delphi (1.0), which I learned as an intern in 1995;
@@ -35,9 +36,9 @@ have learned (and forgotten) a wide variety of languages and technologies, inclu
 * Visual Basic 6, and then Visual Basic .NET and C# - the whole Microsoft / .NET
   ecosystem was (and still is) huge at the government and insurance companies in Quebec.
 * Node / javascript, which I still use from time to time, of course.
-* Swift, which I used when I quit my job to start a (short-lived!) solo app company to build
+* Swift, which I used when I quit my job to start a (short-lived!) solo company to build
   and sell an app in the Mac App Store. This is a great language (well, it was around
-  version 3-4, haven't used it much since), but I feel it suffers from the (necessary)
+  versions 3-4, haven't used it much since), but I feel it suffers from the (necessary)
   backwards compatibility requirements with Objective-C and the Apple Frameworks.
 * Go, which I started learning by reading the language spec for fun during a summer
   vacation (I believe Go 1.0 was just released a few months before), and that I still use
@@ -53,7 +54,7 @@ Nit, Nim, etc. I even implemented my own toy programming language (now unmaintai
 My career can be roughly split in 3 parts:
 
 * Consulting in Quebec City and Paris for DMR, Planaxis, Larochelle-Gratton and CGI,
-  mostly big projects for large enterprises such as Visa, BNP, government departments,
+  mostly big projects for large enterprises such as Visa, Paribas, government departments,
   Desjardins, etc. That was from 1996 to 2008.
 * From 2008 to 2013, employed by government departments, first Revenu Québec then
   Régie de l'Assurance-Maladie du Québec in a lead software architect role.
@@ -150,3 +151,4 @@ life, I enjoy a few hobbies:
 [trofaf]: https://github.com/mna/trofaf
 [hyper]: http://hypermegatop.github.io/
 [bcrich]: https://en.wikipedia.org/wiki/B.C._Rich_Warlock
+[ville]: https://en.wikipedia.org/wiki/Angers
