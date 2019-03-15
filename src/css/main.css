@@ -120,3 +120,39 @@ a {
 .card-foot p {
   @apply my-1;
 }
+
+article {
+  @apply leading-tight;
+}
+
+article h1 {
+  @apply text-2xl my-3;
+}
+
+article h2 {
+  @apply text-xl my-2;
+}
+
+article h3 {
+  @apply text-lg my-1;
+}
+
+article a {
+  @apply underline;
+}
+
+article p {
+  @apply my-2;
+}
+
+article ul {
+  @apply list-reset list-disc list-pos-inside;
+}
+
+article li {
+  @apply my-2;
+}
+
+article li p {
+  @apply inline;
+}
