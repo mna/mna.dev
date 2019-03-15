@@ -10,7 +10,6 @@ data sources as clickable "tiles" or "cards".
 
 * Filter by hashtags
 * Link directly to hashtag filters
-* Search in twitter cards
 * Grab image(s) when extracting the data, render more twitter-like cards
 
 ## install and generate

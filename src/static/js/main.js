@@ -26,12 +26,23 @@ function debounced(delay, fn) {
 // set the filter as a query string and auto-filter on page load.
 
 function filterCards(e) {
-  let text = e.target.value.trim()
+  let text = e.target.value.trim().toLowerCase()
   let words = text.match(/\S+/g) || []
 
   allCards.forEach(card => {
     let content = card.innerText
+    let tweet = card.querySelector(".twitter-tweet")
+    if (tweet) {
+      let tweetText = tweet.shadowRoot && tweet.shadowRoot.querySelector(".Tweet-text")
+      if (!tweetText) {
+        tweetText = tweet.querySelector("p")
+      }
+      if (tweetText) {
+        content = tweetText.innerText
+      }
+    }
 
+    content = content.toLowerCase()
     if (words.every(w => content.includes(w))) {
       card.classList.remove("hidden")
     } else {
@@ -49,7 +60,8 @@ ready(function() {
     })
   })
 
-  allCards = document.querySelectorAll(".card")
+  // cannot extract tweets at this point, twitter script might not be loaded yet
+  allCards = Array.from(document.querySelectorAll(".card"))
 
   let search = document.getElementById("search")
   search.addEventListener("input", debounced(200, filterCards))
