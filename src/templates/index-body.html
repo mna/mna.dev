@@ -4,13 +4,13 @@
   </header>
   <div class="flex flex-wrap">
     {{range .SortedByDateDesc}}
-      {{$tpl := templateFor .}}
-      {{if eq $tpl "post_card.html"}}
-        {{template "post_card.html" .}}
-      {{else if eq $tpl "micropost_card.html"}}
-        {{template "micropost_card.html" .}}
-      {{else if eq $tpl "repo_card.html"}}
-        {{template "repo_card.html" .}}
+      {{$typ := typeOf .}}
+      {{if eq $typ "post"}}
+        {{template "post-card.html" .}}
+      {{else if eq $typ "micropost"}}
+        {{template "micropost-card.html" .}}
+      {{else if eq $typ "repo"}}
+        {{template "repo-card.html" .}}
       {{end}}
     {{end}}
   </div>

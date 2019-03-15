@@ -1,5 +1,7 @@
 # About me
 
+{{template "post-meta.html" .Config}}
+
 My name is Martin Angers, I go by `mna` or some variation of it on most websites.
 When the `.dev` craze cooled down in March 2019, I noticed that `mna.dev` was still
 available at a reasonable price, and decided that I'd make it my *portfolio* of
@@ -130,7 +132,7 @@ life, I enjoy a few hobbies:
   Huston's "Lignes de faille" (*Fault lines*) and Mathias Enard's "Zone" are
   among my favorite ones.
 
-[email]: mailto:{{.Email}}
+[email]: mailto:{{.Vars.Email}}
 [coco2]: https://twitter.com/___mna___/status/813406732697423872
 [agora]: https://github.com/mna/agora
 [github]: https://github.com/mna

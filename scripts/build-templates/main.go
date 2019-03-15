@@ -68,6 +68,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	lps, lms, lgs, err := loadLocalPostMicroPages(posts)
 	if err != nil {
 		log.Fatal(err)
@@ -104,7 +105,7 @@ func main() {
 
 var funcs = template.FuncMap{
 	"cardTextSizeFor": func(section, text string) string {
-		// TODO: down-size if a single word is too long
+		// TODO: down-size if a single word is too long?
 		n := len(text)
 		sz := 0
 		switch {
@@ -147,14 +148,14 @@ var funcs = template.FuncMap{
 	"markdownString": func(s string) template.HTML {
 		return toMarkdown([]byte(s))
 	},
-	"templateFor": func(v interface{}) string {
+	"typeOf": func(v interface{}) string {
 		switch v.(type) {
 		case *types.Post:
-			return "post_card.html"
+			return "post"
 		case *types.MicroPost:
-			return "micropost_card.html"
+			return "micropost"
 		case *types.Repo:
-			return "repo_card.html"
+			return "repo"
 		default:
 			panic(fmt.Errorf("unsupported type: %T", v))
 		}
@@ -281,12 +282,22 @@ func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost, err 
 			return nil
 		}
 
-		t, err := template.ParseFiles(path)
+		t := template.New("root").Funcs(funcs)
+		t, err = t.ParseGlob(filepath.Join(dir, "templates", "*"))
 		if err != nil {
 			return err
 		}
+		t, err = t.ParseFiles(path)
+		if err != nil {
+			return err
+		}
+
 		var buf bytes.Buffer
-		if err := t.Execute(&buf, vars); err != nil {
+		data := map[string]interface{}{
+			"Config": conf,
+			"Vars":   vars,
+		}
+		if err := t.ExecuteTemplate(&buf, fi.Name(), data); err != nil {
 			return err
 		}
 
