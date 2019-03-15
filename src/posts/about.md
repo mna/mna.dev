@@ -16,7 +16,7 @@ You can find some of my code on [github], [gitlab], [bitbucket] and [sourcehut],
 sometimes answer questions on [stackoverflow] and although I closed pretty much
 all my "social" accounts (such as facebook, instagram, snapchat and google+ but then
 so did you), I still use [twitter] from time to time. I like to read [hacker news][hn]
-and [lobsters].
+and [lobsters] though I rarely comment.
 
 ## Background
 

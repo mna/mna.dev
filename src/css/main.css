@@ -101,6 +101,10 @@ a {
   @apply w-full min-h-card flex flex-col flex-wrap border border-grey-light border-solid rounded overflow-hidden;
 }
 
+.card > section:hover {
+  @apply shadow-lg border-blue-dark;
+}
+
 .card-head {
   @apply flex-shrink w-full p-2 border-b border-grey-light border-solid;
 }

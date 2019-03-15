@@ -1,6 +1,6 @@
 <section>
-  <header>
-    <h1 class="text-xl">Filter</h1>
+  <header class="m-2">
+    {{template "index-filter.html" .}}
   </header>
   <div class="flex flex-wrap">
     {{range .SortedByDateDesc}}
