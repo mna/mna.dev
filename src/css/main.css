@@ -94,7 +94,11 @@ a {
 }
 
 .hashtag {
-  @apply inline-block text-sm px-1 my-1 leading-normal border border-solid border-blue-light rounded-lg bg-blue-lighter text-grey-darker;
+  @apply inline-block text-sm px-1 my-1 leading-normal border border-solid border-blue-lighter rounded-lg text-grey-darker;
+}
+
+.hashtag.is-active {
+  @apply border-blue-light bg-blue-lighter text-grey-darker;
 }
 
 /* Style the twitter embeds similarly to cards for when the twitter
