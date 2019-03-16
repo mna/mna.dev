@@ -1,3 +1,10 @@
-<form class="mx-auto max-w-sm py-10 min-w-card">
-  <input class="shadow appearance-none border rounded w-full py-1 px-3 h-10 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="search" type="text" placeholder="Search">
-</form>
+<div class="mx-auto max-w-sm py-10 min-w-card">
+  <form>
+    <input class="shadow appearance-none border rounded w-full py-1 px-3 h-10 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="search" type="text" placeholder="Search">
+  </form>
+  <div class="mt-4 text-center">
+    {{range .AllTags}}
+      <a class="hashtag" href="#">#{{.}}</a>
+    {{end}}
+  </div>
+</div>

@@ -36,6 +36,8 @@ type website struct {
 	MicroPosts []*types.MicroPost
 	Repos      []*types.Repo
 
+	AllTags []string
+
 	// CurrentPost is set only when generating specific pages,
 	// in which case it is set to that page's MarkdownPost.
 	CurrentPost *types.MarkdownPost
@@ -96,6 +98,29 @@ func main() {
 	w.Posts = dps
 	w.MicroPosts = dms
 	w.Repos = drs
+
+	set := make(map[string]bool)
+	for _, p := range w.Posts {
+		for _, t := range p.Tags {
+			set[t] = true
+		}
+	}
+	for _, m := range w.MicroPosts {
+		for _, t := range m.Tags {
+			set[t] = true
+		}
+	}
+	for _, r := range w.Repos {
+		for _, t := range r.Tags {
+			set[t] = true
+		}
+	}
+	tags := make([]string, 0, len(set))
+	for t := range set {
+		tags = append(tags, t)
+	}
+	sort.Strings(tags)
+	w.AllTags = tags
 
 	// generate the index page
 	if err := w.executeIndex(t, dst); err != nil {

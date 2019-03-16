@@ -25,7 +25,7 @@ function debounced(delay, fn) {
 // TODO: https://developer.mozilla.org/en-US/docs/Web/API/History_API
 // set the filter as a query string and auto-filter on page load.
 
-function filterCards(e) {
+function filterCardsBySearch(e) {
   let text = e.target.value.trim().toLowerCase()
   let words = text.match(/\S+/g) || []
 
@@ -51,18 +51,35 @@ function filterCards(e) {
   })
 }
 
+function filterCardsByTag(e) {
+  let tag = e.target.innerText
+
+  allCards.forEach(card => {
+    let cardTags = Array.from(card.querySelectorAll(".hashtag")).map(ht => ht.innerText)
+
+    let tweet = card.querySelector(".twitter-tweet")
+    if (tweet) {
+      // tweets have "#twitter" and "#micro" tags implied
+      cardTags = ["#twitter", "#micro"]
+    }
+
+    if (cardTags.some(cardTag => cardTag === tag)) {
+      card.classList.remove("hidden")
+    } else {
+      card.classList.add("hidden")
+    }
+  })
+}
+
 ready(function() {
   let tags = document.querySelectorAll(".hashtag")
   tags.forEach(tag => {
-    tag.addEventListener("click", e => {
-      console.log(e.target.innerText)
-      e.preventDefault()
-    })
+    tag.addEventListener("click", filterCardsByTag)
   })
 
   // cannot extract tweets at this point, twitter script might not be loaded yet
   allCards = Array.from(document.querySelectorAll(".card"))
 
   let search = document.getElementById("search")
-  search.addEventListener("input", debounced(200, filterCards))
+  search.addEventListener("input", debounced(200, filterCardsBySearch))
 })

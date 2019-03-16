@@ -132,7 +132,7 @@ type MicroPost struct {
 // addition to the provided tags.
 func (p *MicroPost) SetTags(tags ...string) {
 	p.Tags = append(p.Tags, tags...)
-	p.Tags = append(p.Tags, "post", "micro", p.Website)
+	p.Tags = append(p.Tags, "micro", p.Website)
 	p.Tags = canonicalizeTags(p.Tags)
 }
 

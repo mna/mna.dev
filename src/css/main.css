@@ -93,6 +93,10 @@ a {
   @apply text-blue-dark no-underline;
 }
 
+.hashtag {
+  @apply inline-block text-sm px-1 my-1 leading-normal border border-solid border-blue-light rounded-lg bg-blue-lighter text-grey-darker;
+}
+
 /* Style the twitter embeds similarly to cards for when the twitter
  * script is not available/ready.
 */
