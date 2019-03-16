@@ -15,11 +15,11 @@ data sources as clickable "tiles" or "cards".
 ## install and generate
 
 ```
-$ npm init
+$ npm install
 # installs development dependencies, populates node_modules
 
 $ npm run build
-# builds assets, generates css, js, html in public/
+# cleans output, generates data, builds assets, generates css, js, html in public/
 
 $ npm run serve
 # starts a local web server to browse the static website, installs
@@ -28,6 +28,12 @@ $ npm run serve
 $ npm run generate
 # runs the commands to retrieve data from the supported sources,
 # updating existing ones as needed
+
+$ npm-run-all build:*
+# only build the website, do not re-generate data and images
+
+$ npm run watch
+# watch for changes and run corresponding build task live
 ```
 
 Requires the following environments to be set (e.g. via an `.envrc` file

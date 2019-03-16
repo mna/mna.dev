@@ -43,7 +43,7 @@ have learned (and forgotten) a wide variety of languages and technologies, inclu
 * Go, which I started learning by reading the language spec for fun during a summer
   vacation (I believe Go 1.0 was just released a few months before), and that I still use
   extensively to this day - in addition to many of my most well-known open-source projects,
-  it is also the language I use the most professionally, and the one I'm most expert in.
+  it is also the language I use the most professionally, and the one I'm now most expert in.
 
 I'm quite interested in programming languages in general (obsessed, some would say), and have
 played with many relatively unknown/alpha- and beta- stages languages such as Inko, Zig,
