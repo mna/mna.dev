@@ -39,6 +39,8 @@ function clearSearch() {
 
 // show only cards from the haystack that match the searched words.
 function filterCardsBySearch(e) {
+  e.preventDefault()
+
   let text = e.target.value.trim().toLowerCase()
   let words = text.match(/\S+/g) || []
 
