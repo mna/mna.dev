@@ -3,6 +3,7 @@ sources:
   - https://git.sr.ht/~mna/mna.dev
 tasks:
   - build: |
+      cd mna.dev
       git remote add mirror git@github.com:mna/mna.dev.git
       git push mirror master
 secrets:
