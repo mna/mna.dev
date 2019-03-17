@@ -327,7 +327,7 @@ func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost, err 
 		}
 
 		post := &types.MarkdownPost{
-			Path:      rel,
+			Path:      rel + ".html",
 			Title:     conf.Title,
 			Published: conf.Published,
 			Lead:      conf.Lead,
@@ -362,7 +362,7 @@ func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost, err 
 func newWebsite() *website {
 	return &website{
 		Links: []*link{
-			{"About", "", "/about"},
+			{"About", "", "/about.html"},
 			{"Twitter", "___mna___", "https://twitter.com/___mna___/"},
 			{"GitHub", "mna", "https://github.com/mna"},
 			{"StackOverflow", "mna", "https://stackoverflow.com/users/1094941/mna"},
