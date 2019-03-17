@@ -94,7 +94,7 @@ a {
 }
 
 .hashtag {
-  @apply inline-block text-sm px-1 my-1 leading-normal border border-solid border-blue-lighter rounded-lg text-grey-darker;
+  @apply inline-block text-sm px-2 pt-1 my-1 leading-normal border border-solid border-grey-light rounded-lg text-grey-darker;
 }
 
 .hashtag.is-active {
@@ -125,7 +125,7 @@ a {
 }
 
 .card > section:hover {
-  @apply shadow-lg border-blue-dark;
+  @apply shadow border-blue-lighter;
 }
 
 .card-head {

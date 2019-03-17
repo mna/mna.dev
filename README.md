@@ -8,7 +8,6 @@ data sources as clickable "tiles" or "cards".
 
 ## TODOs
 
-* Link directly to hashtag filters, search query
 * Grab image(s) when extracting the data, render more twitter-like cards
 * Click anywhere-ish on a card should link to the URL
 

@@ -37,9 +37,6 @@ function clearSearch() {
   // TODO: clear query string or whatever is used to link to a search
 }
 
-// TODO: https://developer.mozilla.org/en-US/docs/Web/API/History_API
-// set the filter as a query string and auto-filter on page load.
-
 // show only cards from the haystack that match the searched words.
 function filterCardsBySearch(e) {
   let text = e.target.value.trim().toLowerCase()
@@ -80,10 +77,6 @@ function isSuperset(set, subset) {
 function tagClicked(e) {
   e.preventDefault()
 
-  // filtering on a tag clears the search and resets the haystack
-  clearSearch()
-  haystackCards.length = 0
-
   let selectedTag = e.target.innerText
   if (selectedTags.has(selectedTag)) {
     selectedTags.delete(selectedTag)
@@ -91,10 +84,27 @@ function tagClicked(e) {
     selectedTags.add(selectedTag)
   }
 
+  let keys = Array.from(selectedTags.keys())
+  if (keys.length === 0 ) {
+    history.pushState(null, "", "/")
+  } else {
+    history.pushState(null, "", "?tags=" + encodeURIComponent(keys.join(",")))
+  }
+
+  applySelectedTags()
+}
+
+function applySelectedTags() {
+  // filtering on a tag clears the search and resets the haystack
+  clearSearch()
+  haystackCards.length = 0
+
   allTags.forEach(tag => {
     let tagText = tag.innerText
-    if (tagText === selectedTag) {
-      tag.classList.toggle("is-active")
+    if (selectedTags.has(tagText)) {
+      tag.classList.add("is-active")
+    } else {
+      tag.classList.remove("is-active")
     }
   })
 
@@ -116,6 +126,19 @@ function tagClicked(e) {
   })
 }
 
+function tagsFromQueryString() {
+  let params = new URL(window.location).searchParams
+  let tags = params.get("tags")
+  console.log(tags)
+
+  if (tags) {
+    selectedTags = new Set(tags.split(","))
+  } else {
+    selectedTags.clear()
+  }
+  applySelectedTags()
+}
+
 // bootstrap execution, called when document is ready.
 ready(function() {
   // grab list of all cards, and on load the haystack is the set of all cards
@@ -129,6 +152,10 @@ ready(function() {
 
   searchBox = document.getElementById("search")
   searchBox.addEventListener("input", debounced(200, filterCardsBySearch))
+
+  window.onpopstate = tagsFromQueryString
+
+  tagsFromQueryString()
 })
 
 })();
