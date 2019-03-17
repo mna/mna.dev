@@ -1,0 +1,9 @@
+image: alpine/latest
+sources:
+  - https://git.sr.ht/~mna/mna.dev
+tasks:
+  - build: |
+      git remote add mirror git@github.com:mna/mna.dev.git
+      git push mirror master
+secrets:
+  - f7cb2392-fa81-428e-a592-1f7172fd98e1
