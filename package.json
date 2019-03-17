@@ -8,7 +8,6 @@
     "build:css": "tailwind build src/css/main.css -c tailwind.js -o public/css/styles.css",
     "build:html": "go run scripts/build-templates/main.go src/posts/ data/ src/templates/ public/",
     "build:js": "echo 'todo(js): probably just copy over from static dir'",
-    "prebuild": "npm-run-all -s clean generate",
     "build": "npm-run-all -p build:*",
     "clean": "npm-run-all -p clean:*",
     "clean:public": "find public/ -not -path '*/\\.*' -type f -delete",
