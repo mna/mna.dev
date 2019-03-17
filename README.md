@@ -9,7 +9,8 @@ data sources as clickable "tiles" or "cards".
 ## TODOs
 
 * Grab image(s) when extracting the data, render more twitter-like cards
-* Click anywhere-ish on a card should link to the URL
+* Click anywhere-ish on a card should link to the URL?
+* Un-rendered twitter embeds should have a Twitter indication/card-header?
 
 ## install and generate
 
