@@ -3,17 +3,17 @@
     {{.RawHTML}}
   {{else}}
     <section>
-      {{if .URL}}
-      <a href="{{.URL}}">
-      {{end}}
-        <div class="card-body">
-          <div class="{{cardTextSizeFor "body" .Text}}">
-            {{markdownString .Text}}
-          </div>
+      <div class="card-body">
+        <div class="{{cardTextSizeFor "body" .Text}}">
+          {{if .URL}}
+          <a href="{{.URL}}">
+          {{end}}
+          {{markdownString .Text}}
+          {{if .URL}}
+          </a>
+          {{end}}
         </div>
-      {{if .URL}}
-      </a>
-      {{end}}
+      </div>
       <div class="card-foot">
         <p>
           <time datetime="{{isotime .Published}}">Posted {{humantime .Published}}</time> | {{.Website}}

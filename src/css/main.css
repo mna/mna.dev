@@ -93,12 +93,24 @@ a {
   @apply text-blue-dark no-underline;
 }
 
+a:hover {
+  @apply text-blue-light;
+}
+
 .hashtag {
-  @apply inline-block text-sm px-2 my-1 leading-normal border border-solid border-grey-light rounded-lg text-grey-darker;
+  @apply inline-block font-mono text-sm px-2 my-1 leading-normal border border-solid border-grey-light rounded-lg text-grey-darker;
+}
+
+.hashtag:hover {
+  @apply bg-blue-lightest;
 }
 
 .hashtag.is-active {
   @apply border-blue-light bg-blue-lighter text-grey-darker;
+}
+
+.hashtag.is-active:hover {
+  @apply bg-blue text-white;
 }
 
 /* Style the twitter embeds similarly to cards for when the twitter
