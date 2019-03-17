@@ -7,4 +7,4 @@ tasks:
       git remote add mirror git@github.com:mna/mna.dev.git
       git push mirror master
 secrets:
-  - f7cb2392-fa81-428e-a592-1f7172fd98e1
+  - 8a632639-cb32-49f8-b6b8-8040972f80a7
