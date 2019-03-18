@@ -121,7 +121,12 @@ a:hover {
 }
 
 .twitter-tweet:not(.twitter-tweet-rendered):hover {
-  @apply shadow-lg border-blue-dark;
+  @apply shadow border-blue-lighter;
+}
+
+.twitter-tweet:not(.twitter-tweet-rendered)::before {
+  content: "Twitter";
+  @apply block text-2xl w-full mb-2 border-b border-grey-light border-solid;
 }
 
 .twitter-tweet:not(.twitter-tweet-rendered) > p {
