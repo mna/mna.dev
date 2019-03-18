@@ -1,5 +1,7 @@
 # mna.dev
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9dca90a6-815f-4f87-844f-5f1d1c6eaaa4/deploy-status)](https://app.netlify.com/sites/mna-dev/deploys)
+
 This is the source repository for my mna.dev personal website. It uses
 a number of tools to generate data sources for relevant links about me
 (e.g. twitter account, blog, articles, popular repositories, etc.) and
