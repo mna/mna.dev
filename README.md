@@ -8,11 +8,6 @@ a number of tools to generate data sources for relevant links about me
 this gets turned by a build system into a web page that presents those
 data sources as clickable "tiles" or "cards".
 
-## TODOs
-
-* Grab image(s) when extracting the data, render more twitter-like cards
-* Figure out how to re-generate data automatically and publish
-
 ## install and generate
 
 ```
@@ -45,4 +40,10 @@ managed by `direnv`):
 * `SRHT_API_TOKEN`
 * `GITLAB_API_TOKEN`
 * `BITBUCKET_API_TOKEN`
+
+## TODOs
+
+* Grab image(s) when extracting the data, render more twitter-like cards
+* Figure out how to re-generate data automatically and publish (eventually)
+  - systemd timer unit to call a sr.ht build via api, run `npm run generate:data`, commit and push on success
 
