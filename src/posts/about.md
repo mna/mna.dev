@@ -8,9 +8,10 @@ When the `.dev` craze cooled down in March 2019, I noticed that `mna.dev` was st
 available at a reasonable price, and decided that I'd make it my *portfolio* of
 sorts, listing my open-source projects, blog posts and stuff.
 
-I'm a software developer, working mostly as a Go backend engineer since 2012. I
-work remotely as a freelancer based in Quebec City, Canada. If you're interested in
-my services, you can [contact me][email] - I may be available for part-time contracts.
+I've been a professional software developer since the mid 90s, working mostly as a Go
+backend engineer since 2013. I work remotely as a freelancer based in Quebec City, Canada.
+If you're interested in my services, you can [contact me][email] - I may be available for
+part-time contracts.
 
 You can find some of my code on [github], [gitlab], [bitbucket] and [sourcehut], I
 sometimes answer questions on [stackoverflow] and although I closed pretty much
@@ -20,8 +21,9 @@ and [lobsters] though I rarely comment.
 
 ## Background
 
-I have been programming professionally since 1996, and for fun since I was a kid. I
-have learned (and forgotten) a wide variety of languages and technologies, including:
+As mentioned earlier, I have been programming professionally since 1996, and for fun
+since I was a kid. I have learned (and forgotten) a wide variety of languages and
+technologies, including:
 
 * BASIC (probably Color BASIC, as [I had a TRS-80 Color Computer 2][coco2] way back then);
 * C, which was the language used in my computer programming courses and that I still use
