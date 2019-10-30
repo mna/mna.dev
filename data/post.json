@@ -150,6 +150,16 @@
     "post"
   ]
 }{
+  "URL": "https://www.0value.com/build-a-blog-engine-in-go",
+  "Website": "0value",
+  "Title": "Build a blog engine in Go",
+  "Lead": "",
+  "Published": "2013-07-22T00:00:00Z",
+  "Tags": [
+    "0value",
+    "post"
+  ]
+}{
   "URL": "https://www.sputnikmusic.com/list.php?memberid=1142495\u0026listid=186271",
   "Website": "sputnikmusic",
   "Title": "Best Metal Albums - 2018",
@@ -178,16 +188,6 @@
   "Tags": [
     "post",
     "sputnikmusic"
-  ]
-}{
-  "URL": "https://www.0value.com/build-a-blog-engine-in-go",
-  "Website": "0value",
-  "Title": "Build a blog engine in Go",
-  "Lead": "",
-  "Published": "2013-07-22T00:00:00Z",
-  "Tags": [
-    "0value",
-    "post"
   ]
 }{
   "URL": "https://www.0value.com/implementing-lua-coroutines-in-Go",
