@@ -1,4 +1,46 @@
 {
+  "URL": "https://git.sr.ht/~mna/mauve",
+  "Host": "sourcehut",
+  "Name": "mauve",
+  "Description": "",
+  "Language": "",
+  "Created": "2019-11-26T16:19:06Z",
+  "Updated": "2019-11-26T20:22:32Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "sourcehut"
+  ]
+}{
+  "URL": "https://git.sr.ht/~mna/webparts-sessions",
+  "Host": "sourcehut",
+  "Name": "webparts-sessions",
+  "Description": "Implementation of the webparts/http/httpssn standard interface using the gorilla/sessions package.",
+  "Language": "",
+  "Created": "2019-10-31T20:35:54Z",
+  "Updated": "2019-10-31T20:36:14Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "sourcehut"
+  ]
+}{
+  "URL": "https://git.sr.ht/~mna/webparts-auth0",
+  "Host": "sourcehut",
+  "Name": "webparts-auth0",
+  "Description": "Implementation of HTTP handlers and middleware for user authentication and account management based on auth0.",
+  "Language": "",
+  "Created": "2019-10-31T18:22:24Z",
+  "Updated": "2019-11-01T01:56:36Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "sourcehut"
+  ]
+}{
   "URL": "https://git.sr.ht/~mna/webparts-flag",
   "Host": "sourcehut",
   "Name": "webparts-flag",
@@ -47,7 +89,7 @@
   "Description": "",
   "Language": "",
   "Created": "2019-10-17T14:45:18Z",
-  "Updated": "2019-10-29T02:10:10Z",
+  "Updated": "2019-11-09T22:25:35Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -117,7 +159,7 @@
   "Description": "",
   "Language": "",
   "Created": "2019-05-09T21:23:41Z",
-  "Updated": "2019-05-13T02:35:36Z",
+  "Updated": "2019-11-10T22:13:34Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -159,21 +201,7 @@
   "Description": "My personal website.",
   "Language": "",
   "Created": "2019-03-04T23:32:00Z",
-  "Updated": "2019-08-27T20:53:31Z",
-  "Stars": 0,
-  "Forks": 0,
-  "Tags": [
-    "code",
-    "sourcehut"
-  ]
-}{
-  "URL": "https://git.sr.ht/~mna/snow",
-  "Host": "sourcehut",
-  "Name": "snow",
-  "Description": "",
-  "Language": "",
-  "Created": "2019-03-03T23:46:07Z",
-  "Updated": "2019-03-21T20:50:04Z",
+  "Updated": "2019-10-30T00:52:21Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -201,7 +229,7 @@
   "Description": "Generate serverless infrastructure from project layout (canonical repository).",
   "Language": "",
   "Created": "2018-11-10T19:24:53Z",
-  "Updated": "2019-08-07T01:16:24Z",
+  "Updated": "2019-10-31T14:50:51Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -251,30 +279,104 @@
     "gitlab"
   ]
 }{
-  "URL": "https://github.com/PuerkitoBio/gocrawl",
-  "Host": "github",
-  "Name": "PuerkitoBio/gocrawl",
-  "Description": "Polite, slim and concurrent web crawler.",
-  "Language": "Go",
-  "Created": "2012-09-19T02:08:15Z",
-  "Updated": "2019-10-27T12:00:08Z",
-  "Stars": 1797,
-  "Forks": 185,
-  "Tags": [
-    "code",
-    "github",
-    "go"
-  ]
-}{
   "URL": "https://github.com/PuerkitoBio/goquery",
   "Host": "github",
   "Name": "PuerkitoBio/goquery",
   "Description": "A little like that j-thing, only in Go.",
   "Language": "Go",
   "Created": "2012-08-29T02:14:59Z",
-  "Updated": "2019-10-15T22:09:16Z",
-  "Stars": 7926,
-  "Forks": 659,
+  "Updated": "2019-12-09T20:01:06Z",
+  "Stars": 8246,
+  "Forks": 673,
+  "Tags": [
+    "code",
+    "github",
+    "go"
+  ]
+}{
+  "URL": "https://github.com/mna/advent04",
+  "Host": "github",
+  "Name": "mna/advent04",
+  "Description": "Advent of code 2019 day 4",
+  "Language": "Nim",
+  "Created": "2019-12-04T19:38:21Z",
+  "Updated": "2019-12-04T19:38:37Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "github",
+    "nim"
+  ]
+}{
+  "URL": "https://github.com/mna/advent03",
+  "Host": "github",
+  "Name": "mna/advent03",
+  "Description": "Advent of code 2019 day 3",
+  "Language": "",
+  "Created": "2019-12-03T21:48:59Z",
+  "Updated": "2019-12-03T21:49:15Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "github"
+  ]
+}{
+  "URL": "https://github.com/mna/advent02",
+  "Host": "github",
+  "Name": "mna/advent02",
+  "Description": "Advent of code 2019 day 2",
+  "Language": "mupad",
+  "Created": "2019-12-02T17:31:13Z",
+  "Updated": "2019-12-02T19:58:09Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "github",
+    "mupad"
+  ]
+}{
+  "URL": "https://github.com/mna/advent01",
+  "Host": "github",
+  "Name": "mna/advent01",
+  "Description": "Advent of code 2019 day 1",
+  "Language": "mupad",
+  "Created": "2019-12-01T21:11:05Z",
+  "Updated": "2019-12-01T21:11:25Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "github",
+    "mupad"
+  ]
+}{
+  "URL": "https://github.com/throttled/throttled",
+  "Host": "github",
+  "Name": "throttled/throttled",
+  "Description": "Package throttled implements rate limiting access to resources such as HTTP endpoints.",
+  "Language": "Go",
+  "Created": "2014-02-19T12:13:32Z",
+  "Updated": "2019-11-27T21:48:32Z",
+  "Stars": 853,
+  "Forks": 47,
+  "Tags": [
+    "code",
+    "github",
+    "go"
+  ]
+}{
+  "URL": "https://github.com/PuerkitoBio/gocrawl",
+  "Host": "github",
+  "Name": "PuerkitoBio/gocrawl",
+  "Description": "Polite, slim and concurrent web crawler.",
+  "Language": "Go",
+  "Created": "2012-09-19T02:08:15Z",
+  "Updated": "2019-11-13T00:46:00Z",
+  "Stars": 1830,
+  "Forks": 189,
   "Tags": [
     "code",
     "github",
@@ -288,7 +390,7 @@
   "Language": "Go",
   "Created": "2014-01-06T12:45:18Z",
   "Updated": "2019-09-11T23:11:13Z",
-  "Stars": 723,
+  "Stars": 725,
   "Forks": 96,
   "Tags": [
     "code",
@@ -303,8 +405,8 @@
   "Language": "Go",
   "Created": "2015-04-05T14:55:20Z",
   "Updated": "2019-09-09T21:15:44Z",
-  "Stars": 488,
-  "Forks": 36,
+  "Stars": 511,
+  "Forks": 37,
   "Tags": [
     "code",
     "github",
@@ -318,7 +420,7 @@
   "Language": "Go",
   "Created": "2016-03-24T12:03:07Z",
   "Updated": "2019-08-20T13:52:33Z",
-  "Stars": 129,
+  "Stars": 133,
   "Forks": 20,
   "Tags": [
     "code",
@@ -348,23 +450,8 @@
   "Language": "Go",
   "Created": "2016-02-15T17:30:34Z",
   "Updated": "2019-06-14T13:31:38Z",
-  "Stars": 160,
+  "Stars": 163,
   "Forks": 7,
-  "Tags": [
-    "code",
-    "github",
-    "go"
-  ]
-}{
-  "URL": "https://github.com/throttled/throttled",
-  "Host": "github",
-  "Name": "throttled/throttled",
-  "Description": "Package throttled implements rate limiting access to resources such as HTTP endpoints.",
-  "Language": "Go",
-  "Created": "2014-02-19T12:13:32Z",
-  "Updated": "2019-03-22T21:52:09Z",
-  "Stars": 832,
-  "Forks": 45,
   "Tags": [
     "code",
     "github",
@@ -378,8 +465,8 @@
   "Language": "Go",
   "Created": "2012-09-19T15:34:36Z",
   "Updated": "2019-02-16T21:26:37Z",
-  "Stars": 351,
-  "Forks": 46,
+  "Stars": 356,
+  "Forks": 47,
   "Tags": [
     "code",
     "github",
@@ -468,8 +555,8 @@
   "Language": "Go",
   "Created": "2015-02-08T06:32:11Z",
   "Updated": "2017-08-10T14:37:24Z",
-  "Stars": 19,
-  "Forks": 9,
+  "Stars": 20,
+  "Forks": 10,
   "Tags": [
     "code",
     "github",
@@ -528,7 +615,7 @@
   "Language": "Go",
   "Created": "2013-03-09T02:03:01Z",
   "Updated": "2017-03-24T14:39:32Z",
-  "Stars": 42,
+  "Stars": 43,
   "Forks": 1,
   "Tags": [
     "code",
@@ -543,7 +630,7 @@
   "Language": "Go",
   "Created": "2013-01-09T03:30:28Z",
   "Updated": "2017-03-24T14:36:34Z",
-  "Stars": 57,
+  "Stars": 56,
   "Forks": 7,
   "Tags": [
     "code",
@@ -663,7 +750,7 @@
   "Language": "Go",
   "Created": "2013-04-05T18:40:09Z",
   "Updated": "2016-03-24T11:49:05Z",
-  "Stars": 52,
+  "Stars": 51,
   "Forks": 6,
   "Tags": [
     "code",
@@ -738,8 +825,8 @@
   "Language": "Go",
   "Created": "2013-06-19T02:16:30Z",
   "Updated": "2015-01-25T17:12:45Z",
-  "Stars": 323,
-  "Forks": 33,
+  "Stars": 321,
+  "Forks": 35,
   "Tags": [
     "code",
     "github",
@@ -768,7 +855,7 @@
   "Language": "Go",
   "Created": "2014-12-19T02:54:45Z",
   "Updated": "2015-01-04T15:42:27Z",
-  "Stars": 52,
+  "Stars": 55,
   "Forks": 2,
   "Tags": [
     "code",
