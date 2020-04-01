@@ -50,7 +50,7 @@ type repo struct {
 
 func (r *repo) ignoredTopic() bool {
 	for _, topic := range r.Topics {
-		if topic == "ignore" {
+		if topic == "ignore" || topic == "mirror" {
 			return true
 		}
 	}
