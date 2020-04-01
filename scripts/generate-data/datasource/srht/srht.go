@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/url"
 	"os"
 	"time"
 
@@ -28,8 +29,9 @@ type repo struct {
 }
 
 type response struct {
-	Next    int     `json:"next"`
-	Results []*repo `json:"results"`
+	Errors  []map[string]string `json:"errors"`
+	Next    *int                `json:"next"`
+	Results []*repo             `json:"results"`
 }
 
 type source struct {
@@ -88,6 +90,9 @@ func (s *source) processPage(client *http.Client, u string, emit chan<- interfac
 	if err := json.Unmarshal(b, &resp); err != nil {
 		return "", err
 	}
+	if len(resp.Errors) > 0 {
+		return "", fmt.Errorf("%d error(s); first error: %#v", len(resp.Errors), resp.Errors[0])
+	}
 
 	for _, r := range resp.Results {
 		if r.Visibility != "public" {
@@ -105,18 +110,13 @@ func (s *source) processPage(client *http.Client, u string, emit chan<- interfac
 		emit <- repo
 	}
 
-	if resp.Next > 0 {
-		// TODO: for now, the next page query doesn't seem to work on sr.ht (always
-		// returns the same results regardless). Either the doc is wrong at
-		// https://man.sr.ht/api-conventions.md#api-conventions or there is a bug.
-		/*
-			parsed, err := url.Parse(u)
-			if err != nil {
-				return "", err
-			}
-			parsed.RawQuery = fmt.Sprintf("get=%d", resp.Next)
-			return parsed.String(), nil
-		*/
+	if resp.Next != nil && *resp.Next > 0 {
+		parsed, err := url.Parse(u)
+		if err != nil {
+			return "", err
+		}
+		parsed.RawQuery = fmt.Sprintf("start=%d", *resp.Next)
+		return parsed.String(), nil
 	}
 	return "", nil
 }
