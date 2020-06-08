@@ -1,11 +1,67 @@
 {
+  "URL": "https://git.sr.ht/~mna/hellogo",
+  "Host": "sourcehut",
+  "Name": "hellogo",
+  "Description": "",
+  "Language": "",
+  "Created": "2020-05-14T01:45:06Z",
+  "Updated": "2020-05-14T01:47:18Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "sourcehut"
+  ]
+}{
+  "URL": "https://git.sr.ht/~mna/sendkeys",
+  "Host": "sourcehut",
+  "Name": "sendkeys",
+  "Description": "Simulate sending user input in a terminal.",
+  "Language": "",
+  "Created": "2020-04-18T15:25:55Z",
+  "Updated": "2020-04-18T15:30:36Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "sourcehut"
+  ]
+}{
+  "URL": "https://git.sr.ht/~mna/runes",
+  "Host": "sourcehut",
+  "Name": "runes",
+  "Description": "Command to print Unicode code point information.",
+  "Language": "",
+  "Created": "2020-04-15T20:04:03Z",
+  "Updated": "2020-04-22T16:35:23Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "sourcehut"
+  ]
+}{
+  "URL": "https://git.sr.ht/~mna/zzcsi",
+  "Host": "sourcehut",
+  "Name": "zzcsi",
+  "Description": "Control Sequence Introducer (CSI) functions for xterm-compatible terminals.",
+  "Language": "",
+  "Created": "2020-04-02T18:18:53Z",
+  "Updated": "2020-04-03T20:08:36Z",
+  "Stars": 0,
+  "Forks": 0,
+  "Tags": [
+    "code",
+    "sourcehut"
+  ]
+}{
   "URL": "https://git.sr.ht/~mna/zztermtest",
   "Host": "sourcehut",
   "Name": "zztermtest",
-  "Description": "Test command for the zzterm package",
+  "Description": "Test command for the zzterm package.",
   "Language": "",
   "Created": "2020-03-31T02:40:30Z",
-  "Updated": "2020-03-31T02:50:26Z",
+  "Updated": "2020-04-21T03:08:03Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -19,7 +75,7 @@
   "Description": "Zero-allocation terminal input key and mouse decoder in Go.",
   "Language": "",
   "Created": "2020-03-28T14:49:21Z",
-  "Updated": "2020-04-01T14:25:09Z",
+  "Updated": "2020-04-23T14:59:54Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -47,7 +103,7 @@
   "Description": "",
   "Language": "",
   "Created": "2020-03-18T02:12:34Z",
-  "Updated": "2020-03-21T15:58:46Z",
+  "Updated": "2020-05-12T22:01:52Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -131,7 +187,7 @@
   "Description": "An implementation of the `webparts/flag` standard interface based on the standard library and envconfig.",
   "Language": "",
   "Created": "2019-10-24T17:53:49Z",
-  "Updated": "2019-10-24T18:18:11Z",
+  "Updated": "2020-05-04T23:38:55Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -285,7 +341,7 @@
   "Description": "My personal website.",
   "Language": "",
   "Created": "2019-03-04T23:32:00Z",
-  "Updated": "2020-04-01T14:28:33Z",
+  "Updated": "2020-04-01T14:54:32Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -319,36 +375,6 @@
   "Tags": [
     "code",
     "sourcehut"
-  ]
-}{
-  "URL": "https://github.com/mna/redisc",
-  "Host": "github",
-  "Name": "mna/redisc",
-  "Description": "A Go redis cluster client built on top of redigo.",
-  "Language": "Go",
-  "Created": "2016-03-24T12:03:07Z",
-  "Updated": "2020-03-31T18:35:22Z",
-  "Stars": 147,
-  "Forks": 22,
-  "Tags": [
-    "code",
-    "github",
-    "go"
-  ]
-}{
-  "URL": "https://github.com/mna/myvim",
-  "Host": "github",
-  "Name": "mna/myvim",
-  "Description": "my vim setup",
-  "Language": "Vim script",
-  "Created": "2015-02-14T20:42:53Z",
-  "Updated": "2020-03-23T12:50:02Z",
-  "Stars": 1,
-  "Forks": 0,
-  "Tags": [
-    "code",
-    "github",
-    "vim script"
   ]
 }{
   "URL": "https://gitlab.com/___mna___/inko.vim.git",
@@ -393,19 +419,19 @@
     "gitlab"
   ]
 }{
-  "URL": "https://github.com/PuerkitoBio/fetchbot",
+  "URL": "https://github.com/mna/myvim",
   "Host": "github",
-  "Name": "PuerkitoBio/fetchbot",
-  "Description": "A simple and flexible web crawler that follows the robots.txt policies and crawl delays.",
-  "Language": "Go",
-  "Created": "2014-01-06T12:45:18Z",
-  "Updated": "2020-03-20T02:01:01Z",
-  "Stars": 731,
-  "Forks": 96,
+  "Name": "mna/myvim",
+  "Description": "my vim setup",
+  "Language": "Vim script",
+  "Created": "2015-02-14T20:42:53Z",
+  "Updated": "2020-04-30T20:02:44Z",
+  "Stars": 1,
+  "Forks": 0,
   "Tags": [
     "code",
     "github",
-    "go"
+    "vim script"
   ]
 }{
   "URL": "https://github.com/PuerkitoBio/goquery",
@@ -414,9 +440,54 @@
   "Description": "A little like that j-thing, only in Go.",
   "Language": "Go",
   "Created": "2012-08-29T02:14:59Z",
-  "Updated": "2020-02-24T23:34:38Z",
-  "Stars": 8576,
-  "Forks": 692,
+  "Updated": "2020-04-19T15:21:49Z",
+  "Stars": 8873,
+  "Forks": 700,
+  "Tags": [
+    "code",
+    "github",
+    "go"
+  ]
+}{
+  "URL": "https://github.com/throttled/throttled",
+  "Host": "github",
+  "Name": "throttled/throttled",
+  "Description": "Package throttled implements rate limiting access to resources such as HTTP endpoints.",
+  "Language": "Go",
+  "Created": "2014-02-19T12:13:32Z",
+  "Updated": "2020-04-03T13:37:28Z",
+  "Stars": 904,
+  "Forks": 49,
+  "Tags": [
+    "code",
+    "github",
+    "go"
+  ]
+}{
+  "URL": "https://github.com/mna/redisc",
+  "Host": "github",
+  "Name": "mna/redisc",
+  "Description": "A Go redis cluster client built on top of redigo.",
+  "Language": "Go",
+  "Created": "2016-03-24T12:03:07Z",
+  "Updated": "2020-03-31T18:35:22Z",
+  "Stars": 152,
+  "Forks": 22,
+  "Tags": [
+    "code",
+    "github",
+    "go"
+  ]
+}{
+  "URL": "https://github.com/PuerkitoBio/fetchbot",
+  "Host": "github",
+  "Name": "PuerkitoBio/fetchbot",
+  "Description": "A simple and flexible web crawler that follows the robots.txt policies and crawl delays.",
+  "Language": "Go",
+  "Created": "2014-01-06T12:45:18Z",
+  "Updated": "2020-03-20T02:01:01Z",
+  "Stars": 734,
+  "Forks": 97,
   "Tags": [
     "code",
     "github",
@@ -430,8 +501,8 @@
   "Language": "Go",
   "Created": "2015-04-05T14:55:20Z",
   "Updated": "2020-02-24T19:22:40Z",
-  "Stars": 535,
-  "Forks": 40,
+  "Stars": 542,
+  "Forks": 41,
   "Tags": [
     "code",
     "github",
@@ -445,7 +516,7 @@
   "Language": "Go",
   "Created": "2012-09-19T02:08:15Z",
   "Updated": "2020-02-02T23:13:23Z",
-  "Stars": 1857,
+  "Stars": 1870,
   "Forks": 192,
   "Tags": [
     "code",
@@ -512,21 +583,6 @@
     "mupad"
   ]
 }{
-  "URL": "https://github.com/throttled/throttled",
-  "Host": "github",
-  "Name": "throttled/throttled",
-  "Description": "Package throttled implements rate limiting access to resources such as HTTP endpoints.",
-  "Language": "Go",
-  "Created": "2014-02-19T12:13:32Z",
-  "Updated": "2019-11-27T21:48:32Z",
-  "Stars": 871,
-  "Forks": 48,
-  "Tags": [
-    "code",
-    "github",
-    "go"
-  ]
-}{
   "URL": "https://github.com/PuerkitoBio/rehttp",
   "Host": "github",
   "Name": "PuerkitoBio/rehttp",
@@ -534,8 +590,8 @@
   "Language": "Go",
   "Created": "2016-02-15T17:30:34Z",
   "Updated": "2019-06-14T13:31:38Z",
-  "Stars": 164,
-  "Forks": 7,
+  "Stars": 167,
+  "Forks": 9,
   "Tags": [
     "code",
     "github",
@@ -549,8 +605,8 @@
   "Language": "Go",
   "Created": "2012-09-19T15:34:36Z",
   "Updated": "2019-02-16T21:26:37Z",
-  "Stars": 370,
-  "Forks": 48,
+  "Stars": 371,
+  "Forks": 49,
   "Tags": [
     "code",
     "github",
@@ -834,8 +890,8 @@
   "Language": "Go",
   "Created": "2013-04-05T18:40:09Z",
   "Updated": "2016-03-24T11:49:05Z",
-  "Stars": 51,
-  "Forks": 6,
+  "Stars": 52,
+  "Forks": 7,
   "Tags": [
     "code",
     "github",
@@ -879,8 +935,8 @@
   "Language": "Go",
   "Created": "2013-11-27T03:21:39Z",
   "Updated": "2015-05-29T13:53:58Z",
-  "Stars": 283,
-  "Forks": 60,
+  "Stars": 281,
+  "Forks": 59,
   "Tags": [
     "code",
     "github",
@@ -909,7 +965,7 @@
   "Language": "Go",
   "Created": "2013-06-19T02:16:30Z",
   "Updated": "2015-01-25T17:12:45Z",
-  "Stars": 323,
+  "Stars": 324,
   "Forks": 36,
   "Tags": [
     "code",

@@ -30,7 +30,7 @@ type repo struct {
 
 type response struct {
 	Errors  []map[string]string `json:"errors"`
-	Next    *int                `json:"next"`
+	Next    *string             `json:"next"`
 	Results []*repo             `json:"results"`
 }
 
@@ -110,12 +110,12 @@ func (s *source) processPage(client *http.Client, u string, emit chan<- interfac
 		emit <- repo
 	}
 
-	if resp.Next != nil && *resp.Next > 0 {
+	if resp.Next != nil && *resp.Next != "" {
 		parsed, err := url.Parse(u)
 		if err != nil {
 			return "", err
 		}
-		parsed.RawQuery = fmt.Sprintf("start=%d", *resp.Next)
+		parsed.RawQuery = fmt.Sprintf("start=%s", *resp.Next)
 		return parsed.String(), nil
 	}
 	return "", nil

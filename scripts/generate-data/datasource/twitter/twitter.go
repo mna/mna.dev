@@ -2,6 +2,7 @@ package twitter
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"html/template"
 	"io/ioutil"
@@ -98,6 +99,10 @@ func (s *source) processPage(client *http.Client, url string, emit chan<- interf
 
 		return count < maxTweets
 	})
+
+	if count == 0 {
+		return "", errors.New("no post found")
+	}
 	return "", nil
 }
 
