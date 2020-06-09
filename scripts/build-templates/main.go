@@ -168,7 +168,19 @@ var funcs = template.FuncMap{
 	"isotime": func(t time.Time) string {
 		return t.Format("2006-01-02")
 	},
-	"lower":    strings.ToLower,
+	"lower": strings.ToLower,
+	"map": func(kvs ...string) map[string]string {
+		m := make(map[string]string)
+		for i := 0; i < len(kvs); i += 2 {
+			k := kvs[i]
+			var v string
+			if i+1 < len(kvs) {
+				v = kvs[i+1]
+			}
+			m[k] = v
+		}
+		return m
+	},
 	"markdown": toMarkdown,
 	"markdownString": func(s string) template.HTML {
 		return toMarkdown([]byte(s))

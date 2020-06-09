@@ -18,6 +18,8 @@ However, it feels very comfortable to use, enough resting space besides the (rea
 trackpad - which is itself great, not quite as _awesome_ as the macbook's, but next best
 thing, I'd say -, and an _amazing_ keyboard. I just love the feel of those key presses.
 
+{{template "post-img.html" (map "Src" "dell-xps-macbook-pro-size.jpg" "Alt" "Dell XPS 13 on top of Macbook Pro 13 2015" "Caption" "Dell XPS 13 on top of Macbook Pro 13 2015")}}
+
 The screen is also wonderful, even coming from years of staring at a retina
 slab. Despite having chosen the "lower-res" version (i.e. the 1920 x 1200, not
 the 4K which comes with touch-screen, which I wasn't interested in), the matte
@@ -154,6 +156,8 @@ default dark-themed terminal configuration) and I have a light-themed terminal c
 for when I'm outside, which makes it very usable at around 50% even in sunny conditions.
 Of course, thanks to the matte finish, I don't find myself staring at a mirror - that
 screen is perfect to work in many conditions.
+
+{{template "post-img.html" (map "Src" "dell-xps-macbook-pro-screen.jpg" "Alt" "Dell XPS 13 screen side-by-side with Macbook Pro 13 2015" "Caption" "Dell XPS 13 screen side-by-side with Macbook Pro 13 2015")}}
 
 The keyboard backlight has three levels, and I believe it has a light sensor that makes
 it fade out if there is enough light, or stay on otherwise, but I may be wrong. I usually
