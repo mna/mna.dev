@@ -12,7 +12,6 @@ import (
 	_ "git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource/sputnik"
 	_ "git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource/srht"
 	_ "git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource/staticpost"
-	_ "git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource/twitter"
 	_ "git.sr.ht/~mna/mna.dev/scripts/generate-data/datasource/zerovalue"
 )
 

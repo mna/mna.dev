@@ -1,18 +1,4 @@
 {
-  "URL": "https://git.sr.ht/~mna/hellogo",
-  "Host": "sourcehut",
-  "Name": "hellogo",
-  "Description": "",
-  "Language": "",
-  "Created": "2020-05-14T01:45:06Z",
-  "Updated": "2020-05-14T01:47:18Z",
-  "Stars": 0,
-  "Forks": 0,
-  "Tags": [
-    "code",
-    "sourcehut"
-  ]
-}{
   "URL": "https://git.sr.ht/~mna/sendkeys",
   "Host": "sourcehut",
   "Name": "sendkeys",
@@ -341,7 +327,7 @@
   "Description": "My personal website.",
   "Language": "",
   "Created": "2019-03-04T23:32:00Z",
-  "Updated": "2020-04-01T14:54:32Z",
+  "Updated": "2020-06-09T21:34:31Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -419,6 +405,21 @@
     "gitlab"
   ]
 }{
+  "URL": "https://github.com/throttled/throttled",
+  "Host": "github",
+  "Name": "throttled/throttled",
+  "Description": "Package throttled implements rate limiting access to resources such as HTTP endpoints.",
+  "Language": "Go",
+  "Created": "2014-02-19T12:13:32Z",
+  "Updated": "2020-06-17T19:11:35Z",
+  "Stars": 911,
+  "Forks": 50,
+  "Tags": [
+    "code",
+    "github",
+    "go"
+  ]
+}{
   "URL": "https://github.com/mna/myvim",
   "Host": "github",
   "Name": "mna/myvim",
@@ -441,23 +442,8 @@
   "Language": "Go",
   "Created": "2012-08-29T02:14:59Z",
   "Updated": "2020-04-19T15:21:49Z",
-  "Stars": 8873,
-  "Forks": 700,
-  "Tags": [
-    "code",
-    "github",
-    "go"
-  ]
-}{
-  "URL": "https://github.com/throttled/throttled",
-  "Host": "github",
-  "Name": "throttled/throttled",
-  "Description": "Package throttled implements rate limiting access to resources such as HTTP endpoints.",
-  "Language": "Go",
-  "Created": "2014-02-19T12:13:32Z",
-  "Updated": "2020-04-03T13:37:28Z",
-  "Stars": 904,
-  "Forks": 49,
+  "Stars": 8940,
+  "Forks": 703,
   "Tags": [
     "code",
     "github",
@@ -471,7 +457,7 @@
   "Language": "Go",
   "Created": "2016-03-24T12:03:07Z",
   "Updated": "2020-03-31T18:35:22Z",
-  "Stars": 152,
+  "Stars": 153,
   "Forks": 22,
   "Tags": [
     "code",
@@ -486,7 +472,7 @@
   "Language": "Go",
   "Created": "2014-01-06T12:45:18Z",
   "Updated": "2020-03-20T02:01:01Z",
-  "Stars": 734,
+  "Stars": 733,
   "Forks": 97,
   "Tags": [
     "code",
@@ -501,7 +487,7 @@
   "Language": "Go",
   "Created": "2015-04-05T14:55:20Z",
   "Updated": "2020-02-24T19:22:40Z",
-  "Stars": 542,
+  "Stars": 546,
   "Forks": 41,
   "Tags": [
     "code",
@@ -516,8 +502,8 @@
   "Language": "Go",
   "Created": "2012-09-19T02:08:15Z",
   "Updated": "2020-02-02T23:13:23Z",
-  "Stars": 1870,
-  "Forks": 192,
+  "Stars": 1873,
+  "Forks": 193,
   "Tags": [
     "code",
     "github",
@@ -591,7 +577,7 @@
   "Created": "2016-02-15T17:30:34Z",
   "Updated": "2019-06-14T13:31:38Z",
   "Stars": 167,
-  "Forks": 9,
+  "Forks": 10,
   "Tags": [
     "code",
     "github",
@@ -605,7 +591,7 @@
   "Language": "Go",
   "Created": "2012-09-19T15:34:36Z",
   "Updated": "2019-02-16T21:26:37Z",
-  "Stars": 371,
+  "Stars": 372,
   "Forks": 49,
   "Tags": [
     "code",
@@ -966,7 +952,7 @@
   "Created": "2013-06-19T02:16:30Z",
   "Updated": "2015-01-25T17:12:45Z",
   "Stars": 324,
-  "Forks": 36,
+  "Forks": 35,
   "Tags": [
     "code",
     "github",
@@ -1100,7 +1086,7 @@
   "Language": "Go",
   "Created": "2013-07-26T16:57:07Z",
   "Updated": "2013-08-01T16:46:52Z",
-  "Stars": 4,
+  "Stars": 5,
   "Forks": 0,
   "Tags": [
     "code",
