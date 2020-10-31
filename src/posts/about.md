@@ -13,7 +13,7 @@ backend engineer since 2013. I work remotely as a freelancer based in Quebec Cit
 If you're interested in my services, you can [contact me][email] - I may be available for
 part-time contracts.
 
-You can find some of my code on [github], [gitlab], [bitbucket] and [sourcehut], I
+You can find some of my code on [github], [sourcehut], [gitlab] and [bitbucket], I
 sometimes answer questions on [stackoverflow] and although I closed pretty much
 all my "social" accounts (such as facebook, instagram, snapchat and google+ but then
 so did you), I still use [twitter] from time to time. I like to read [hacker news][hn]
@@ -46,6 +46,9 @@ technologies, including:
   vacation (I believe Go 1.0 was just released a few months before), and that I still use
   extensively to this day - in addition to many of my most well-known open-source projects,
   it is also the language I use the most professionally, and the one I'm now most expert in.
+* Lua, which I started exploring [during the 2020 lockdown][lua] and have been using a lot for
+  personal projects since.
+
 
 I'm quite interested in programming languages in general (obsessed, some would say), and have
 played with many relatively unknown/alpha- and beta- stages languages such as Inko, Zig,
@@ -127,13 +130,13 @@ life, I enjoy a few hobbies:
   I recently bought an audio interface and a Shure mic, and started recording on
   GarageBand, there's a world of fun with that.
 
-* Writing - I enjoy poetry and a few years ago I wrote a lot of it (in french),
+* Writing - I enjoy poetry and some years ago I wrote a lot of it (in french),
   and had two poems published.
 
 * Reading - I spend a lot of my reading time on technical articles and other
-  programming-related documentation, but I also enjoy reading novels. Nancy
-  Huston's "Lignes de faille" (*Fault lines*) and Mathias Enard's "Zone" are
-  among my favorite ones.
+  programming-related documentation, but I also enjoy reading novels and history
+  books. Nancy Huston's "Lignes de faille" (*Fault lines*) and Mathias Enard's
+  "Zone" are among my favorite ones.
 
 [email]: mailto:{{.Vars.Email}}
 [coco2]: https://twitter.com/___mna___/status/813406732697423872
@@ -154,3 +157,4 @@ life, I enjoy a few hobbies:
 [hyper]: http://hypermegatop.github.io/
 [bcrich]: https://en.wikipedia.org/wiki/B.C._Rich_Warlock
 [ville]: https://en.wikipedia.org/wiki/Angers
+[lua]: https://twitter.com/___mna___/status/1265789119483035649
