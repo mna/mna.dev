@@ -2,7 +2,7 @@
 
 {{template "post-meta.html" .Config}}
 
-Modern systems - often *web apps*, with multiple other components outside the web server itself, so *web systems* - are incredibly complex. Microservices, serverless, distributed, eventually consistent, no single point of failure, etc., the concepts, technologies and parties involved pile up. They quickly become an inextricable maze (I won't say mess, as some are very well designed, but a complex maze nonetheless) that no single person on the engineering team has a **complete and thorough** understanding of. There are so many configurations, services, third-party tools, proxies, moving parts that when something breaks, it can take people from *multiple teams* with different access privileges just to investigate what went wrong where, nevermind to fix it.
+Modern systems - often *web apps*, with multiple other components outside the web server itself, so *web systems* - are incredibly complex. Microservices, serverless, distributed, container orchestration, eventually consistent, no single point of failure, etc., the concepts, technologies and parties involved pile up. They quickly become an inextricable maze (I won't say mess, as some are very well designed, but a complex maze nonetheless) that no single person on the engineering team has a **complete and thorough** understanding of. There are so many configurations, services, third-party tools, proxies, moving parts that when something breaks, it can take people from *multiple teams* with different access privileges just to investigate what went wrong where, nevermind to fix it.
 
 This post is about an exercise in restraint. In minimalism and simplicity. This is about building and designing _human-scale_ web systems.
 
@@ -12,7 +12,7 @@ Who would that be for? Well for starters, many systems never need to operate at 
 
 ## The Small Architecture
 
-What would that small approach to web systems look like, and what would it offer? There are many lenses through which such a system can be defined, analyzed and evaluated. I'll focus on three: infrastructure, architecture and operations.
+What would that small approach to web systems look like, and what would it offer? There are many lenses through which such a system can be defined, analyzed and evaluated. I'll focus on three: infrastructure, architecture and operations. Note that I will only discuss back-end concerns, not front-end.
 
 ### Infrastructure
 
@@ -20,15 +20,15 @@ That small architecture relies on only three core components - a programming lan
 
 * the Lua programming language
 * the PostgreSQL database
-* the Linux operating system (Fedora)
+* the Linux operating system (the Fedora distribution, in my personal case)
 
 You could easily imagine a system where you applied similar concepts using different technologies, however I strongly suggest you pick:
 
-* a small, simple and _fast enough_ programming language (I think Go, Python or Javascript would be fine alternatives)
+* a small, simple and _fast enough_ programming language (I think Go, Python or Javascript would be fine alternatives, even if in my opinion the last 2 may have grown beyond small and simple)
 * a robust, proven _relational_ database (mysql/mariadb would be a fine alternative)
 * your preferred OS
 
-Of course those choices end up being a bit subjective, although things like the team's background, the local market, available support in the targeted deployment data center, special requirements for the product itself that make one language or database significantly better suited than another, etc. all come into play.
+Of course those choices end up being a bit subjective, although things like the team's background, the local (or global, even) market, available support in the targeted deployment data center, special requirements for the product itself that make one language or database significantly better suited than another, etc. all come into play.
 
 What should already be obvious is the small amount of knowledge required to understand the system: being familiar enough with the language and database, and a good working knowledge of the operating system (especially some command-line skills and an understanding of how long-running services/daemons work, e.g. systemd in my specific case).
 
@@ -76,7 +76,33 @@ Many of the points in the list depend on the programming language and its availa
 
 For the web server part, and the code in general, even though the small architecture results in a monolith, it doesn't mean it should all be tied up together. Tulip itself is based on very loosely-coupled packages, using a [well-defined, simple and small "package contract"][contract]. It is easily extendable and in fact I recommend building the various parts of the application as distinct, small and isolated packages too.
 
+Some common workflows such as password reset (i.e. the "forgot password?" feature) and email verification - using a signed random token sent via email - can all be done with this small architecture too and are in fact provided as part of the `account` package in tulip. It is based on a generic `token` package that handles creation of such random tokens, with a maximum age and optional "expire on validation" behaviour. This token package also handles the session IDs. Once again leveraging the scheduled jobs, there is a command that runs at regular intervals to remove expired tokens from the table. An authorization middleware is available to restrict some URLs only to e.g. authenticated or verified users, or to members of a specific group.
+
 ### Operations
+
+I'll also address in this section the **required components for development**, as this is also a huge potential for complexity. In fact let's start with that. What is absolutely needed is:
+
+* a version control system
+* a host for the repository and a way to track issues, review pull requests/patches
+* some form of [CI/CD][cicd] (continuous integration, delivery and deployment)
+* a way to run a local environment
+
+I won't get into the company chat, documentation, etc. as those are not development-specific concerns. The text editor or the "general programming environment" should be left to the preference of the developer - I don't know if it has to be said, but do not force a text editor/IDE choice to developers. They know better than you (whoever _you_ are in this scenario) what they like and with which tools they are most comfortable and productive.
+
+I think the first point is obvious, `git` is the clear choice here and it's fair to assume most developers are at least familiar with it, as such it doesn't add a huge complexity tax (even if the tool is not simple). Source code hosting, issue and pull requests/patches tracking has many popular options - Github, Gitlab, Bitbucket, etc. - but my personal choice would be one that resonates well with the minimal and simple mindset, [Sourcehut][sr]. Incidentally, that platform also has great support for builds to use as CI/CD, so the same choice ticks two boxes (most source forges have some support for this too, of course). It should run tests and any other static checks or linting tools required. The nice thing with sourcehut's builds is that the build definition can be part of the repository, so by checking it out locally, everyone has access to the complete lifecycle of the system, including the CI/CD definition. We'll talk about deployment a bit more in a minute.
+
+The last point is crucial. It must be possible to run such a system locally, this has many benefits including a much shorter feedback loop and easier debugging. Quite often this requires multiple convoluted steps, pages of documentation, many tools to install, etc. and ends up lagging behind anyway, in a semi-working state or outdated documentation.
+
+Given the tiny infrastructure involved here, it is trivial to run the system locally, assuming you run the same (or compatible enough) operating system: install postgresql, create a database and configure the application to connect to it. However, I personally prefer to have everything related to a project live inside that project's directory - so in this case, to have all postgresql data and configuration in that directory, just like I don't install my Lua dependencies system-wide, but locally in a `lua_modules` subdirectory (using a small script I wrote, [llrocks][]). As I'm quite familiar with Docker, I don't mind using it to run the postgresql instance in this situation (and I actually use `docker-compose` even if it's just a single database service, because it provides a more declarative way to run it and I prefer its command-line UI vs docker itself). But I know many talented and experienced developers dislike or don't know docker too well and wouldn't want to be forced that dependency - unlike `git`, I'd argue `docker` does add a more significant complexity tax even if you'd practically only need to run `docker-compose up -d`, `docker-compose start` and `docker-compose stop`, so it's nice to have both options.
+
+Onto **operations-related** things, I mentioned deployment in passing, now let's dive into this. Some modern tools offer "infrastructure as code" where you declaratively configure the infrastructure you want, and the tool turns it into reality. It is really great, but it is also very complex, as the way to get the infrastructure up is a bit of a "magical black box" and it can be [tricky to debug][terra] when it fails. For such a small and simple infrastructure, I don't think it's worth adding this kind of complexity. Instead, a straightforward command-line script - ideally written in the same programming language as the rest of the system - that deploys the application using basic, imperative commands in an easily readable sequence of steps not only makes it easy to deploy manually or automatically, but makes it easy to understand the requirements to run the system, where it logs stuff, where configuration is stored, etc.
+
+I have started work on [such a script][deploy] for a tulip-based system (note: I don't think it will remain in the tulip repository). It is not meant to be general - it is a starting point that should be adapted for each system's needs and should be stored in the system's repository, but it gives a good idea of how clear and simple it can be. It is nice to use, and although in its current form it uses [Digital Ocean][do] as Virtual Private Server (VPS) provider, it could easily be changed to another, as most expose their features through an API anyway. Once the base OS image is created (which may take about 10 minutes or so), a new server can be setup in a few seconds. The command is designed in a way that allows creating arbitrary test/staging deployments (using different subdomains, e.g. if your system lives at `example.com`, you can reserve `www.example.com` for production, and deploy staging to `staging.example.com`). Eventually, it will support private deployments (where you would need a secret key to access the server, if you want your test environments to be completely safe from view), "deploying" (restoring from) specific database backups and running multiple services (e.g. the web server and any number of message queue workers). Taking those regular database backups and storing them securely outside the server is also something that should be part of the installation.
+
+Because the infrastructure is so simple, a postgresql database backup is the only thing needed to get back on track after an incident, everything else is in the source code repository.
+
+* Observability, monitoring, alerting
+* On-call, incidents script
 
 ## In Conclusion
 
@@ -100,3 +126,9 @@ For the web server part, and the code in general, even though the small architec
 [cron]: https://github.com/citusdata/pg_cron
 [pubsub]: https://www.postgresql.org/docs/13/sql-notify.html
 [contract]: https://man.sr.ht/~mna/tulip/#architecture
+[cicd]: https://www.redhat.com/en/topics/devops/what-is-ci-cd
+[sr]: https://sourcehut.org/
+[llrocks]: https://git.sr.ht/~mna/llrocks
+[terra]: https://github.com/hashicorp/terraform-plugin-sdk/issues/88
+[deploy]: https://git.sr.ht/~mna/tulip/tree/main/scripts/deploy.lua
+[do]: https://www.digitalocean.com/
