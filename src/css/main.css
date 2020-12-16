@@ -166,7 +166,7 @@ a:hover {
 }
 
 article {
-  @apply leading-tight;
+  @apply leading-normal;
 }
 
 article h1 {
@@ -190,7 +190,7 @@ article p {
 }
 
 article ul {
-  @apply list-reset list-disc list-pos-inside;
+  @apply list-disc list-pos-inside;
 }
 
 article li {
