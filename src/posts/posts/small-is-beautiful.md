@@ -50,6 +50,24 @@ I should write down a proper love letter at some point, but for this post, I'll 
 
 * As mentioned, it has great support for _iterators_ so you can use `for` loops over anything you want, any way you want.
 
+A fancy hello world could look like that (which you can run with `$ lua <file>`):
+
+```lua
+local msg = 'Hello, world!'
+local n, inc = 0, true
+for c in string.gmatch(msg, '.') do
+  if inc then
+    n = n + 1
+  else
+    n = n - 1
+  end
+  if c == ' ' then
+    inc = false
+  end
+  print(string.rep(' ', 2*n) .. c)
+end
+```
+
 ### Architecture
 
 A simple web system still needs to be secure and requires a number of architectural components to reliably and efficiently do its work.
@@ -95,21 +113,56 @@ The last point is crucial. It must be possible to run such a system locally, thi
 
 Given the tiny infrastructure involved here, it is trivial to run the system locally, assuming you run the same (or compatible enough) operating system: install postgresql, create a database and configure the application to connect to it. However, I personally prefer to have everything related to a project live inside that project's directory - so in this case, to have all postgresql data and configuration in that directory, just like I don't install my Lua dependencies system-wide, but locally in a `lua_modules` subdirectory (using a small script I wrote, [llrocks][]). As I'm quite familiar with Docker, I don't mind using it to run the postgresql instance in this situation (and I actually use `docker-compose` even if it's just a single database service, because it provides a more declarative way to run it and I prefer its command-line UI vs docker itself). But I know many talented and experienced developers dislike or don't know docker too well and wouldn't want to be forced that dependency - unlike `git`, I'd argue `docker` does add a more significant complexity tax even if you'd practically only need to run `docker-compose up -d`, `docker-compose start` and `docker-compose stop`, so it's nice to have both options.
 
-Onto **operations-related** things, I mentioned deployment in passing, now let's dive into this. Some modern tools offer "infrastructure as code" where you declaratively configure the infrastructure you want, and the tool turns it into reality. It is really great, but it is also very complex, as the way to get the infrastructure up is a bit of a "magical black box" and it can be [tricky to debug][terra] when it fails. For such a small and simple infrastructure, I don't think it's worth adding this kind of complexity. Instead, a straightforward command-line script - ideally written in the same programming language as the rest of the system - that deploys the application using basic, imperative commands in an easily readable sequence of steps not only makes it easy to deploy manually or automatically, but makes it easy to understand the requirements to run the system, where it logs stuff, where configuration is stored, etc.
+Now regarding **operations-related** things proper, we need at least:
 
-I have started work on [such a script][deploy] for a tulip-based system (note: I don't think it will remain in the tulip repository). It is not meant to be general - it is a starting point that should be adapted for each system's needs and should be stored in the system's repository, but it gives a good idea of how clear and simple it can be. It is nice to use, and although in its current form it uses [Digital Ocean][do] as Virtual Private Server (VPS) provider, it could easily be changed to another, as most expose their features through an API anyway. Once the base OS image is created (which may take about 10 minutes or so), a new server can be setup in a few seconds. The command is designed in a way that allows creating arbitrary test/staging deployments (using different subdomains, e.g. if your system lives at `example.com`, you can reserve `www.example.com` for production, and deploy staging to `staging.example.com`). Eventually, it will support private deployments (where you would need a secret key to access the server, if you want your test environments to be completely safe from view), "deploying" (restoring from) specific database backups and running multiple services (e.g. the web server and any number of message queue workers). Taking those regular database backups and storing them securely outside the server is also something that should be part of the installation.
+* CI/CD as already discussed, but more specifically a straightforward deployment mechanism
+* Data backup and restore
+* Observability, monitoring and alerting
+* Good support to analyze and investigate incidents
+* Scaling scenarios
 
-Because the infrastructure is so simple, a postgresql database backup is the only thing needed to get back on track after an incident, everything else is in the source code repository.
+Some modern tools offer "infrastructure as code" where you declaratively configure the infrastructure you want, and the tool turns it into reality. It is really great, but it is also very complex, as the way to get the infrastructure up is a bit of a "magical black box" and it can be [tricky to debug][terra] when it fails. For such a small and simple infrastructure, I don't think it's worth adding this kind of complexity. Instead, a straightforward command-line script - ideally written in the same programming language as the rest of the system - that deploys the application using basic, imperative commands in an easily readable sequence of steps not only makes it easy to deploy manually or automatically, but makes it easy to understand the requirements to run the system, where it logs stuff, where configuration is stored, etc.
 
-* Observability, monitoring, alerting
-* On-call, incidents script
+I have started work on [such a script][deploy] for a tulip-based system (note: I don't think it will remain in the tulip repository). It is not meant to be general - it is a starting point that should be adapted for each system's needs and should be stored in the system's repository, but it gives a good idea of how clear and simple it can be. It is nice to use, and although in its current form it uses [Digital Ocean][do] as Virtual Private Server (VPS) provider, it could easily be changed to another, as most expose their features through an API anyway. It supports those distinct steps:
+
+```
+The deploy script is the combination of:
+1. create an infrastructure (optional)
+2. install the database on that infrastructure (optional)
+3. deploy the new code to that infrastructure (optional)
+4. (re)start the application's services
+5. activate this deployment (optional)
+```
+
+Once the base OS image is created (which may take about 10 minutes or so), a new server can be setup in a few seconds. The command is designed in a way that allows creating arbitrary test/staging deployments (using different subdomains, e.g. if your system lives at `example.com`, you can reserve `www.example.com` for production, and deploy staging to `staging.example.com`). Eventually, it will support private deployments (where you would need a secret key to access the server, if you want your test environments to be completely safe from view), "deploying" (restoring from) specific database backups and running multiple services (e.g. the web server and any number of message queue workers). Taking those regular database backups and storing them securely outside the server is also something that should be part of the installation.
+
+Because the infrastructure is so simple, a [postgresql database backup][backup] is the only thing needed to get back on track after an incident, everything else is in the source code repository.
+
+Critical to a good operations story is the observability of the system. I mentioned in the architecture section the importance of logging and capturing metrics, this is where this information is put to good use. Having a single place to look for system health monitoring (often in the form of a dashboard) is a must, and so is good alerting. There are lots of books and posts on this subject, I won't go into much details, but this is one area where it might make sense to use a third-party SaaS platform to provide clear dashboards, flexible alerting and powerful insights when issues arise. The tulip framework outputs logs in a standard way (typically to stdout, but if running in systemd, it would likely be logging to journald), and supports [statsd-compatible metrics][statsd] recording. Most monitoring platform have highly flexible log and metrics collectors/extractors/scrapers/converters, making it relatively easy to get the data into their system. If you really want to handle this without a third-party, then you may want to look at [Prometheus][prom], [Grafana][graf] and [Grafana Loki][loki], but I feel that's more complexity than handing the data over to e.g. [DataDog][dd].
+
+One might argue that a minimal and simple approach would be to use our postgresql database for this too, leveraging its text-search capability for logs querying, and creating a time-series-like table for metrics. There are two problems with this - first, I think that powerful visualization of the system health is important, so the storage is only one part of this, and two, the whole point of this is to be able to be alerted and query logs if e.g. the database itself is down.
+
+Once again thanks to the simplicity of the infrastructure, investigating incidents is straightforward. There may be problems with the server's disk space, load, networking, etc. If the server is fine, there may be issues with the postgresql database, or the various application services that make up the system. I think it is worth having a script - again, ideally implemented with the same programming language - that assists in identifying issues. I have implemented this in the past, the idea is to take a very deliberate, step-by-step validation of an as-exhaustive-as-possible list of components, e.g.:
+
+* check that localhost (the computer used to run the script) has working networking access
+* check that connecting to the remote server via ssh works
+* check disk space, load (maybe output the `top` command), etc. on the remote server
+* ping the domain to ensure DNS resolves correctly
+* make basic http/https/http 1.1/http 2 requests to the domain
+* check the status of all services involved (e.g. in my case `systemctl status`, which also prints the last few lines of the relevant logs)
+* connect to the database and check load/process list (e.g. information from `pg_stat_activity`, `pg_stat_database`, maybe run [pg\_top][pgtop])
+* check the status page of your VPS provider
+
+It is worth taking the time to polish this tool and its output, as it automates (and encodes directly in the repository, so that this information can be learned) many steps that would be required to check in case of incidents, when stress levels are high, and can quickly pinpoint the source of an issue. If some services have failed sor some reason, the deploy script mentioned earlier can be used to restart all services on an existing infrastructure, and if things are truly bad beyond repair, a deployment on a new infrastructure can be done in seconds (maybe from a database backup, maybe from an older version of the code).
+
+The last point I mentioned in operations is the scaling scenarios. It can obviously scale vertically, depending on what your VPS provider supports. However, Lua supports concurrency but not parallelism, so it won't take advantage of multiple CPUs in a given process (but it may help if you have multiple processes in your system, like a web server and a few message queue workers, in addition to the database engine). Depending on where the bottleneck is, the various parts of the infrastructure (database, worker process, web server process) can be installed to their own separate server. Multiple web servers can be executed on a machine behind a reverse proxy to take advantage of all CPUs. There are a number of ways that simple and minimal infrastructure and architecture can scale without adding too much extra components and complexity - the key here is to adjust the tooling accordingly, so the actual commands stay simple and the scripts keep on encoding that knowledge. Most importantly, investigate, replicate, isolate, benchmark, analyze and _understand_ the bottlenecks before applying a solution.
 
 ## In Conclusion
 
-* adjust, adapt to your needs
-* a starting state, not a final one, and not an end goal - the end goal is what you build with it
-* any scalability issues should be properly investigated, replicated, isolated, benchmarked, analyzed and understood before choosing a solution
-* be mindful of the complexity cost you bring in with the solution, across all relevant lenses (not just e.g. on the programming aspect, but on deployment, observability, etc.) - it's very easy to add complexity, it's incredibly hard to remove it
+I believe there is tremendous value in keeping things simple and having everyone in the team being able to have a complete mental model of the whole system. I think complexity gets out of hand because we are collectively very bad at judging the cost (across all relevant lenses, not just the development aspect, but deployment, observability, etc.) of adding components in a system. It often looks like a small, harmless (actually, helpful!) and reasonable thing to do when all changes are taken in isolation. We are also often too quick to point to "new tool!" to solve a problem when what really solves it might be "new concept!", and there may be simpler ways to integrate that concept in our system. It is probably some order of magnitudes harder to _remove_ complexity than it is _adding_ it.
+
+This small architecture is a starting point, not an end goal - the end goal should be what you build with it and how it improves people's lives! So adjust and adapt it to your needs - it's worth repeating that the _concepts_, not the specific _technologies_, are what matters in this post. Finally, a warning: be prepared to (respectfully) fight hard to keep things simple - as most everyone else (often unknowingly) will fight *against* it!
+
 * fight hard to keep things simple - everybody else will (often unknowingly) fight *against* it, because cool new tech, it's just a little technology to add here and there, we've done it at $PLACE and it worked well, they do it at $BIGPLACE, popular tech articles, Gartner quadrant, etc.
 * use as much as possible of what you control (here, the database, the os, your code); as little as required from what you don't (third-parties, VPS provider, monitoring SaaS) to make it easy to swap them out.
 
@@ -132,3 +185,10 @@ Because the infrastructure is so simple, a postgresql database backup is the onl
 [terra]: https://github.com/hashicorp/terraform-plugin-sdk/issues/88
 [deploy]: https://git.sr.ht/~mna/tulip/tree/main/scripts/deploy.lua
 [do]: https://www.digitalocean.com/
+[backup]: https://www.postgresql.org/docs/current/backup-dump.html
+[prom]: https://prometheus.io/
+[graf]: https://grafana.com/grafana/
+[loki]: https://grafana.com/oss/loki/
+[dd]: https://www.datadoghq.com/
+[statsd]: https://github.com/statsd/statsd/blob/master/docs/metric_types.md
+[pgtop]: https://pg_top.gitlab.io/
