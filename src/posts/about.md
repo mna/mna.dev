@@ -107,7 +107,7 @@ or a mix of all this:
 
 ## Family
 
-My significant other and I have two wonderful kids, a boy and a girl. We also have
+My significant other and I have two wonderful ~~kids~~ teenagers, a boy and a girl. We also have
 two cats, which you may see from time to time on my Twitter feed or on some of my
 profile pictures (though usually this is *feu* Gribouille, who died in 2018).
 
