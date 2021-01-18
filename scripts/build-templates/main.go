@@ -18,6 +18,13 @@ import (
 	"github.com/russross/blackfriday/v2"
 )
 
+const (
+	baseURL         = "https://mna.dev"
+	aboutFilename   = "about.html"
+	robotsFilename  = "robots.txt"
+	sitemapFilename = "sitemap.txt"
+)
+
 var vars = map[string]string{
 	"Email": "martin.n.angers+mna.dev@gmail.com",
 }
@@ -125,6 +132,14 @@ func main() {
 	// generate the index page
 	if err := w.executeIndex(t, dst); err != nil {
 		log.Fatal(err)
+	}
+
+	// generate the sitemap
+	if err := w.generateSitemap(dst); err != nil {
+	}
+
+	// generate the robots.txt
+	if err := w.generateRobots(dst); err != nil {
 	}
 }
 
@@ -374,7 +389,7 @@ func loadLocalPostMicroPages(dir string) (ps, ms, gs []*types.MarkdownPost, err 
 func newWebsite() *website {
 	return &website{
 		Links: []*link{
-			{"About", "", "/about.html"},
+			{"About", "", "/" + aboutFilename},
 			{"Twitter", "___mna___", "https://twitter.com/___mna___/"},
 			{"GitHub", "mna", "https://github.com/mna"},
 			{"StackOverflow", "mna", "https://stackoverflow.com/users/1094941/mna"},
@@ -387,6 +402,39 @@ func newWebsite() *website {
 		},
 		Vars: vars,
 	}
+}
+
+func (w *website) generateSitemap(outDir string) error {
+	f, err := os.Create(filepath.Join(outDir, sitemapFilename))
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	for _, p := range w.Posts {
+		if p.Website == "mna.dev" {
+			if _, err := fmt.Fprintln(f, baseURL+p.URL); err != nil {
+				return err
+			}
+		}
+	}
+	if _, err := fmt.Fprintln(f, baseURL+"/about.html"); err != nil {
+		return err
+	}
+	return f.Close()
+}
+
+func (w *website) generateRobots(outDir string) error {
+	f, err := os.Create(filepath.Join(outDir, robotsFilename))
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	if _, err := fmt.Fprintln(f, "Sitemap: "+baseURL+"/"+sitemapFilename); err != nil {
+		return err
+	}
+	return f.Close()
 }
 
 func (w *website) executePage(t *template.Template, outDir string, post *types.MarkdownPost) error {

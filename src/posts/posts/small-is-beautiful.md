@@ -30,7 +30,7 @@ You could easily imagine a system where you applied similar concepts using diffe
 
 Of course those choices end up being a bit subjective, although things like the team's background, the local (or global, even) market, available support in the targeted deployment data center, special requirements for the product itself that make one language or database significantly better suited than another, etc. all come into play.
 
-What should already be obvious is the small amount of knowledge required to understand the system: being familiar enough with the language and database, and a good working knowledge of the operating system (especially some command-line skills and an understanding of how long-running services/daemons work, e.g. systemd in my specific case). All components live on a single server. That's the whole infrastructre.
+What should already be obvious is the small amount of knowledge required to understand the system: being familiar enough with the language and database, and a good working knowledge of the operating system (especially some command-line skills and an understanding of how long-running services/daemons work, e.g. systemd in my specific case). All components live on a single server. That's the whole infrastructure.
 
 ### A Short Detour: Lua
 
@@ -121,7 +121,7 @@ Now regarding **operations-related** things proper, we need at least:
 
 Some modern tools offer "infrastructure as code" where you declaratively configure the infrastructure you want, and the tool turns it into reality. It is really great, but it is also quite complex, as the way to get the infrastructure up is a bit of a "magical black box" and it can be [tricky to debug][terra] when it fails. For such a small and simple infrastructure, I don't think it's worth adding this kind of complexity. Instead, a straightforward command-line script - ideally written in the same programming language as the rest of the system - that deploys the application using basic, imperative commands in an easily readable sequence of steps not only makes it easy to deploy manually or automatically (e.g. as part of CI/CD), but makes it easy to understand the requirements to run the system, where it logs stuff, where configuration is stored, etc.
 
-I have started work on [such a script][deploy] for a tulip-based system (note: I don't think it will remain in the tulip repository). It is not meant to be general - it is a starting point that should be adapted for each system's needs and should be stored in the system's repository, but it gives a good idea of how clear and simple it can be. It is nice to use, and although in its current form it uses [Digital Ocean][do] as Virtual Private Server (VPS) provider, it could easily be changed to another, as most expose their features through an API anyway. It supports those distinct steps:
+I have started work on [such a script][deploy] for a tulip-based system. It is not meant to be general - it is a starting point that should be adapted for each system's needs and should be stored in the system's repository, but it gives a good idea of how clear and simple it can be. It is nice to use, and although in its current form it uses [Digital Ocean][do] as Virtual Private Server (VPS) provider, it could easily be changed to another, as most expose their features through an API anyway. It supports those distinct steps:
 
 ```
 The deploy script is the combination of:
@@ -169,7 +169,7 @@ Investigating incidents is simplified by the straightforward infrastructure. The
 * connect to the database and check load/process list (e.g. information from `pg_stat_activity`, `pg_stat_database`, maybe run [pg\_top][pgtop])
 * check the status page of your VPS provider
 
-It is worth taking the time to polish this tool and its output, as it automates (and encodes directly in the repository, so that this information can be learned) many steps that would be required to check in case of incidents, when stress levels are high, and can quickly pinpoint the source of an issue. If some services have failed sor some reason, the deploy script mentioned earlier can be used to restart all services on an existing infrastructure, and if things are truly bad beyond repair, a deployment on a new infrastructure can be done in seconds (maybe from a database backup, maybe from an older version of the code).
+It is worth taking the time to polish this tool and its output, as it automates (and encodes directly in the repository, so that this information can be learned) many steps that would be required to check in case of incidents, when stress levels are high, and can quickly pinpoint the source of an issue. If some services have failed for some reason, the deploy script mentioned earlier can be used to restart all services on an existing infrastructure, and if things are truly bad beyond repair, a deployment on a new infrastructure can be done in seconds (maybe from a database backup, maybe from an older version of the code).
 
 The last point I mentioned in operations is the scaling scenarios. It can obviously scale vertically, depending on what your VPS provider supports (that is, more RAM, more disk space, more/faster CPUs). However, Lua supports concurrency but not parallelism, so it won't take advantage of multiple CPUs in a given process (but it may help if you have multiple processes in your system, like a web server and a few message queue workers, in addition to the database engine).
 
@@ -198,7 +198,7 @@ This small architecture is a starting point, not an end goal - the end goal shou
 [sr]: https://sourcehut.org/
 [llrocks]: https://git.sr.ht/~mna/llrocks
 [terra]: https://github.com/hashicorp/terraform-plugin-sdk/issues/88
-[deploy]: https://git.sr.ht/~mna/tulip/tree/main/scripts/deploy.lua
+[deploy]: https://git.sr.ht/~mna/tulip-cli/tree/main/item/exp/deploy.lua
 [do]: https://www.digitalocean.com/
 [backup]: https://www.postgresql.org/docs/current/backup-dump.html
 [prom]: https://prometheus.io/
