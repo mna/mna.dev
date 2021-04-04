@@ -105,6 +105,11 @@ or a mix of all this:
   store requirements, etc. I took a year off to work on this, from implementation
   to launch and a few sales - too little to keep going, sadly - mainly in 2017.
 
+* [**Fiends.io**][fiends], a search engine for heavy metal reviews, scratching a similar itch as
+  the previously mentioned Horns of the Devil website. This is implemented following
+  the architecture and development philosophy outlined in my [Small is Beautiful][small]
+  blog post.
+
 ## Family
 
 My significant other and I have two wonderful ~~kids~~ teenagers, a boy and a girl. We also have
@@ -158,3 +163,5 @@ life, I enjoy a few hobbies:
 [bcrich]: https://en.wikipedia.org/wiki/B.C._Rich_Warlock
 [ville]: https://en.wikipedia.org/wiki/Angers
 [lua]: https://twitter.com/___mna___/status/1265789119483035649
+[small]: https://mna.dev/posts/small-is-beautiful.html
+[fiends]: https://www.fiends.io/
