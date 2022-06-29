@@ -433,13 +433,13 @@
     "sourcehut"
   ]
 }{
-  "URL": "https://git.sr.ht/~mna/kick",
+  "URL": "https://git.sr.ht/~mna/kick-archived-see-github",
   "Host": "sourcehut",
-  "Name": "kick",
+  "Name": "kick-archived-see-github",
   "Description": "kickstart my code",
   "Language": "",
   "Created": "2019-03-23T02:46:13Z",
-  "Updated": "2019-10-01T17:22:13Z",
+  "Updated": "2022-02-13T18:36:39Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -453,7 +453,7 @@
   "Description": "My personal website.",
   "Language": "",
   "Created": "2019-03-04T23:32:00Z",
-  "Updated": "2021-05-19T17:41:39Z",
+  "Updated": "2022-02-10T00:31:27Z",
   "Stars": 0,
   "Forks": 0,
   "Tags": [
@@ -487,6 +487,21 @@
   "Tags": [
     "code",
     "sourcehut"
+  ]
+}{
+  "URL": "https://github.com/fleetdm/fleet",
+  "Host": "github",
+  "Name": "fleetdm/fleet",
+  "Description": "Open source device management, built on osquery.",
+  "Language": "Go",
+  "Created": "2020-11-03T22:17:18Z",
+  "Updated": "2022-06-29T22:27:43Z",
+  "Stars": 849,
+  "Forks": 156,
+  "Tags": [
+    "code",
+    "github",
+    "go"
   ]
 }{
   "URL": "https://gitlab.com/___mna___/inkospec.git",
@@ -531,15 +546,60 @@
     "gitlab"
   ]
 }{
-  "URL": "https://github.com/fleetdm/fleet",
+  "URL": "https://github.com/PuerkitoBio/purell",
   "Host": "github",
-  "Name": "fleetdm/fleet",
-  "Description": "Open source device management, built on osquery.",
+  "Name": "PuerkitoBio/purell",
+  "Description": "tiny Go library to normalize URLs",
   "Language": "Go",
-  "Created": "2020-11-03T22:17:18Z",
-  "Updated": "2022-02-10T00:08:44Z",
-  "Stars": 649,
-  "Forks": 120,
+  "Created": "2012-09-19T15:34:36Z",
+  "Updated": "2022-06-21T14:01:57Z",
+  "Stars": 422,
+  "Forks": 59,
+  "Tags": [
+    "code",
+    "github",
+    "go"
+  ]
+}{
+  "URL": "https://github.com/PuerkitoBio/goquery",
+  "Host": "github",
+  "Name": "PuerkitoBio/goquery",
+  "Description": "A little like that j-thing, only in Go.",
+  "Language": "Go",
+  "Created": "2012-08-29T02:14:59Z",
+  "Updated": "2022-06-19T21:19:17Z",
+  "Stars": 11592,
+  "Forks": 854,
+  "Tags": [
+    "code",
+    "github",
+    "go"
+  ]
+}{
+  "URL": "https://github.com/throttled/throttled",
+  "Host": "github",
+  "Name": "throttled/throttled",
+  "Description": "Package throttled implements rate limiting access to resources such as HTTP endpoints.",
+  "Language": "Go",
+  "Created": "2014-02-19T12:13:32Z",
+  "Updated": "2022-05-29T18:19:52Z",
+  "Stars": 1171,
+  "Forks": 84,
+  "Tags": [
+    "code",
+    "github",
+    "go"
+  ]
+}{
+  "URL": "https://github.com/mna/upstashdis",
+  "Host": "github",
+  "Name": "mna/upstashdis",
+  "Description": "A Go client and a compatible server for local testing for the Upstash Redis REST API interface.",
+  "Language": "Go",
+  "Created": "2022-05-05T01:54:46Z",
+  "Updated": "2022-05-26T13:22:04Z",
+  "Stars": 2,
+  "Forks": 1,
   "Tags": [
     "code",
     "github",
@@ -553,8 +613,8 @@
   "Language": "Shell",
   "Created": "2020-01-31T18:46:16Z",
   "Updated": "2022-01-18T19:30:02Z",
-  "Stars": 54,
-  "Forks": 9,
+  "Stars": 56,
+  "Forks": 10,
   "Tags": [
     "code",
     "github",
@@ -574,21 +634,6 @@
     "code",
     "github",
     "vim script"
-  ]
-}{
-  "URL": "https://github.com/PuerkitoBio/goquery",
-  "Host": "github",
-  "Name": "PuerkitoBio/goquery",
-  "Description": "A little like that j-thing, only in Go.",
-  "Language": "Go",
-  "Created": "2012-08-29T02:14:59Z",
-  "Updated": "2022-01-04T19:43:09Z",
-  "Stars": 11089,
-  "Forks": 828,
-  "Tags": [
-    "code",
-    "github",
-    "go"
   ]
 }{
   "URL": "https://github.com/mna/mainer",
@@ -621,20 +666,6 @@
     "lua"
   ]
 }{
-  "URL": "https://github.com/mna/dummy2",
-  "Host": "github",
-  "Name": "mna/dummy2",
-  "Description": "",
-  "Language": "",
-  "Created": "2021-10-11T19:27:52Z",
-  "Updated": "2021-10-11T19:28:44Z",
-  "Stars": 0,
-  "Forks": 0,
-  "Tags": [
-    "code",
-    "github"
-  ]
-}{
   "URL": "https://github.com/mna/redisc",
   "Host": "github",
   "Name": "mna/redisc",
@@ -642,23 +673,8 @@
   "Language": "Go",
   "Created": "2016-03-24T12:03:07Z",
   "Updated": "2021-09-05T19:37:12Z",
-  "Stars": 205,
-  "Forks": 25,
-  "Tags": [
-    "code",
-    "github",
-    "go"
-  ]
-}{
-  "URL": "https://github.com/throttled/throttled",
-  "Host": "github",
-  "Name": "throttled/throttled",
-  "Description": "Package throttled implements rate limiting access to resources such as HTTP endpoints.",
-  "Language": "Go",
-  "Created": "2014-02-19T12:13:32Z",
-  "Updated": "2021-08-21T16:55:28Z",
-  "Stars": 1142,
-  "Forks": 80,
+  "Stars": 211,
+  "Forks": 28,
   "Tags": [
     "code",
     "github",
@@ -702,8 +718,8 @@
   "Language": "Go",
   "Created": "2012-09-19T02:08:15Z",
   "Updated": "2021-05-19T15:15:33Z",
-  "Stars": 1965,
-  "Forks": 192,
+  "Stars": 1985,
+  "Forks": 194,
   "Tags": [
     "code",
     "github",
@@ -717,8 +733,8 @@
   "Language": "Go",
   "Created": "2014-01-06T12:45:18Z",
   "Updated": "2021-05-19T15:11:17Z",
-  "Stars": 764,
-  "Forks": 99,
+  "Stars": 774,
+  "Forks": 100,
   "Tags": [
     "code",
     "github",
@@ -732,23 +748,8 @@
   "Language": "Go",
   "Created": "2016-02-15T17:30:34Z",
   "Updated": "2021-05-19T15:07:43Z",
-  "Stars": 187,
+  "Stars": 192,
   "Forks": 14,
-  "Tags": [
-    "code",
-    "github",
-    "go"
-  ]
-}{
-  "URL": "https://github.com/PuerkitoBio/purell",
-  "Host": "github",
-  "Name": "PuerkitoBio/purell",
-  "Description": "tiny Go library to normalize URLs",
-  "Language": "Go",
-  "Created": "2012-09-19T15:34:36Z",
-  "Updated": "2021-05-06T17:23:18Z",
-  "Stars": 415,
-  "Forks": 58,
   "Tags": [
     "code",
     "github",
@@ -777,7 +778,7 @@
   "Language": "Go",
   "Created": "2015-04-05T14:55:20Z",
   "Updated": "2021-03-08T20:29:28Z",
-  "Stars": 654,
+  "Stars": 670,
   "Forks": 52,
   "Tags": [
     "code",
@@ -941,7 +942,7 @@
   "Language": "Swift",
   "Created": "2017-09-01T14:26:34Z",
   "Updated": "2017-11-21T02:00:10Z",
-  "Stars": 22,
+  "Stars": 21,
   "Forks": 2,
   "Tags": [
     "code",
@@ -986,7 +987,7 @@
   "Language": "Go",
   "Created": "2016-03-17T17:25:13Z",
   "Updated": "2017-03-24T14:42:16Z",
-  "Stars": 57,
+  "Stars": 58,
   "Forks": 2,
   "Tags": [
     "code",
@@ -1016,7 +1017,7 @@
   "Language": "Go",
   "Created": "2013-01-09T03:30:28Z",
   "Updated": "2017-03-24T14:36:34Z",
-  "Stars": 58,
+  "Stars": 57,
   "Forks": 7,
   "Tags": [
     "code",
@@ -1077,7 +1078,7 @@
   "Created": "2016-08-04T16:21:57Z",
   "Updated": "2016-08-04T16:22:12Z",
   "Stars": 3,
-  "Forks": 1,
+  "Forks": 0,
   "Tags": [
     "code",
     "github",
@@ -1181,8 +1182,8 @@
   "Language": "Go",
   "Created": "2013-11-27T03:21:39Z",
   "Updated": "2015-05-29T13:53:58Z",
-  "Stars": 278,
-  "Forks": 57,
+  "Stars": 277,
+  "Forks": 58,
   "Tags": [
     "code",
     "github",
@@ -1211,8 +1212,8 @@
   "Language": "Go",
   "Created": "2013-06-19T02:16:30Z",
   "Updated": "2015-01-25T17:12:45Z",
-  "Stars": 324,
-  "Forks": 33,
+  "Stars": 325,
+  "Forks": 32,
   "Tags": [
     "code",
     "github",
@@ -1232,21 +1233,6 @@
     "code",
     "github",
     "nimrod"
-  ]
-}{
-  "URL": "https://github.com/mna/jsonb",
-  "Host": "github",
-  "Name": "mna/jsonb",
-  "Description": "wip",
-  "Language": "Go",
-  "Created": "2014-11-16T03:50:59Z",
-  "Updated": "2014-11-16T04:38:56Z",
-  "Stars": 0,
-  "Forks": 0,
-  "Tags": [
-    "code",
-    "github",
-    "go"
   ]
 }{
   "URL": "https://github.com/mna/nimhash",
