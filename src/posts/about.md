@@ -66,6 +66,13 @@ My career can be roughly split in 3 parts:
 * Since late 2013, working remotely (mostly as a freelancer, mostly for startups)
   for various companies around the world (USA, Switzerland, France, etc.).
 
+As a freelancer, I've most notably worked with [Splice](https://splice.com) to
+help build the backend for roughly 6 years (in 2 stints) - including in [the
+very early days](https://twitter.com/mattetti/status/1108404063375220736) when
+the engineering team was very small -, multiple contracts with
+[Kite](https://www.kite.com/) over 4 years working on programming language
+parsers, and since mid-2021 with [Fleet](https://fleetdm.com/).
+
 ## Personal Projects
 
 In addition to my professional work and my open-source projects (listed on this site),
@@ -105,16 +112,20 @@ or a mix of all this:
   store requirements, etc. I took a year off to work on this, from implementation
   to launch and a few sales - too little to keep going, sadly - mainly in 2017.
 
-* [**Fiends.io**][fiends], a search engine for heavy metal reviews, scratching a similar itch as
-  the previously mentioned Horns of the Devil website. This is implemented following
-  the architecture and development philosophy outlined in my [Small is Beautiful][small]
-  blog post.
+* [**Fiends.io**][fiends], a search engine for heavy metal reviews launched in
+  early 2021, scratching a similar itch as the previously mentioned Horns of
+  the Devil website. This is implemented following the architecture and
+  development philosophy outlined in my [Small is Beautiful][small] blog post.
+  I shut it down in mid-2022 as I did not use it much anymore and it did not
+  see a lot of traffic.
 
 ## Family
 
-My significant other and I have two wonderful ~~kids~~ teenagers, a boy and a girl. We also have
-two cats, which you may see from time to time on my Twitter feed or on some of my
-profile pictures (though usually this is *feu* Gribouille, who died in 2018).
+My significant other and I have two wonderful ~~kids~~ teenagers, a boy and a
+girl. We also have [two
+cats](https://twitter.com/___mna___/status/1247589958954749954), which you may
+see from time to time on my Twitter feed or on some of my profile pictures
+(though usually this is *feu* Gribouille, who died in 2018).
 
 ## Hobbies
 
@@ -129,11 +140,13 @@ life, I enjoy a few hobbies:
   various rock, folk and americana artists. Thanks to my kids I also listen to a
   fair share of contemporary pop and rap music.
 
-* Making music - I play decent guitar and used to play drums, although I haven't
-  played in years (I sold my drum in 2017). I have two accoustic guitars and an
-  electric one (a black [B.C. Rich Warlock][bcrich]), and an old Korg keyboard.
-  I recently bought an audio interface and a Shure mic, and started recording on
-  GarageBand, there's a world of fun with that.
+* Making music - I play [decent
+  guitar](https://twitter.com/___mna___/status/1286394098916757511) and used to
+  play drums, although I haven't played in years (I sold my drum in 2017). I
+  have two accoustic guitars and two electric ones (including a black [B.C. Rich
+  Warlock][bcrich]), and an old Korg keyboard. I have an audio interface and a
+  Shure mic, and sometimes record stuff on GarageBand, there's a world of fun
+  with that.
 
 * Writing - I enjoy poetry and some years ago I wrote a lot of it (in french),
   and had two poems published.
@@ -142,6 +155,13 @@ life, I enjoy a few hobbies:
   programming-related documentation, but I also enjoy reading novels and history
   books. Nancy Huston's "Lignes de faille" (*Fault lines*) and Mathias Enard's
   "Zone" are among my favorite ones.
+
+* DIY Projects - I built a
+  [catio](https://twitter.com/___mna___/status/1406756511322447879) for our
+  cats, and more recently [a shed all by
+  myself](https://twitter.com/___mna___/status/1542282756142637057) (that is,
+  alone, which admittedly was challenging at times!). I have a few other such
+  projects planned.
 
 [email]: mailto:{{.Vars.Email}}
 [coco2]: https://twitter.com/___mna___/status/813406732697423872
@@ -164,4 +184,4 @@ life, I enjoy a few hobbies:
 [ville]: https://en.wikipedia.org/wiki/Angers
 [lua]: https://twitter.com/___mna___/status/1265789119483035649
 [small]: https://mna.dev/posts/small-is-beautiful.html
-[fiends]: https://www.fiends.io/
+[fiends]: https://web.archive.org/web/20220629214202/https://www.fiends.io/
