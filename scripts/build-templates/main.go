@@ -393,6 +393,7 @@ func newWebsite() *website {
 			{"Twitter", "___mna___", "https://twitter.com/___mna___/"},
 			{"GitHub", "mna", "https://github.com/mna"},
 			{"StackOverflow", "mna", "https://stackoverflow.com/users/1094941/mna"},
+			{"Mastodon", "@mna@fosstodon.org", "https://fosstodon.org/@mna"},
 		},
 		IconCredits: []*iconCredit{
 			{Icon: "About", Name: "Dave Gandy", AuthorURL: "https://www.flaticon.com/authors/dave-gandy", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},

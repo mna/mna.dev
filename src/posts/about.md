@@ -16,8 +16,9 @@ part-time contracts.
 You can find some of my code on [github], [sourcehut], [gitlab] and [bitbucket], I
 sometimes answer questions on [stackoverflow] and although I closed pretty much
 all my "social" accounts (such as facebook, instagram, snapchat and google+ but then
-so did you), I still use [twitter] from time to time. I like to read [hacker news][hn]
-and [lobsters] though I rarely comment.
+so did you), I still use [twitter] from time to time (and more recently,
+[mastodon]). I like to read [hacker news][hn] and [lobsters] though I rarely
+comment.
 
 ## Background
 
@@ -185,3 +186,4 @@ life, I enjoy a few hobbies:
 [lua]: https://twitter.com/___mna___/status/1265789119483035649
 [small]: https://mna.dev/posts/small-is-beautiful.html
 [fiends]: https://web.archive.org/web/20220629214202/https://www.fiends.io/
+[mastodon]: https://fosstodon.org/@mna
