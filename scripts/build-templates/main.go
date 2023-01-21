@@ -400,6 +400,7 @@ func newWebsite() *website {
 			{Icon: "GitHub", Name: "Dave Gandy", AuthorURL: "https://www.flaticon.com/authors/dave-gandy", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
 			{Icon: "Twitter", Name: "Katarina Stefanikova", AuthorURL: "https://www.flaticon.com/authors/katarina-stefanikova", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
 			{Icon: "Stack Overflow", Name: "Pixel perfect", AuthorURL: "https://www.flaticon.com/authors/pixel-perfect", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
+			{Icon: "Mastodon", Name: "Jin Nguyen", AuthorURL: "https://commons.wikimedia.org/wiki/File:Mastodon_Logotype_(Simple).svg", Website: "Wikimedia", WebsiteURL: "https://commons.wikimedia.org", License: "GNU AGPL", LicenseURL: "https://www.gnu.org/licenses/agpl-3.0.html"},
 		},
 		Vars: vars,
 	}
