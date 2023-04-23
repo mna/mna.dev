@@ -83,7 +83,7 @@ func (s *source) processPage(client *http.Client, u string, emit chan<- interfac
 		return "", err
 	}
 	if res.StatusCode > 200 {
-		return "", fmt.Errorf("http status code: %d", res.StatusCode)
+		return "", fmt.Errorf("http status code: %d\n%s", res.StatusCode, string(b))
 	}
 
 	var resp response

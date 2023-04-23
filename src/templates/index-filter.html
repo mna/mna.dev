@@ -1,16 +1,20 @@
 <div class="mx-auto max-w-md py-10 min-w-card">
-  <p class="mb-4">
-  This is a searchable and filterable directory of my blog posts and open-source code repositories I created or significantly contributed to.
-  </p>
-  <p class="mb-4">
-  quick links: <a href="?tags=%23post">blog posts</a> | <a href="?tags=%23code">source code repositories</a> | <a href="https://github.com/sponsors/mna">sponsor my open source work</a>
-  </p>
-  <form onsubmit="return false;">
-    <input class="shadow appearance-none border rounded w-full py-1 px-3 h-10 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="search" type="text" placeholder="Search">
-  </form>
-  <div class="mt-4 text-center">
-    {{range .AllTags}}
-      <a class="hashtag" href="#">#{{.}}</a>
-    {{end}}
-  </div>
+	<p class="mb-4">
+		This is a searchable and filterable directory of my blog posts and open-source code repositories I created or
+		significantly contributed to.
+	</p>
+	<p class="mb-4">
+		quick links: <a href="?tags=%23post">blog posts</a> | <a href="?tags=%23code">source code repositories</a> | <a
+			href="https://github.com/sponsors/mna">sponsor my open source work</a> | <a href="/about.html">about me</a>
+	</p>
+	<form onsubmit="return false;">
+		<input
+			class="shadow appearance-none border rounded w-full py-1 px-3 h-10 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+			id="search" type="text" placeholder="Search">
+	</form>
+	<div class="mt-4 text-center">
+		{{range .AllTags}}
+		<a class="hashtag" href="#">#{{.}}</a>
+		{{end}}
+	</div>
 </div>
