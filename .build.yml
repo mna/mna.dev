@@ -8,5 +8,5 @@ tasks:
       git push mirror master
 secrets:
   - 8a632639-cb32-49f8-b6b8-8040972f80a7
-  - fbb26d7f-ea1b-41c0-97b3-882ad37c66a0
+  - b771aa79-c02a-4f92-b9ef-bc387bfa5647
 
