@@ -16,9 +16,8 @@ part-time contracts.
 You can find some of my code on [github], [sourcehut], [gitlab] and [bitbucket], I
 sometimes answer questions on [stackoverflow] and although I closed pretty much
 all my "social" accounts (such as facebook, instagram, snapchat and google+ but then
-so did you), I still use [twitter] from time to time (and more recently,
-[mastodon]). I like to read [hacker news][hn] and [lobsters] though I rarely
-comment.
+so did you), I'm trying out [mastodon] and [bluesky]. I like to read [hacker news][hn]
+and [lobsters] though I rarely comment.
 
 ## Background
 
@@ -122,10 +121,10 @@ or a mix of all this:
 
 ## Family
 
-My significant other and I have two wonderful ~~kids~~ teenagers, a boy and a
+My significant other and I have two wonderful ~~kids~~ ~~teenagers~~ young adults, a boy and a
 girl. We also have [two
 cats](https://twitter.com/___mna___/status/1247589958954749954), which you may
-see from time to time on my Twitter feed or on some of my profile pictures
+see from time to time on my social feeds or on some of my profile pictures
 (though usually this is *feu* Gribouille, who died in 2018).
 
 ## Hobbies
@@ -153,16 +152,15 @@ life, I enjoy a few hobbies:
   and had two poems published.
 
 * Reading - I spend a lot of my reading time on technical articles and other
-  programming-related documentation, but I also enjoy reading novels and history
-  books. Nancy Huston's "Lignes de faille" (*Fault lines*) and Mathias Enard's
-  "Zone" are among my favorite ones.
+  programming-related documentation, but I also enjoy reading novels, history
+  books and fantasy. Nancy Huston's "Lignes de faille" (*Fault lines*) and 
+  Mathias Enard's "Zone" are among my favorite ones.
 
 * DIY Projects - I built a
   [catio](https://twitter.com/___mna___/status/1406756511322447879) for our
   cats, and more recently [a shed all by
-  myself](https://twitter.com/___mna___/status/1542282756142637057) (that is,
-  alone, which admittedly was challenging at times!). I have a few other such
-  projects planned.
+  myself](https://twitter.com/___mna___/status/1542282756142637057), and another one
+  a couple years later. I'm now doing a lot of woodworking projects for fun, mostly small furniture.
 
 [email]: mailto:{{.Vars.Email}}
 [coco2]: https://twitter.com/___mna___/status/813406732697423872
@@ -173,6 +171,7 @@ life, I enjoy a few hobbies:
 [sourcehut]: https://git.sr.ht/~mna/
 [stackoverflow]: https://stackoverflow.com/users/1094941/mna
 [twitter]: https://twitter.com/___mna___
+[bluesky]: https://bsky.app/profile/mna75.bsky.social
 [hn]: https://news.ycombinator.com/
 [lobsters]: https://lobste.rs/
 [horns]: https://web.archive.org/web/20101115125910/http://hornsofthedevil.com/

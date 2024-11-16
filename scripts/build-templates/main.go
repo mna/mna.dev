@@ -390,17 +390,17 @@ func newWebsite() *website {
 	return &website{
 		Links: []*link{
 			{"About", "", "/" + aboutFilename},
-			{"Twitter", "___mna___", "https://twitter.com/___mna___/"},
 			{"GitHub", "mna", "https://github.com/mna"},
 			{"StackOverflow", "mna", "https://stackoverflow.com/users/1094941/mna"},
 			{"Mastodon", "@mna@fosstodon.org", "https://fosstodon.org/@mna"},
+			{"Bluesky", "@mna75.bsky.social", "https://bsky.app/profile/mna75.bsky.social"},
 		},
 		IconCredits: []*iconCredit{
 			{Icon: "About", Name: "Dave Gandy", AuthorURL: "https://www.flaticon.com/authors/dave-gandy", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
 			{Icon: "GitHub", Name: "Dave Gandy", AuthorURL: "https://www.flaticon.com/authors/dave-gandy", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
-			{Icon: "Twitter", Name: "Katarina Stefanikova", AuthorURL: "https://www.flaticon.com/authors/katarina-stefanikova", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
 			{Icon: "Stack Overflow", Name: "Pixel perfect", AuthorURL: "https://www.flaticon.com/authors/pixel-perfect", Website: "flaticon.com", WebsiteURL: "https://www.flaticon.com/", License: "CC 3.0 BY", LicenseURL: "http://creativecommons.org/licenses/by/3.0/"},
 			{Icon: "Mastodon", Name: "Jin Nguyen", AuthorURL: "https://commons.wikimedia.org/wiki/File:Mastodon_Logotype_(Simple).svg", Website: "Wikimedia", WebsiteURL: "https://commons.wikimedia.org", License: "GNU AGPL", LicenseURL: "https://www.gnu.org/licenses/agpl-3.0.html"},
+			{Icon: "Bluesky", Name: "Simple Icons Collaborators", AuthorURL: "https://iconbuddy.com/simple-icons/bluesky", Website: "iconbuddy.com", WebsiteURL: "https://iconbuddy.com", License: "CC0 1.0", LicenseURL: "https://creativecommons.org/publicdomain/zero/1.0/deed.en"},
 		},
 		Vars: vars,
 	}
